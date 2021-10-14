@@ -43,8 +43,7 @@ Quy định và quy trình làm việc
 
     - Tạo database trong My SQL
 
-        `CREATE DATABASE <>`
-
+        `create database review_db`
     - Chạy code
 
         Tiếp tục ở terminal vừa clone git repository về
