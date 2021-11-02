@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const hbs  = require('express-handlebars');
 
 const db = require('./models/index');
 
@@ -16,7 +17,10 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.engine('hbs', hbs({extname: '.hbs'}));
 app.set('view engine', 'hbs');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
