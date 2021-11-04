@@ -52,7 +52,7 @@
 
 .nav-bar {
     margin-top: 20px;
-    margin-left: 250px;
+    margin-left: 200px;
     float: right;
 }
 
@@ -113,13 +113,14 @@ a {
 .slider {
     padding-bottom: 30px;
     overflow: hidden;
+    height: 100vh;
 }
 
 .dot-container {
     position: absolute;
     height: 30px;
     width: 100%;
-    margin-top: -50px;
+    margin-top: -150px;
     display: flex;
     justify-content: center;
     text-align: center;
