@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
-    class User extends Sequelize.Model {}
+    class User extends Sequelize.Model {
+        static associate(models) {
+            User.hasMany(models.Rate, {
+                foreignKey: 'userId',
+            });
+        }
+    }
 
     User.init(
         {
@@ -48,11 +54,6 @@ module.exports = (sequelize, Sequelize) => {
         },
     );
 
-    User.associate = function (models) {
-        User.hasMany(models.Rates, {
-            foreignKey: 'userId',
-        });
-    }
-
     return User;
 };
+

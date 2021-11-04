@@ -1,5 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
-    class Rate extends Sequelize.Model {}
+    class Rate extends Sequelize.Model {
+        static associate(models) {
+            Rate.belongsTo(models.User, {
+                foreignKey: 'userId',
+            });
+        }
+    }
 
     Rate.init(
         {
@@ -22,12 +28,7 @@ module.exports = (sequelize, Sequelize) => {
             timestamps: false,
         },
     );
-    
-    Rate.associate = function (models) {
-        Rate.belongsTo(models.User, {
-            foreignKey: 'userId',
-        });
-    };
 
     return Rate;
 };
+
