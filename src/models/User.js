@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
-    class Users extends Sequelize.Model {}
+    class User extends Sequelize.Model {}
 
-    Users.init(
+    User.init(
         {
             username: {
                 type: Sequelize.STRING(255),
@@ -43,16 +43,16 @@ module.exports = (sequelize, Sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Users',
+            modelName: 'User',
             timestamps: true,
         },
     );
 
-    Users.associate = function (models) {
-        Users.hasMany(models.Rates, {
+    User.associate = function (models) {
+        User.hasMany(models.Rates, {
             foreignKey: 'userId',
         });
     }
 
-    return Users;
+    return User;
 };

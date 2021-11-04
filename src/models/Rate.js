@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
-    class Rates extends Sequelize.Model {}
+    class Rate extends Sequelize.Model {}
 
-    Rates.init(
+    Rate.init(
         {
             userId: {
                 type: Sequelize.INTEGER,
@@ -18,16 +18,16 @@ module.exports = (sequelize, Sequelize) => {
         },
         {
             sequelize,
-            modelName: 'Rates',
+            modelName: 'Rate',
             timestamps: false,
         },
     );
     
-    Rates.associate = function (models) {
-        Rates.belongsTo(models.Users, {
+    Rate.associate = function (models) {
+        Rate.belongsTo(models.User, {
             foreignKey: 'userId',
         });
     };
 
-    return Rates;
+    return Rate;
 };
