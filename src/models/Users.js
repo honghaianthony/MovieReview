@@ -45,7 +45,6 @@ module.exports = (sequelize, Sequelize) => {
             sequelize,
             modelName: 'Users',
             timestamps: true,
-            underscored: true,
         },
     );
 
