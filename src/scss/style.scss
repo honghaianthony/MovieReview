@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    padding: 20px 120px;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+.logo img {
+    padding-top: 15px;
+    width: 180px;
+}
+
+.search {
+    display: flex;
+    width: 620px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.search i {
+    margin: 0 5px;
+    padding-top: 5px;
+}
+
+.search input {
+    height: 30px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.nav-bar {
+    margin-top: 20px;
+    margin-left: 200px;
+    float: right;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.menu li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu > li {
+    padding: 0 12px;
+    position: relative;
+}
+
+.menu > li a {
+    font-family: Arial;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    display: block;
+    line-height: 20px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.aspect-ratio-169 {
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+    transition: 0.3s all ease-in-out;
+}
+
+.aspect-ratio-169 img {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider {
+    padding-bottom: 30px;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.dot-container {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.dot.active {
+    background-color: #c23535;
+}
+
+.footer {
+    margin-top: 20px;
+    height: 400px;
+    width: 100%;
+}
+
+.content-up {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+    background-color: #efefef;
+}
+
+.footer-logo {
+    margin-top: 95px;
+    padding-left: 30px;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.footer-link {
+    padding: 30px 100px;
+}
+
+.footer-link-title {
+    width: 100%;
+}
+
+.footer-link-title span {
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.linking {
+    padding: 0;
+    padding-top: 10px;
+}
+
+.linking li {
+    padding-bottom: 20px;
+    list-style-type: none;
+}
+
+.linking li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.animate-border {
+    position: relative;
+    display: block;
+    width: 130px;
+    height: 3px;
+    background: #e6673b;
+}
+
+.footer-contact {
+    padding: 30px 100px;
+}
+
+.footer-contact-title {
+    width: 100%;
+}
+
+.footer-contact-title span {
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.footer-contact-detail {
+    padding: 0;
+    padding-top: 10px;
+}
+
+.footer-contact-detail a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-contact-detail a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-contact-detail-mail {
+    padding-bottom: 20px;
+}
+
+.footer-contact-detail-facebook {
+    padding-bottom: 20px;
+}
+
+.footer-contact-detail-facebook img {
+    padding-left: 13px;
+    padding-right: 15px;
+}
+
+.footer-contact-detail-phone {
+    padding-bottom: 20px;
+}
+
+.footer-contact-detail-phone img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-contact-detail-position img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-service {
+    padding: 30px 100px;
+}
+
+.footer-service-title {
+    width: 100%;
+}
+
+.footer-service-title span {
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.footer-service-detail {
+    padding: 0;
+    padding-top: 10px;
+}
+
+.footer-service-detail a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-service-detail a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-service-detail-netflix {
+    padding-bottom: 20px;
+}
+
+.footer-service-detail-ghienreview {
+    padding-bottom: 20px;
+}
+
+.footer-service-detail-ghienreview img {
+    padding-right: 5px;
+}
+
+.footer-service-detail-wikipedia {
+    padding-bottom: 20px;
+}
+
+.footer-service-detail-wikipedia img {
+    padding-right: 5px;
+}
+
+.footer-service-detail-facebook img {
+    padding-right: 15px;
+}
+
+.content-down {
+    height: 100px;
+    background: #000;
+}
+
+.content-down-copyright {
+    padding-top: 20px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.content-down-copyright span {
+    color: white;
+}
+
+.content-down-allrights {
+    padding-top: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.content-down-allrights span {
+    color: white;
+}
+
+.content-down-allrights i {
+    color: white;
+}
+
+/* Login */
+.content-left {
+    height: 100%;
+    width: 50%;
+    background-image: url("images/avengersnew.jpg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.content-right {
+    width: 50%;
+    float: right;
+}
+
+.login-text {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.form-input {
+    padding-top: 20px;
+}
+
+.input-field {
+    margin-left: 130px;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.save-password {
+    margin-left: 130px;
+}
+
+button {
+    display: block;
+    width: 73%;
+    border: none;
+    margin-left: 130px;
+    margin-top: 20px;
+    background-color: #265ce9;
+    padding: 7px 28px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.others {
+    margin-left: 130px;
+    margin-top: 20px;
+}
+
+.forgot-password {
+    float: right;
+    margin-right: 120px;
+}
+
+.copyright {
+    position: absolute;
+    width: 325px;
+    height: 45px;
+    left: 802px;
+    top: 910px;
+    margin-left: 450px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #898989;
+}
