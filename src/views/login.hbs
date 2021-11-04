@@ -1,13 +1,46 @@
-<h1>Đăng nhập</h1>
-<form action="">
-    <div>
-        <label for="username">Tên người dùng: </label>
-        <input type="text" name="username" id="username">
-    </div>
-    <div>
-        <label for="pasword">Mật khẩu: </label>
-        <input type="password" name="password" id="password">
-    </div>
-    <button type="submit">Login</button>
-</form>
-<a href="/register">Đăng ký</a>
+<section class="login">
+            <div class="container">
+                <div class="content-left"></div>
+                <div class="content-right">
+                    <div class="login-text">Đăng nhập</div>
+                    <div class="form-input">
+                        <form id="login" class="input-group">
+                            <input
+                                type="text"
+                                class="input-field"
+                                placeholder="Tên tài khoản"
+                                required
+                            />
+                            <input
+                                type="password"
+                                class="input-field"
+                                id="myInput"
+                                placeholder="Mật khẩu"
+                                required
+                            />
+                        </form>
+                    </div>
+                    <div class="save-password">
+                        <input type="checkbox" class="check-box" />
+                        <label>Lưu mật khẩu</label>
+                    </div>
+                        <button
+                            type="submit"
+                            class="toggle-btn"
+                            onclick="Login()"
+                        >
+                            Đăng nhập
+                        </button>
+
+                        <div class="others">
+                            <a href="#">Không có tài khoản? Đăng ký</a>
+                            <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                        </div>
+
+                        <div class="copyright">
+                            Bản quyền trực thuộc HongHai Entertainment
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
