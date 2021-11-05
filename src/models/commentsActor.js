@@ -1,7 +1,7 @@
 module.exports = (sequelize, Sequelize) => {
-    class Comments_actor extends Sequelize.Model {}
+    class commentsActor extends Sequelize.Model {}
 
-    Users.init(
+    commentsActor.init(
         {
             actorId: {
                 type: Sequelize.INTEGER,
