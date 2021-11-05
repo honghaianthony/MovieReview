@@ -62,6 +62,186 @@
                 imgSelector[index].classList.add("active");
             }
             setInterval(imgSlide, 5000);
+
+            //actor
+              const smallImg = document.querySelectorAll(
+                ".actor-content-left-small-image img"
+            );
+            const bigImg = document.querySelector(
+                ".actor-content-left-big-image img"
+            );
+            const backgroundImg = document.querySelector(".actor");
+
+             backgroundImg.style.background = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/agelina_bg.jpg)";
+            backgroundImg.style.backgroundPosition = "fixed";
+            backgroundImg.style.backgroundSize = "cover";
+            backgroundImg.style.backgroundAttachment = "fixed";
+
+            document.querySelector(
+                ".actor-content-right-name-hoyeon"
+            ).style.display = "none";
+            document.querySelector(
+                ".actor-content-right-detail-hoyeon"
+            ).style.display = "none";
+
+            document.querySelector(
+                ".actor-content-right-name-tom"
+            ).style.display = "none";
+            document.querySelector(
+                ".actor-content-right-detail-tom"
+            ).style.display = "none";
+
+            document.querySelector(
+                ".actor-content-right-name-kaity"
+            ).style.display = "none";
+            document.querySelector(
+                ".actor-content-right-detail-kaity"
+            ).style.display = "none";
+
+            smallImg.forEach(function (imgItem, index) {
+                imgItem.addEventListener("click", function () {
+                    bigImg.src = imgItem.src;
+                    if (index === 1) {
+                        backgroundImg.style.background =
+                            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/hooyeon_bg.jpg) ";
+                        backgroundImg.style.backgroundPosition = "fixed";
+                        backgroundImg.style.backgroundSize = "cover";
+                        backgroundImg.style.backgroundAttachment = "fixed";
+
+                        document.querySelector(
+                            ".actor-content-right-name-hoyeon"
+                        ).style.display = "block";
+                        document.querySelector(
+                            ".actor-content-right-detail-hoyeon"
+                        ).style.display = "block";
+
+                        document.querySelector(
+                            ".actor-content-right-name-kaity"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-kaity"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-angelina"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-angelina"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-tom"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-tom"
+                        ).style.display = "none";
+                    }
+                    if (index === 2) {
+                        backgroundImg.style.background =
+                            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/tom_bg.jpg)";
+                        backgroundImg.style.backgroundPosition = "fixed";
+                        backgroundImg.style.backgroundSize = "cover";
+                        backgroundImg.style.backgroundAttachment = "fixed";
+
+                        document.querySelector(
+                            ".actor-content-right-name-tom"
+                        ).style.display = "block";
+                        document.querySelector(
+                            ".actor-content-right-detail-tom"
+                        ).style.display = "block";
+                        document.querySelector(
+                            ".actor-content-right-name-hoyeon"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-hoyeon"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-angelina"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-angelina"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-kaity"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-kaity"
+                        ).style.display = "none";
+                    }
+                    if (index === 3) {
+                        backgroundImg.style.background =
+                            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/kaity_bg.jpg)";
+                        backgroundImg.style.backgroundPosition = "fixed";
+                        backgroundImg.style.backgroundSize = "cover";
+                        backgroundImg.style.backgroundAttachment = "fixed";
+
+                        document.querySelector(
+                            ".actor-content-right-name-kaity"
+                        ).style.display = "block";
+                        document.querySelector(
+                            ".actor-content-right-detail-kaity"
+                        ).style.display = "block";
+
+                        document.querySelector(
+                            ".actor-content-right-name-tom"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-tom"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-angelina"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-angelina"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-hooyeon"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-hooyeon"
+                        ).style.display = "none";
+                    }
+                    if (index === 0) {
+                        backgroundImg.style.background =
+                            "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/agelina_bg.jpg)";
+                        backgroundImg.style.backgroundPosition = "fixed";
+                        backgroundImg.style.backgroundSize = "cover";
+                        backgroundImg.style.backgroundAttachment = "fixed";
+
+                        document.querySelector(
+                            ".actor-content-right-name-angelina"
+                        ).style.display = "block";
+                        document.querySelector(
+                            ".actor-content-right-detail-angelina"
+                        ).style.display = "block";
+
+                        document.querySelector(
+                            ".actor-content-right-name-hoyeon"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-hoyeon"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-kaity"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-kaity"
+                        ).style.display = "none";
+
+                        document.querySelector(
+                            ".actor-content-right-name-tom"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-tom"
+                        ).style.display = "none";
+                    }
+                });
+            });
         </script>
 </body>
 </html>

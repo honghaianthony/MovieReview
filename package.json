@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "nodemon ./bin/www",
-        "watch": "node-sass --watch src/scss/ --output src/public/css/",
+        "watch": "node-sass --watch src/views/scss/ --output src/public/css/",
         "dev": "nodemon ./bin/www"
     },
     "dependencies": {
