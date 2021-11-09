@@ -40,6 +40,7 @@
             const imgContainer = document.querySelector(".aspect-ratio-169");
             const imgSelector = document.querySelectorAll(".dot");
             let index = 0;
+            slider(index);
             let imgNumber = imgPosition.length;
             imgPosition.forEach(function (image, index) {
                 image.style.left = index * 100 + "%";
@@ -49,7 +50,6 @@
             });
             function imgSlide() {
                 index++;
-                imgContainer.style.left = "-" + index * 100 + "%";
                 if (index >= imgNumber) {
                     index = 0;
                 }
