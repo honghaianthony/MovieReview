@@ -591,3 +591,96 @@ a {
 .review .fa-heart {
     color: #f21e44;
 }
+
+//Login
+
+.login-content-left {
+    height: 100%;
+    width: 50%;
+    background-image: url("../../../src/public/images/avengersnew.jpg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.login-content-right {
+    width: 50%;
+    float: right;
+}
+
+.login-text {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.login-form-input {
+    padding-top: 20px;
+}
+
+.login-input-field {
+    margin-left: 130px;
+    width: 100%;
+    justify-content: center;
+    // align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.login-save-password {
+    margin-left: 130px;
+    cursor: pointer;
+}
+
+.login-toggle-btn {
+    display: block;
+    width: 73%;
+    border: none;
+    margin-left: 130px;
+    margin-top: 20px;
+    background-color: #265ce9;
+    padding: 7px 28px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.login-others {
+    margin-left: 130px;
+    margin-top: 20px;
+}
+
+.login-forgot-password {
+    float: right;
+    margin-right: 120px;
+}
+
+.login-copyright {
+    position: absolute;
+    width: 325px;
+    height: 45px;
+    left: 802px;
+    top: 910px;
+    margin-left: 450px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #898989;
+}
