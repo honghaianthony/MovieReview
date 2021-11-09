@@ -1,7 +1,22 @@
 module.exports = (sequelize, Sequelize) => {
-    class Users extends Sequelize.Model {}
+    class User extends Sequelize.Model {
+        static associate(models) {
+            User.hasMany(models.Rate, {
+                foreignKey: 'userId',
+            });
+            User.hasMany(models.Comment, {
+                foreignKey: 'userId',
+            });
+            User.hasMany(models.CommentActor, {
+                foreignKey: 'userId',
+            });
+            User.hasMany(models.Rate, {
+                foreignKey: 'userId',
+            });
+        }
+    }
 
-    Users.init(
+    User.init(
         {
             username: {
                 type: Sequelize.STRING(255),
@@ -43,10 +58,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         {
             sequelize,
-            modelName: "Users",
+            modelName: 'User',
             timestamps: true,
-        }
+        },
     );
 
-    return Users;
+    return User;
 };
+
