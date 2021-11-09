@@ -591,3 +591,169 @@ a {
 .review .fa-heart {
     color: #f21e44;
 }
+/* film_KD*/
+.containner
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(./banner1.jpg);
+    background-position: center;
+    background-size:100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #fff;
+    height: 1650px;
+}
+.left
+{
+    width: 50%;
+    position:absolute;
+    left: 0;
+    top:0;
+}
+.left .logo 
+{
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    
+}
+.left .logo img
+{
+    width: 60px;
+    height: 60px;
+}
+.left .title
+{
+    position: absolute;
+    left: 320px;
+    top: 115px;
+    font-size: 32px;
+    font-weight:bold;
+    color: #fff;
+}
+/*infor film*/
+.left .info_film 
+{
+    position: absolute;
+    left: 250px;
+    top: 200px;
+    font-size: 24px;  
+}
+.left .info_film .info-film-title
+{
+    font-size: 48px;
+    font-weight: bold;
+    margin: -24px 0 24px 0;
+}
+.left .info_film .info-film-information 
+{
+    font-size: 28px;
+}
+.left .info_film .rate-info
+{
+    position: absolute;
+    left: 100px;
+    margin-top: -30px;
+}
+.rate-info p
+{
+    margin-top: -25px;
+    margin-left: -25px;
+}
+.rate-icon
+{
+    width: 50px;
+
+}
+/*infor film*/
+/*review content*/
+.left .review-content
+{
+    position: absolute;
+    min-width: 700px;
+    width: 900px;
+    left: 250px;
+    top: 400px;
+    font-size: 36px;
+    text-align: justify;
+    line-height: 1.5;
+    color: #fff;
+    margin-top: -28px;
+}
+/*review content*/
+/*button-watch*/
+.left .button-watch
+{
+    position: absolute;    
+    left: 250px;
+    top: 1000px; 
+    margin-top: 50px;
+}
+.left .button-watch button:hover
+{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+.left .button-watch button
+{
+    border-radius: 50px;
+    padding: 30px 60px;
+    font-size: 36px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: none;
+}
+.left .button-watch .button-watch-trailer
+{
+    background-color: rgb(243, 7, 7);
+    color: #fff;
+    margin-right: 150px;
+}
+/*button-watch*/
+/*others-film*/
+.left .others-film
+{
+    position:absolute;
+    top: 1200px;
+    left: 200px;
+}
+.others-film ul li
+{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 50px;
+}
+.others-film ul li:hover
+{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+/*others-film*/
+/*poster*/
+.right
+{
+    position:absolute;
+    right: 0;
+    top:0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right .poster
+{
+    position: absolute;
+    right: 600px;
+    top: 250px;
+    
+}
+.right .poster img
+{
+    width: 140%;
+}
+.right .poster img:hover
+{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+/*poster*/ 
+/* film_KD*/
