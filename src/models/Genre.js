@@ -1,11 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
-  class Genres extends Sequelize.Model {
+  class Genre extends Sequelize.Model {
     static associate(models) {
-      Genres.belongsToMany(models.Movies, { through: "Genres_Movies" });
+      Genre.belongsToMany(models.Movie, { through: "GenreMovie" });
     }
   }
 
-  Genres.init(
+  Genre.init(
     {
       genreId: {
         type: Sequelize.INTEGER,
@@ -17,10 +17,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     {
       sequelize,
-      modelName: "Genres",
+      modelName: "Genre",
       timestamps: false,
     }
   );
 
-  return Genres;
+  return Genre;
 };

@@ -4,6 +4,15 @@ module.exports = (sequelize, Sequelize) => {
             User.hasMany(models.Rate, {
                 foreignKey: 'userId',
             });
+            User.hasMany(models.Comment, {
+                foreignKey: 'userId',
+            });
+            User.hasMany(models.CommentActor, {
+                foreignKey: 'userId',
+            });
+            User.hasMany(models.Rate, {
+                foreignKey: 'userId',
+            });
         }
     }
 

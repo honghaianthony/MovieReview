@@ -1,11 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
-  class Movies extends Sequelize.Model {
+  class Movie extends Sequelize.Model {
     static associate(models) {
-      Movies.belongsToMany(models.Genres, { through: "Genres_Movies" });
+      Movie.belongsToMany(models.Genres, { through: "GenreMovie" });
+      Movie.hasOne(models.Movie, {
+        foreignKey: "movieId",
+      });
     }
   }
 
-  Movies.init(
+  Movie.init(
     {
       movieId: {
         type: Sequelize.INTEGER,
@@ -35,10 +38,10 @@ module.exports = (sequelize, Sequelize) => {
     },
     {
       sequelize,
-      modelName: "Movies",
+      modelName: "Movie",
       timestamps: false,
     }
   );
 
-  return Movies;
+  return Movie;
 };

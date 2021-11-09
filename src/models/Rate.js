@@ -4,6 +4,9 @@ module.exports = (sequelize, Sequelize) => {
             Rate.belongsTo(models.User, {
                 foreignKey: 'userId',
             });
+            Rate.belongsTo(models.Review, {
+                foreignKey: 'reviewId',
+            });
         }
     }
 

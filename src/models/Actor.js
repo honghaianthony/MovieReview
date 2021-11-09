@@ -1,12 +1,11 @@
 module.exports = (sequelize, Sequelize) => {
     class Actor extends Sequelize.Model {
-        /*static associate(models) {
-            Actor.hasMany(models.Comment, {
+        static associate(models) {
+            Actor.hasMany(models.CommentActor, {
                 foreignKey : 'actorId',
             });
           
         }
-        */
     }
 
     Actor.init(
@@ -15,21 +14,21 @@ module.exports = (sequelize, Sequelize) => {
                 type: Sequelize.STRING(255),
                 allowNull: false
             },
-            descriptionText: {
-                type: Sequelize.STRING(255),
-                allowNull: false
+            description: {
+                type: Sequelize.TEXT,
+                // allowNull: false
             },
-            titleText: {
-                type: Sequelize.STRING(255),
-                allowNull: false
+            title: {
+                type: Sequelize.TEXT,
+                // allowNull: false
             },
-            contentText: {
-                type: Sequelize.STRING(255),
-                allowNull: false
+            content: {
+                type: Sequelize.TEXT,
+                // allowNull: false
             },
             rate: {
                 type: Sequelize.DOUBLE,
-                allowNull: false
+                // allowNull: false
             },
             img: {
                 type: Sequelize.STRING(255),

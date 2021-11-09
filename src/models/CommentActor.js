@@ -1,18 +1,18 @@
 module.exports = (sequelize, Sequelize) => {
-    class Comment extends Sequelize.Model {
+    class CommentActor extends Sequelize.Model {
         static associate(models) {
-            Comment.belongsTo(models.User, {
-                foreignKey: "userId",
+            CommentActor.belongsTo(models.Actor, {
+                foreignKey: "actorId",
             });
-            Comment.belongsTo(models.Review, {
-                foreignKey: "reviewId",
+            CommentActor.belongsTo(models.User, {
+                foreignKey: "userId",
             });
         }
     }
 
-    Comment.init(
+    CommentActor.init(
         {
-            reviewId: {
+            actorId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 primaryKey: true,
@@ -22,16 +22,16 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: false,
                 primaryKey: true,
             },
-            context: {
+            content: {
                 type: Sequelize.TEXT,
-            },
+            }, 
         },
         {
             sequelize,
-            modelName: "Comment",
+            modelName: 'CommentActor',
             timestamps: true,
-        }
+        },
     );
 
-    return Comment;
+    return CommentActor;
 };
