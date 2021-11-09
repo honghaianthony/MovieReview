@@ -354,3 +354,74 @@ button:hover {
   line-height: 18px;
   text-align: center;
   color: #898989; }
+/* Another film*/
+.another-flim-container{
+  position: relative;
+}
+.container-item{
+  padding: 60px;
+  background-color: #D0D0D0;
+  height:700px;
+}
+
+.middle-container{
+  display:flex;
+  overflow: hidden;
+}
+.text-container-top{
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+i.fas.fa-film.board {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  font-size:100px;
+}
+i.fas.fa-video.flim {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.content-img-top img{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 200px;
+  height:150px;
+}
+.text-container-top{
+  font-size: 25px;
+}
+.middle-content{
+  display:flex;
+  width:100%; 
+}
+.content-item{
+  width: 33.33%;
+  
+  text-align: center;
+}
+.text-content{
+  text-align: center;
+  margin-top: 10px;
+}
+.content-item img {
+  width: 260px;
+  height: 350px;
+  border-radius: 30px;
+}
+.content-item  p{
+  font-size:22px;
+  font-weight:500;
+ 
+}
+/* .fa, .fas{
+  font-size:100px;
+  margin-top: 30px;
+} */
