@@ -12,6 +12,10 @@ router.get("/login", function (req, res, next) {
     res.render("login", { layout: "other" });
 });
 
+router.get("/review-detail-squid-game", function (req, res, next) {
+    res.render("review-detail");
+});
+
 router.use("/user", userRouter);
 
 module.exports = router;

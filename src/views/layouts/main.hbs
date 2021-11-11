@@ -34,6 +34,14 @@
     {{>footer}}
 
  <script>
+            const settingPost = document.querySelector(".three-dots-button");
+            if (settingPost) {
+                settingPost.addEventListener("click", function () {
+                    document
+                        .querySelector(".sub-menu-show")
+                        .classList.toggle("active-three-dots");
+                });
+            }
             const imgPosition = document.querySelectorAll(
                 ".aspect-ratio-169 img"
             );
