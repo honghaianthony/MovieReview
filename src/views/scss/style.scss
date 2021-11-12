@@ -592,7 +592,7 @@ a {
     color: #f21e44;
 }
 /* film_KD*/
-.containner
+.film
 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(./banner1.jpg);
     background-position: center;
@@ -600,72 +600,63 @@ a {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #fff;
-    height: 1650px;
+    position: relative;
+    padding: 40px;
 }
-.left
+.film .left
 {
-    width: 50%;
-    position:absolute;
-    left: 0;
-    top:0;
+    display: block;
 }
-.left .logo 
+.film .left .logo
 {
-    position: absolute;
-    left: 250px;
-    top: 100px;
+    padding: 20px;
+    vertical-align: middle;
+    position: relative;
     
 }
-.left .logo img
+ .logo img
 {
+    display: inline-block;
     width: 60px;
     height: 60px;
 }
-.left .title
+ .logo .head
 {
-    position: absolute;
-    left: 320px;
-    top: 115px;
-    font-size: 32px;
+    display: inline-block;
+    font-size: 28px;
     font-weight:bold;
     color: #fff;
-}
-/*infor film*/
-.left .info_film 
-{
     position: absolute;
-    left: 250px;
-    top: 200px;
-    font-size: 24px;  
+    top:35px;
 }
-.left .info_film .info-film-title
+.left .info_film
 {
-    font-size: 48px;
-    font-weight: bold;
-    margin: -24px 0 24px 0;
+    padding-left: 35px;
 }
-.left .info_film .info-film-information 
+.info_film .rate-info p
 {
-    font-size: 28px;
+    margin-top: -16px;
 }
-.left .info_film .rate-info
-{
-    position: absolute;
-    left: 100px;
-    margin-top: -30px;
-}
-.rate-info p
-{
-    margin-top: -25px;
-    margin-left: -25px;
-}
-.rate-icon
-{
-    width: 50px;
-
-}
-/*infor film*/
 /*review content*/
+.left .review-content
+{
+    padding-left: 35px;
+    font-size: 24px;
+    line-height: 1.5;
+    color:#fff;
+    width: 700px;
+}
+/*review content*/
+.left .button-watch button
+{
+    border-radius: 50px;
+    padding: 30px 60px;
+    font-size: 36px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: none;
+}
+/*
 .left .review-content
 {
     position: absolute;
@@ -681,6 +672,7 @@ a {
 }
 /*review content*/
 /*button-watch*/
+/*
 .left .button-watch
 {
     position: absolute;    
@@ -710,6 +702,7 @@ a {
 }
 /*button-watch*/
 /*others-film*/
+/*
 .left .others-film
 {
     position:absolute;
@@ -728,7 +721,7 @@ a {
     cursor: pointer;
 }
 /*others-film*/
-/*poster*/
+/*poster
 .right
 {
     position:absolute;
