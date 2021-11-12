@@ -489,17 +489,16 @@ a {
 
 /* film_KD*/
 .film {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./banner1.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("images/agelina_bg.jpg");
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: #fff;
-  position: relative;
   padding: 40px; }
 
 .film .left {
-  display: block; }
+  width: 100%; }
 
 .film .left .logo {
   padding: 20px;
@@ -522,17 +521,84 @@ a {
 .left .info_film {
   padding-left: 35px; }
 
+.left .info_film .info-film-title {
+  font-size: 24px; }
+
+.info_film img {
+  width: 50px; }
+
+.info_film .rate-info {
+  display: inline-block;
+  margin-bottom: -16px; }
+
 .info_film .rate-info p {
   margin-top: -16px; }
 
+/*review content*/
 .left .review-content {
   padding-left: 35px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5;
   color: #fff;
-  width: 700px; }
+  position: relative; }
+
+.left .review-content .content {
+  display: inline-block;
+  margin-right: 50px;
+  width: 40%; }
+
+.left .review-content .poster {
+  display: inline-block;
+  position: absolute;
+  right: 200px;
+  top: -100px; }
+
+.review-content img {
+  width: 400px; }
+
+.review-content img:hover {
+  transform: scale(1.08);
+  cursor: pointer; }
 
 /*review content*/
+.left .button-watch {
+  padding-left: 35px; }
+
+.left .button-watch button {
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: none;
+  outline: none; }
+
+.left .button-watch button:hover {
+  transform: scale(1.08);
+  cursor: pointer; }
+
+.left .button-watch .button-watch-trailer {
+  background-color: #f30707;
+  color: #fff;
+  margin-right: 100px; }
+
+/*orther film*/
+.left .others-film {
+  margin-top: 50px; }
+
+.left .others-film img {
+  width: 150px;
+  border-radius: 5px; }
+
+.left .others-film ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 40px; }
+
+.others-film ul li:hover {
+  transform: scale(1.08);
+  cursor: pointer; }
+
 /*
 .left .review-content
 {
