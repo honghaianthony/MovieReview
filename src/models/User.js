@@ -3,9 +3,18 @@ module.exports = (sequelize, Sequelize) => {
     static associate(models) {
       User.hasMany(models.Review, { foreignKey: "userId" });
       User.hasMany(models.Actor, { foreignKey: "userId" });
-      User.belongsToMany(models.Review, { through: "Comment" });
-      User.belongsToMany(models.Review, { through: "Rate" });
-      User.belongsToMany(models.Actor, { through: "CommentActor" });
+      User.belongsToMany(models.Review, {
+        through: "Comment",
+        foreignKey: "userId",
+      });
+      User.belongsToMany(models.Review, {
+        through: "Rate",
+        foreignKey: "userId",
+      });
+      User.belongsToMany(models.Actor, {
+        through: "CommentActor",
+        foreignKey: "userId",
+      });
     }
   }
 

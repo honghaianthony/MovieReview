@@ -1,9 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
   class Actor extends Sequelize.Model {
     static associate(models) {
-      Actor.belongsToMany(models.User, { through: "CommentActor" });
+      Actor.belongsToMany(models.User, {
+        through: "CommentActor",
+        foreignKey: "actorId",
+      });
       Actor.belongsTo(models.User, {
-        foreignKey: "userId"
+        foreignKey: "userId",
       });
     }
   }
