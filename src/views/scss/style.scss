@@ -591,3 +591,429 @@ a {
 .review .fa-heart {
     color: #f21e44;
 }
+
+//Login
+
+.login-content-left {
+    height: 100%;
+    width: 50%;
+    background-image: url("../../../src/public/images/avengersnew.jpg");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.login-content-right {
+    width: 50%;
+    float: right;
+}
+
+.login-text {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.login-form-input {
+    padding-top: 20px;
+}
+
+.login-input-field {
+    margin-left: 130px;
+    width: 100%;
+    justify-content: center;
+    // align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.login-save-password {
+    margin-left: 130px;
+    cursor: pointer;
+}
+
+.login-toggle-btn {
+    display: block;
+    width: 73%;
+    border: none;
+    margin-left: 130px;
+    margin-top: 20px;
+    background-color: #265ce9;
+    padding: 7px 28px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.login-others {
+    margin-left: 130px;
+    margin-top: 20px;
+}
+
+.login-forgot-password {
+    float: right;
+    margin-right: 120px;
+}
+
+.login-copyright {
+    position: absolute;
+    width: 325px;
+    height: 45px;
+    left: 802px;
+    top: 910px;
+    margin-left: 450px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #898989;
+}
+
+/*Review Detail */
+
+.review-detail {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.review-detail-top {
+    padding-bottom: 20px;
+}
+
+.review-detail-top .title {
+    font-weight: 700;
+    font-size: 30px;
+    font-family: Arial;
+}
+
+.review-detail-top .three-dots {
+    margin-top: -40px;
+    float: right;
+}
+.sub-menu-show {
+    position: absolute;
+    height: 0;
+}
+.sub-menu {
+    background-color: #fff;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition: 0.2s all ease-in-out;
+    margin-top: 10px;
+    top: 0px;
+    margin-left: -200px;
+    z-index: 1;
+    line-height: 2;
+    text-align: center;
+}
+
+.sub-menu-show ul {
+    padding: 0;
+}
+
+.active-three-dots {
+    display: none;
+}
+.sub-menu-show ul li {
+    text-align: center;
+    padding: 10px 0;
+    list-style-type: none;
+}
+.sub-menu-show ul li a {
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    line-height: 1.5;
+    outline: none;
+    color: #000;
+}
+
+.review-detail-top .three-dots .sub-menu li a:hover,
+.review-detail-top .three-dots .sub-menu li a:focus {
+    color: blue;
+}
+
+.review-detail-top .three-dots-button i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.review-detail-info {
+    padding: 15px 0;
+}
+
+.review-detail-author {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-detail-author .review-detail-author-left {
+    float: left;
+    padding-right: 20px;
+}
+
+.review-detail-author .review-detail-author-right .name {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Arial;
+}
+
+.review-detail-author .review-detail-author-right .role {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Arial;
+    color: #2c38a4;
+}
+
+.review-detail-audience {
+    float: right;
+    font-weight: 700;
+    z-index: -1;
+}
+
+.review-detail-audience i {
+    padding-left: 10px;
+    color: yellow;
+}
+
+.review-detail-content-top .col-md-6 {
+    padding-bottom: 20px;
+}
+
+.review-detail-content-top-info span {
+    float: left;
+    padding-right: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: Arial;
+}
+
+.review-detail-content-top-info p {
+    font-style: italic;
+    color: #ff3737;
+    font-size: 15px;
+    font-family: Arial;
+    padding-bottom: 50px;
+}
+
+.review-detail-content {
+    padding-top: 20px;
+    text-align: justify;
+    font-family: Arial;
+}
+
+.review-detail-content .image-info {
+    padding: 10px 0;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.review-detail-content .part {
+    font-style: italic;
+    font-weight: 700;
+    padding: 15px 10px;
+    text-align: justify;
+}
+
+.review-detail-content-evaluate {
+    padding: 20px 12px;
+    display: flex;
+    align-items: center;
+}
+
+.review-detail-content .evaluate {
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.review-detail-content .source {
+    padding: 20px 12px;
+    text-align: right;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.review-detail-content .evaluate-question {
+    margin-top: -25px;
+    padding-right: 150px;
+    font-weight: 700;
+}
+
+.review-detail-content-rating {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    display: flex;
+}
+
+.review-detail-content-rating input {
+    display: none;
+}
+
+.review-detail-content-rating label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+}
+
+.review-detail-content-rating label:before {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    position: relative;
+    display: block;
+    font-size: 20px;
+    color: #101010;
+}
+
+.review-detail-content-rating label:after {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    position: absolute;
+    display: block;
+    font-size: 20px;
+    color: yellow;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.review-detail-content-rating label:hover:after,
+.review-detail-content-rating label:hover ~ label:after,
+.review-detail-content-rating input:checked ~ label:after {
+    opacity: 1;
+}
+
+.review-detail-comment {
+    padding-top: 10px;
+}
+
+.review-detail-comment .title {
+    padding: 50px 12px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.review-detail-comment-user {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-detail-comment-user-first {
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.review-detail-comment-user-second {
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.review-detail-comment-user-third {
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.review-detail-comment-user-forth {
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.review-detail-comment-user-input {
+    padding: 20px 10px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.review-detail-comment-user-left {
+    float: left;
+}
+
+.review-detail-comment-user-left img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: -30px;
+    margin-top: -40px;
+    border: 5px solid #fff;
+    margin-bottom: 30px;
+}
+
+.review-detail-comment-user-right-text {
+    margin-top: -40px;
+    margin-left: -20px;
+    font-size: 16px;
+    padding: 5px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+    width: 1200px;
+    height: 120%;
+    align-items: center;
+}
+.review-detail-comment-user-right-text span {
+    padding-top: 30px;
+    color: #3e7fe1;
+}
+
+.review-detail-comment-user-right-text-input {
+    margin-top: -40px;
+    margin-left: -20px;
+    font-size: 16px;
+    padding: 5px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+    width: 1200px;
+    height: 120%;
+    align-items: center;
+}
+
+.review-detail-comment-user-right-text-input input {
+    padding-top: 20px;
+    height: 30px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.review-detail-comment-user-button button {
+    float: right;
+    padding: 10px 15px;
+    width: 175px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    background-color: #f21e44;
+    color: #fff;
+}

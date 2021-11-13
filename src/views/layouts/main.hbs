@@ -34,12 +34,21 @@
     {{>footer}}
 
  <script>
+            const settingPost = document.querySelector(".three-dots-button");
+            if (settingPost) {
+                settingPost.addEventListener("click", function () {
+                    document
+                        .querySelector(".sub-menu-show")
+                        .classList.toggle("active-three-dots");
+                });
+            }
             const imgPosition = document.querySelectorAll(
                 ".aspect-ratio-169 img"
             );
             const imgContainer = document.querySelector(".aspect-ratio-169");
             const imgSelector = document.querySelectorAll(".dot");
             let index = 0;
+            slider(index);
             let imgNumber = imgPosition.length;
             imgPosition.forEach(function (image, index) {
                 image.style.left = index * 100 + "%";
@@ -49,7 +58,6 @@
             });
             function imgSlide() {
                 index++;
-                imgContainer.style.left = "-" + index * 100 + "%";
                 if (index >= imgNumber) {
                     index = 0;
                 }
@@ -72,7 +80,7 @@
             );
             const backgroundImg = document.querySelector(".actor");
 
-             backgroundImg.style.background = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/agelina_bg.jpg)";
+            backgroundImg.style.background = "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(images/agelina_bg.jpg)";
             backgroundImg.style.backgroundPosition = "fixed";
             backgroundImg.style.backgroundSize = "cover";
             backgroundImg.style.backgroundAttachment = "fixed";
@@ -185,6 +193,13 @@
                         ).style.display = "block";
 
                         document.querySelector(
+                            ".actor-content-right-name-hoyeon"
+                        ).style.display = "none";
+                        document.querySelector(
+                            ".actor-content-right-detail-hoyeon"
+                        ).style.display = "none";
+
+                        document.querySelector(
                             ".actor-content-right-name-tom"
                         ).style.display = "none";
                         document.querySelector(
@@ -198,12 +213,7 @@
                             ".actor-content-right-detail-angelina"
                         ).style.display = "none";
 
-                        document.querySelector(
-                            ".actor-content-right-name-hooyeon"
-                        ).style.display = "none";
-                        document.querySelector(
-                            ".actor-content-right-detail-hooyeon"
-                        ).style.display = "none";
+        
                     }
                     if (index === 0) {
                         backgroundImg.style.background =
