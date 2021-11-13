@@ -592,26 +592,46 @@ a {
     color: #f21e44;
 }
 /* film_KD*/
-.film
+.fiml-content
 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("images/agelina_bg.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("images/banner1.png");
     background-position: center;
     background-size:100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+.film-squidgame
+{   
     color: #fff;
     padding: 40px;
+    display: none;
 }
-.film .left
+.film-spiderman
 {
-    width: 100%;
-}
-.film .left .logo
-{
-    padding: 20px;
-    vertical-align: middle;
-    position: relative;
+    color: #fff;
+    padding: 40px; 
     
+}
+.film-likeaboss
+{
+    color: #fff;
+    padding: 40px; 
+    display: none;
+
+}
+.film-insideout
+{
+    color: #fff;    
+    padding: 40px; 
+    display: none;
+}
+.logo
+{
+    margin-left: 20px;
+    vertical-align: middle;
 }
  .logo img
 {
@@ -622,76 +642,74 @@ a {
  .logo .head
 {
     display: inline-block;
-    font-size: 28px;
+    vertical-align: middle;   
     font-weight:bold;
     color: #fff;
-    position: absolute;
-    top:35px;
+    margin-bottom: -16px;
 }
-.left .info_film
+.info_film
 {
     padding-left: 35px;
-    position: relative;
 }
-.left .info_film .info-film-title
+.info_film .info-film-title
 {
-    font-size: 24px;
+    font-size: 32px;
+    text-transform: capitalize;
 }
-.info_film img
-{       
-    width: 50px;
+.info_film .info-film-title
+{
+    font-size: 32px;
+    text-transform: capitalize;
 }
 .info_film .rate-info
-{   
-    position: absolute;
-    margin-bottom: -16px;
-    left: 100px;
-    top: 110px;
-    margin-bottom: -16px;
-}
-.info_film .rate-info p
 {
-   margin-top: -16px;
+    position: relative;
 }
-
+.rate-info .rate-icon
+{
+    width: 50px;
+}
+.rate-info >p
+{
+    position: absolute;
+    top:5px;
+    left:60px;
+}
 /*review content*/
-.left .review-content
+.review-content
 {
     padding-left: 35px;
     font-size: 20px;
     line-height: 1.5;
-    color:#fff;
-    position: relative;
-   
+    color:#fff; 
+    display: flex;
 }
-.left .review-content .content
+.review-content .content-left,.content-right
 {
+    width: 50%;
     display: inline-block;
-    margin-right: 50px;
-    width: 40%; 
 }
-.left .review-content .poster
+.review-content .content-right
 {
-    display: inline-block;
-    position: absolute;
-    right: 200px;
-    top: -100px; 
+    margin-top: -150px;
+    margin-left: 50px;
 }
-.review-content img
+.review-content .content-right img
 {
-    width: 400px;
+    width: 500px;
+    border-radius: 10px;
 }
-.review-content img:hover
+.content-left .content
 {
-    transform: scale(1.08);
-    cursor: pointer;
+    width: 90%;
+    margin-top: 20px;
 }
 /*review content*/
-.left .button-watch
+.button-watch
 {
-    padding-left: 35px;
+    margin-top: 30px;
 }
-.left .button-watch button
+.button-watch button
 {
     border-radius: 50px;
     padding: 10px 30px;
@@ -701,129 +719,37 @@ a {
     border: none;
     outline: none;
 }
-.left .button-watch button:hover
+.button-watch button:hover
 {
     transform: scale(1.08);
     cursor: pointer;
 }
-.left .button-watch .button-watch-trailer
+.button-watch .button-watch-trailer
 {
     background-color: rgb(243, 7, 7);
     color: #fff;
-    margin-right: 100px;
+    margin-right:100px;
 }
-/*orther film*/
-.left .others-film
-{
-    margin-top: 50px;
+.others-film
+{   
+    margin-top: 20px;
+    margin-left: -30px;
 }
-.left .others-film img
+ .others-film img
 {
     width: 150px;
     border-radius: 5px;    
 }
-.left .others-film ul li
+ .others-film ul li
 {
     list-style-type: none;
     display: inline-block;
+    margin-bottom: 15px;
     margin-right: 40px;
 }
 .others-film ul li:hover
 {
     transform: scale(1.08);
     cursor: pointer;
-}
-/*
-.left .review-content
-{
-    position: absolute;
-    min-width: 700px;
-    width: 900px;
-    left: 250px;
-    top: 400px;
-    font-size: 36px;
-    text-align: justify;
-    line-height: 1.5;
-    color: #fff;
-    margin-top: -28px;
-}
-/*review content*/
-/*button-watch*/
-/*
-.left .button-watch
-{
-    position: absolute;    
-    left: 250px;
-    top: 1000px; 
-    margin-top: 50px;
-}
-.left .button-watch button:hover
-{
-    transform: scale(1.08);
-    cursor: pointer;
-}
-.left .button-watch button
-{
-    border-radius: 50px;
-    padding: 30px 60px;
-    font-size: 36px;
-    text-transform: capitalize;
-    font-weight: 600;
-    border: none;
-}
-.left .button-watch .button-watch-trailer
-{
-    background-color: rgb(243, 7, 7);
-    color: #fff;
-    margin-right: 150px;
-}
-/*button-watch*/
-/*others-film*/
-/*
-.left .others-film
-{
-    position:absolute;
-    top: 1200px;
-    left: 200px;
-}
-.others-film ul li
-{
-    list-style-type: none;
-    display: inline-block;
-    margin-right: 50px;
-}
-.others-film ul li:hover
-{
-    transform: scale(1.08);
-    cursor: pointer;
-}
-/*others-film*/
-/*poster
-.right
-{
-    position:absolute;
-    right: 0;
-    top:0;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.right .poster
-{
-    position: absolute;
-    right: 600px;
-    top: 250px;
-    
-}
-.right .poster img
-{
-    width: 140%;
-}
-.right .poster img:hover
-{
-    transform: scale(1.08);
-    cursor: pointer;
-}
-/*poster*/ 
+} 
 /* film_KD*/
