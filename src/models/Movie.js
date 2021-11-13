@@ -1,19 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
   class Movie extends Sequelize.Model {
     static associate(models) {
+      Movie.hasMany(models.Review, { foreignKey: "movieId" });
+
       Movie.belongsToMany(models.Genre, { through: "GenreMovie" });
-      Movie.hasOne(models.Movie, {
-        foreignKey: "movieId",
-      });
     }
   }
 
   Movie.init(
     {
-      movieId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-      },
       name: {
         type: Sequelize.STRING(255),
       },

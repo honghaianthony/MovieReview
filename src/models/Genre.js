@@ -7,10 +7,6 @@ module.exports = (sequelize, Sequelize) => {
 
   Genre.init(
     {
-      genreId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-      },
       type: {
         type: Sequelize.STRING,
       },
