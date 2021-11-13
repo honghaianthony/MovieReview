@@ -3,6 +3,12 @@ module.exports = (sequelize, Sequelize) => {
     static associate(models) {
       Review.belongsToMany(models.User, { through: "Comment" });
       Review.belongsToMany(models.User, { through: "Rate" });
+      Review.belongsTo(models.Movie, {
+        foreignKey: "movieId",
+      });
+      Review.belongsTo(models.User, {
+        foreignKey: "userId",
+      });
     }
   }
 

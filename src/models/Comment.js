@@ -5,12 +5,6 @@ module.exports = (sequelize, Sequelize) => {
 
   Comment.init(
     {
-      creatAt: {
-        type: Sequelize.DATE,
-      },
-      updateAt: {
-        type: Sequelize.DATE,
-      },
       content: {
         type: Sequelize.TEXT,
       },
