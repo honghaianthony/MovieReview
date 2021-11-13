@@ -430,3 +430,165 @@ button:hover {
 
     color: #898989;
 }
+/* film_KD*/
+.fiml-content
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("images/banner1.png");
+    background-position: center;
+    background-size:100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.film-squidgame
+{   
+    color: #fff;
+    padding: 40px;
+    display: none;
+}
+.film-spiderman
+{
+    color: #fff;
+    padding: 40px; 
+    
+}
+.film-likeaboss
+{
+    color: #fff;
+    padding: 40px; 
+    display: none;
+
+}
+.film-insideout
+{
+    color: #fff;    
+    padding: 40px; 
+    display: none;
+}
+.logo
+{
+    margin-left: 20px;
+    vertical-align: middle;
+}
+ .logo img
+{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+ .logo .head
+{
+    display: inline-block;
+    vertical-align: middle;   
+    font-weight:bold;
+    color: #fff;
+    margin-bottom: -16px;
+}
+.info_film
+{
+    padding-left: 35px;
+}
+.info_film .info-film-title
+{
+    font-size: 32px;
+    text-transform: capitalize;
+}
+.info_film .info-film-title
+{
+    font-size: 32px;
+    text-transform: capitalize;
+}
+.info_film .rate-info
+{
+    position: relative;
+}
+.rate-info .rate-icon
+{
+    width: 50px;
+}
+.rate-info >p
+{
+    position: absolute;
+    top:5px;
+    left:60px;
+}
+/*review content*/
+.review-content
+{
+    padding-left: 35px;
+    font-size: 20px;
+    line-height: 1.5;
+    color:#fff; 
+    display: flex;
+}
+.review-content .content-left,.content-right
+{
+    width: 50%;
+    display: inline-block;
+}
+.review-content .content-right
+{
+    margin-top: -150px;
+    margin-left: 50px;
+}
+.review-content .content-right img
+{
+    width: 500px;
+    border-radius: 10px;
+}
+.content-left .content
+{
+    width: 90%;
+    margin-top: 20px;
+}
+/*review content*/
+.button-watch
+{
+    margin-top: 30px;
+}
+.button-watch button
+{
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
+.button-watch button:hover
+{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+.button-watch .button-watch-trailer
+{
+    background-color: rgb(243, 7, 7);
+    color: #fff;
+    margin-right:100px;
+}
+.others-film
+{   
+    margin-top: 20px;
+    margin-left: -30px;
+}
+ .others-film img
+{
+    width: 150px;
+    border-radius: 5px;    
+}
+ .others-film ul li
+{
+    list-style-type: none;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 40px;
+}
+.others-film ul li:hover
+{
+    transform: scale(1.08);
+    cursor: pointer;
+} 
+/* film_KD*/
