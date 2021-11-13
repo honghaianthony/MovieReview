@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "watch": "node-sass --watch src/views/scss/ --output src/public/css/",
+        "watch": "node-sass --watch src/scss/ --output src/public/css/",
         "start": "nodemon --inspect ./bin/www",
         "dev": "nodemon --inspect ./bin/www"
     },
