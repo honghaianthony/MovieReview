@@ -16,6 +16,10 @@ router.get("/review-detail-squid-game", function (req, res, next) {
     res.render("review-detail");
 });
 
+router.get("/aboutus", function (req, res, next) {
+    res.render("aboutus");
+});
+
 router.use("/user", userRouter);
 
 module.exports = router;
