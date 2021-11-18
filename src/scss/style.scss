@@ -1444,9 +1444,10 @@ a {
 
 .AboutUsSlide3__container{
     background-image: url("../images/anhnenaboutus.png");
-    // background-size: 100%;
+    background-size: cover;
     // height: 1000px; 
     background-repeat: no-repeat;
+    background-attachment: fixed;
     padding:30px;
 }
 .AboutusSlide3__topcontent{
