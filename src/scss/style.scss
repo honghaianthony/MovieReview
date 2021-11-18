@@ -1254,4 +1254,138 @@ a {
     font-weight:500;
    
   }
+/*AboutUs*/
+.AboutUsSlide2__container{
+    background-color: #D0D0D0;
+    padding: 30px 20px;
+    width:100%;
+}
+.TopAboutUs__container{
+    margin-bottom: 0;
+    padding:20px;
+}
+.TopAboutUs__container h3{
+    font-size: 15px;
+    font-weight: 600;
+}
+.TopAboutUs__Item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.AboutUs__Item_img {
+    width:50%;
+    padding:20px;
+}
 
+.AboutUs__Item_img img {
+    width:100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.AboutUs__Item_decripsion{
+    width:50%;
+    padding:20px;
+    line-height: 1.4;
+    
+}
+.AboutUs__Item_decripsion__2{
+    width: 50%;
+    padding:20px;
+    line-height: 1.4;
+    
+}
+.AboutUs__Item_img__2{
+    width:50%;
+    padding:20px;
+}
+.AboutUs__Item_img__2 img{
+    width:100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.TopAboutUs__Item_decripsion_first{
+    margin-bottom: 20px;
+}
+.TopAboutUs__Item_decripsion_first h3{
+    font-size:30px;
+    color:#033ED8;
+
+}
+.TopAboutUs__Item_decripsion_second {
+    text-align: justify;
+}
+.TopAboutUs__Item_decripsion_second span{
+    font-size: 18px;
+}
+.BottomAboutUs__Item{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+/*slide 3*/
+
+.AboutUsSlide3__container{
+    background-image: url("../images/anhnenaboutus.png");
+    // background-size: 100%;
+    // height: 1000px; 
+    background-repeat: no-repeat;
+    padding:30px;
+}
+.AboutusSlide3__topcontent{
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    padding:20px;
+}
+.AboutusSlide3__topcontent h2{
+    font-size: 40px;
+}
+.AboutusSlide3__centercontent{
+    margin-top: 30px;
+}
+.centercontent__container{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.centercontent__listitem{
+    /* width:20%; */
+    /* padding:20px; */
+    color:#fff;
+}
+
+.centerItem__img{
+    display:flex;
+    justify-content: center;
+}
+.centerItem__img img{
+    border-radius:50%;
+    height:200px;
+    object-fit: cover;
+    width:200px;
+}
+.CenterItem_topdecription{
+    display:flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.CenterItem_topdecription p{
+    margin:0;
+}
+.team-decription p{
+    margin:0;
+}
+// .CenterItem_bottomdecription{
+//     margin-top: 5px;
+// }
+.team-decription,.school-decription{
+    display: flex;
+    justify-content: center;
+     margin-top: 5px;
+    
+}
