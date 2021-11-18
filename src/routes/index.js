@@ -16,8 +16,8 @@ router.get("/review-detail-squid-game", function (req, res, next) {
     res.render("review-detail");
 });
 
-router.get("/films-review", function (req, res, next) { 
-    res.render("films-review",{ 
+router.get("/film-review", function (req, res, next) { 
+    res.render("film-review",{ 
         films:[ 
             { 
                 img:"images/sky-tuour.jpg", 
