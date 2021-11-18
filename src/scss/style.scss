@@ -1184,6 +1184,121 @@ a {
     cursor: pointer;
 } 
 /* film_KD*/
+/*films-review*/
+.review-phim-container
+{
+    font-size: 16px;
+    color:#fff;
+    background-color: #1a191f;
+    display: block;
+}
+.link
+{
+    padding-top:30px ;
+    padding-left: 50px;
+}
+#form-film
+{
+    font-size: 16px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    margin-left: 50px;
+    display: block;
+}
+.title-page
+{
+    font-size: 20px;
+    text-align: center; 
+    color: rgba(241, 190, 22, 0.918);
+}
+.fa-film
+{
+    font-size: 100px;
+}
+.main-review-film
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.one-film
+{ 
+    margin: 10px 20px;
+    text-align: center;
+    display:inline-block;
+    flex-basis: 20%;
+}
+.one-film:hover
+{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.one-film img
+{
+    width: 250px;
+    border-radius: 10px;
+}
+.one-film .film-title
+{
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+    margin: 10px;
+}
+.one-film .film-title:hover
+{
+    color: #def31e;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.film-content
+{
+    text-align: center;
+}
+.rate-film
+{
+    display: flex;
+    justify-content: center;
+}
+.rate-film img
+{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.rate-content .point
+{
+    margin-top: -16px;
+
+}
+.kind-of-film
+{
+    color: #def31e;
+}
+.more
+{
+    text-align: center;
+    padding: 40px;
+    
+}
+.more a
+{
+    text-decoration: none;
+    color: #fff;
+}
+.more a:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.fa-angle-double-down
+{
+    font-size: 15px;
+}
 
 // Giao
 /* Another film*/
