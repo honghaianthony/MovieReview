@@ -1,16 +1,30 @@
 const express = require("express");
 const router = express.Router();
+const passport = require('passport');
+const passportAuth = require('../config/passport');
 
 const userRouter = require("./users");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
+    console.log(req.user)
     res.render("index", { title: "Express" });
 });
 
-router.get("/login", function (req, res, next) {
+router.get("/login", passportAuth.checkNotAuthenticated, function (req, res, next) {
     res.render("login", { layout: "other" });
 });
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
+
+router.post('/logout', (req, res) => {
+    req.logOut();
+    res.redirect('/');
+})
 
 router.get("/review-detail-squid-game", function (req, res, next) {
     res.render("review-detail");

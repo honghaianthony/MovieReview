@@ -7,7 +7,7 @@ module.exports = {
         
         try {
             const hashedPassword = await bcrypt.hash(password, 10)
-            await models.user.create({
+            await models.User.create({
                 username,
                 password: hashedPassword,
                 fullName: name,
