@@ -2,7 +2,7 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
 const hbs  = require('express-handlebars');
 const passport = require('passport');
 const flash = require('express-flash');
@@ -33,8 +33,13 @@ app.set('view engine', 'hbs');
 
 
 app.use(
-  logger(
-    ':method :url :status :remote-addr - :remote-user [:date[iso]]'
+  morgan(
+    ':method :url :status :remote-addr - :remote-user [:date[iso]]',
+    {
+      skip: function (req, res) {
+        return req.url.indexOf('/images') == 0 
+      }
+    }
   )
 );
 app.use(express.json());
