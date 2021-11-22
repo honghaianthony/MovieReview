@@ -19,7 +19,7 @@ module.exports = {
             
             res.redirect('login');
         } catch (error) {
-            res.redirect('/user/register')
+            res.redirect('register')
         }
         
     },

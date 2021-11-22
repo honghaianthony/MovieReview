@@ -8,12 +8,6 @@ module.exports = (sequelize, Sequelize) => {
       content: {
         type: Sequelize.TEXT,
       },
-      creatAt: {
-        type: Sequelize.DATE,
-      },
-      updateAt: {
-        type: Sequelize.DATE,
-      },
     },
     {
       sequelize,
