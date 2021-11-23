@@ -1,46 +1,48 @@
-{{! <section class="login">
-            <div class="container">
-                <div class="login-content-left"></div>
-                <div class="login-content-right">
-                    <div class="login-text">Đăng nhập</div>
-                    <div class="login-form-input">
-                        <form id="loginField" class="login-input-group">
-                            <input
-                                type="text"
-                                class="login-input-field"
-                                placeholder="Tên tài khoản"
-                                required
-                            />
-                            <input
-                                type="password"
-                                class="login-input-field"
-                                id="myInput"
-                                placeholder="Mật khẩu" required
-                            />
-                        </form>
-                    </div>
-                    <div class="login-save-password">
-                        <input type="checkbox" class="check-box" />
-                        <label>Lưu mật khẩu</label>
-                    </div>
-                        <button
-                            type="submit"
-                            class="login-toggle-btn"
-                            onclick="Login()"
-                        >
-                            Đăng nhập
-                        </button>
-
-                        <div class="login-others">
-                            <a href="#">Không có tài khoản? Đăng ký</a>
-                            <a href="#" class="login-forgot-password">Quên mật khẩu?</a>
-                        </div>
-
-                        <div class="login-copyright">
-                            Bản quyền trực thuộc HongHai Entertainment
-                        </div>
-                    </div>
-                </div>
+<section class="login">
+    <div class="content-left">
+        <img src="images/fastfurious.jpg" alt="" />
+    </div>
+    <div class="content-right">
+        <div class="form-login">
+            <div class="login-title row">
+                <img src="images/login_icon.png" />
+                <div class="login-title-text">Đăng nhập</div>
             </div>
-</section> }}
-Đây là trang login
+            <form id="login" class="input-group row">
+                <div class="login-input-form">
+                    <input
+                        type="text"
+                        class="input-field"
+                        placeholder="Tên tài khoản"
+                        required
+                    />
+                </div>
+                <div class="login-input-form">
+                    <input
+                        type="password"
+                        class="input-field"
+                        id="myInput"
+                        placeholder="Mật khẩu"
+                        required
+                    />
+                </div>
+            </form>
+            <div class="save-password">
+                <label><input type="checkbox" name="" /> Lưu mật khẩu</label>
+            </div>
+            <div class="login-input-form">
+                <button type="submit" class="toggle-btn" onclick="Login()">
+                    Đăng nhập
+                </button>
+            </div>
+            <div class="others">
+                <a href="#">Không có tài khoản? Đăng ký</a>
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            </div>
+
+            <div class="copyright">
+                Bản quyền trực thuộc HongHai Entertainment
+            </div>
+        </div>
+    </div>
+</section>

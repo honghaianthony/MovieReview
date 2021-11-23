@@ -1,29 +1,60 @@
-<h1>Đăng ký</h1>
-<form action="/user/register" method="POST">
-    <div>
-        <label for="username">Tên người dùng: </label>
-        <input type="text" name="username" id="username">
+<section class="register">
+    <div class="content-left">
+        <img src="images/fastfurious.jpg" alt="" />
     </div>
-    <div>
-        <label for="password">Mật khẩu: </label>
-        <input type="password" name="password" id="password">
+    <div class="content-right">
+        <div class="form-register">
+            <div class="register-title row">
+                <img src="images/login_icon.png" />
+                <div class="register-title-text">Đăng ký</div>
+            </div>
+            <form id="register" class="input-group row">
+                <div class="register-input-form">
+                    <input
+                        type="text"
+                        class="input-field"
+                        placeholder="Tên tài khoản"
+                        required
+                    />
+                </div>
+                <div class="register-input-form">
+                    <input
+                        type="password"
+                        class="input-field"
+                        id="myInput"
+                        placeholder="Mật khẩu"
+                        required
+                    />
+                </div>
+                <div class="register-input-form">
+                    <input
+                        type="password"
+                        class="input-field"
+                        id="myInput"
+                        placeholder="Nhập lại mật khẩu"
+                        required
+                    />
+                </div>
+                <div class="register-input-form">
+                    <input
+                        type="email"
+                        class="input-field"
+                        id="myInput"
+                        placeholder="Email"
+                        required
+                    />
+                </div>
+            </form>
+
+            <div class="register-input-form">
+                <button type="submit" class="toggle-btn" onclick="register()">
+                    Đăng ký
+                </button>
+            </div>
+
+            <div class="copyright">
+                Bản quyền trực thuộc HongHai Entertainment
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="name">Họ và Tên: </label>
-        <input type="text" name="name" id="name">
-    </div>
-    <div>
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email">
-    </div>
-    <div>
-        <label for="phone">Số điện thoại: </label>
-        <input type="tel" name="phone" id="phone">
-    </div>
-    <div>
-        <label for="birth">Ngày sinh: </label>
-        <input type="date" name="birth" id="birth">
-    </div>
-    <button type="submit">Đăng ký</button>
-</form>
-<a href="/login">Đăng nhập</a>
+</section>
