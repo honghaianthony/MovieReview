@@ -21,10 +21,19 @@ router.post('/logout', (req, res) => {
     res.redirect('/');
 })
 
+
 router.get("/register", function (req, res, next) {
-    res.render("register", { layout: "other"});
+    res.render("register", { layout: "other" });
+});
+router.post("/register", userController.CreateUser);
+
+
+router.get("/forgot", function (req, res, next) {
+    res.render("forgot-password", { layout: "other" });
+});
+router.get("/change-password", function (req, res, next) {
+    res.render("change-password", { layout: "other" });
 });
 
-router.post("/register", userController.CreateUser);
 
 module.exports = router;

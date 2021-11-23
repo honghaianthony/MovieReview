@@ -8,7 +8,7 @@
                 <img src="images/login_icon.png" />
                 <div class="register-title-text">Đăng ký</div>
             </div>
-            <form id="register" class="input-group row">
+            <form id="register" class="input-group row" action="/register" method="post">
                 <div class="register-input-form">
                     <input
                         type="text"
@@ -44,13 +44,13 @@
                         required
                     />
                 </div>
+                <div class="register-input-form">
+                    <button type="submit" class="toggle-btn" onclick="register()">
+                        Đăng ký
+                    </button>
+                </div>
             </form>
 
-            <div class="register-input-form">
-                <button type="submit" class="toggle-btn" onclick="register()">
-                    Đăng ký
-                </button>
-            </div>
 
             <div class="copyright">
                 Bản quyền trực thuộc HongHai Entertainment

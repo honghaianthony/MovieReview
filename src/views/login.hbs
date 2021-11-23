@@ -8,12 +8,13 @@
                 <img src="images/login_icon.png" />
                 <div class="login-title-text">Đăng nhập</div>
             </div>
-            <form id="login" class="input-group row">
+            <form id="login" class="input-group row" action="/login" method="post">
                 <div class="login-input-form">
                     <input
                         type="text"
                         class="input-field"
                         placeholder="Tên tài khoản"
+                        name="username"
                         required
                     />
                 </div>
@@ -23,18 +24,25 @@
                         class="input-field"
                         id="myInput"
                         placeholder="Mật khẩu"
+                        name="password"
                         required
                     />
                 </div>
+                <div class="save-password">
+                    <label><input type="checkbox" name="" /> Lưu mật khẩu</label>
+                </div>
+                <button type="submit" class="toggle-btn">
+                    Đăng nhập
+                </button>
             </form>
-            <div class="save-password">
+            {{!-- <div class="save-password">
                 <label><input type="checkbox" name="" /> Lưu mật khẩu</label>
             </div>
             <div class="login-input-form">
-                <button type="submit" class="toggle-btn" onclick="Login()">
+                <button type="submit" class="toggle-btn">
                     Đăng nhập
                 </button>
-            </div>
+            </div> --}}
             <div class="others">
                 <a href="#">Không có tài khoản? Đăng ký</a>
                 <a href="#" class="forgot-password">Quên mật khẩu?</a>
