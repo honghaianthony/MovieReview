@@ -1184,6 +1184,121 @@ a {
     cursor: pointer;
 } 
 /* film_KD*/
+/*films-review*/
+.review-phim-container
+{
+    font-size: 16px;
+    color:#fff;
+    background-color: #1a191f;
+    display: block;
+}
+.link
+{
+    padding-top:30px ;
+    padding-left: 50px;
+}
+#form-film
+{
+    font-size: 16px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    margin-left: 50px;
+    display: block;
+}
+.title-page
+{
+    font-size: 20px;
+    text-align: center; 
+    color: rgba(241, 190, 22, 0.918);
+}
+.fa-film
+{
+    font-size: 100px;
+}
+.main-review-film
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.one-film
+{ 
+    margin: 10px 20px;
+    text-align: center;
+    display:inline-block;
+    flex-basis: 20%;
+}
+.one-film:hover
+{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.one-film img
+{
+    width: 250px;
+    border-radius: 10px;
+}
+.one-film .film-title
+{
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+    margin: 10px;
+}
+.one-film .film-title:hover
+{
+    color: #def31e;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.film-content
+{
+    text-align: center;
+}
+.rate-film
+{
+    display: flex;
+    justify-content: center;
+}
+.rate-film img
+{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.rate-content .point
+{
+    margin-top: -16px;
+
+}
+.kind-of-film
+{
+    color: #def31e;
+}
+.more
+{
+    text-align: center;
+    padding: 40px;
+    
+}
+.more a
+{
+    text-decoration: none;
+    color: #fff;
+}
+.more a:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.fa-angle-double-down
+{
+    font-size: 15px;
+}
 
 // Giao
 /* Another film*/
@@ -1254,4 +1369,138 @@ a {
     font-weight:500;
    
   }
+/*AboutUs*/
+.AboutUsSlide2__container{
+    background-color: #D0D0D0;
+    padding: 30px 20px;
+    width:100%;
+}
+.TopAboutUs__container{
+    margin-bottom: 0;
+    padding:20px;
+}
+.TopAboutUs__container h3{
+    font-size: 15px;
+    font-weight: 600;
+}
+.TopAboutUs__Item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.AboutUs__Item_img {
+    width:50%;
+    padding:20px;
+}
 
+.AboutUs__Item_img img {
+    width:100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.AboutUs__Item_decripsion{
+    width:50%;
+    padding:20px;
+    line-height: 1.4;
+    
+}
+.AboutUs__Item_decripsion__2{
+    width: 50%;
+    padding:20px;
+    line-height: 1.4;
+    
+}
+.AboutUs__Item_img__2{
+    width:50%;
+    padding:20px;
+}
+.AboutUs__Item_img__2 img{
+    width:100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.TopAboutUs__Item_decripsion_first{
+    margin-bottom: 20px;
+}
+.TopAboutUs__Item_decripsion_first h3{
+    font-size:30px;
+    color:#033ED8;
+
+}
+.TopAboutUs__Item_decripsion_second {
+    text-align: justify;
+}
+.TopAboutUs__Item_decripsion_second span{
+    font-size: 18px;
+}
+.BottomAboutUs__Item{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+/*slide 3*/
+
+.AboutUsSlide3__container{
+    background-image: url("../images/anhnenaboutus.png");
+    // background-size: 100%;
+    // height: 1000px; 
+    background-repeat: no-repeat;
+    padding:30px;
+}
+.AboutusSlide3__topcontent{
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    padding:20px;
+}
+.AboutusSlide3__topcontent h2{
+    font-size: 40px;
+}
+.AboutusSlide3__centercontent{
+    margin-top: 30px;
+}
+.centercontent__container{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.centercontent__listitem{
+    /* width:20%; */
+    /* padding:20px; */
+    color:#fff;
+}
+
+.centerItem__img{
+    display:flex;
+    justify-content: center;
+}
+.centerItem__img img{
+    border-radius:50%;
+    height:200px;
+    object-fit: cover;
+    width:200px;
+}
+.CenterItem_topdecription{
+    display:flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.CenterItem_topdecription p{
+    margin:0;
+}
+.team-decription p{
+    margin:0;
+}
+// .CenterItem_bottomdecription{
+//     margin-top: 5px;
+// }
+.team-decription,.school-decription{
+    display: flex;
+    justify-content: center;
+     margin-top: 5px;
+    
+}

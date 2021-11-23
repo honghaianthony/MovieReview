@@ -1,0 +1,45 @@
+<section class="review-phim">
+        <div class="review-phim-container">
+            <div class="link">
+                <p>Trang chủ <i class="fas fa-arrow-right"></i> Review phim</p>
+            </div>
+                <select name="kind-of-film" id="form-film">
+                    <option value="Tất cả phim">Tất cả phim</option>
+                    <option value="Hành động">Hành động</option>
+                    <option value="Kinh dị">Kinh dị</option>
+                    <option value="Hài">Hài</option>
+                    <option value="Tình cảm">Tình cảm</option>
+                    <option value="Khoa học">Khoa học</option>
+                    <option value="Trinh thám">Trinh thám</option>
+                    <option value="Hoạt hình">Hoạt hình</option>
+                </select>
+            <div class="title-page">
+                <h2>PHIM CỦA CHÚNG TÔI  <i class="fas fa-video"></i></h2>              
+            </div>
+            <div class="main-review-film">
+                    {{#each films}}
+                    <div class="one-film ">
+                        <img class="film-img"src={{this.img}} alt="">
+                        <div class="film-title">
+                            <p>{{this.filmname}}</p>
+                        </div>
+                        <div class="kind-of-film">
+                                <p>Thể loại: {{this.kind}}</p>
+                        </div>
+                        <div class="rate-film">
+                            <img src="images/staricon.png" alt="rate-icon">
+                            <div class="rate-content">
+                                <p>IMDb Rating</p>
+                                <p class="point">{{this.rate}}</p>
+                            </div>
+                         </div>
+                            
+                     </div>
+                    {{/each}}                                  
+            </div>
+            <div class="more">
+                <a href="#">Xem thêm</a>
+                <i class="fas fa-angle-double-down icon"></i>
+            </div>
+        </div>
+    </section>
