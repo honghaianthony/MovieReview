@@ -2173,10 +2173,11 @@ i.fas.fa-video.flim {
 
 .AboutUsSlide3__container {
     background-image: url("../images/anhnenaboutus.png");
-    // background-size: 100%;
-    // height: 1000px;
+    background-size: cover;
+    // height: 1000px; 
     background-repeat: no-repeat;
-    padding: 30px;
+    background-attachment: fixed;
+    padding:30px;
 }
 .AboutusSlide3__topcontent {
     color: #fff;
@@ -2190,13 +2191,24 @@ i.fas.fa-video.flim {
 .AboutusSlide3__centercontent {
     margin-top: 30px;
 }
-.centercontent__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+// .centercontent__container{
+//    display:grid;
+//    grid-template-columns: 1fr 1fr 1fr;
+//    grid-column-gap: 10px;
+//     grid-row-gap: 10px;
+// }
+.centercontent__listitem1__container{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
-.centercontent__listitem {
+.centercontent__listitem2__container{
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 30px;
+}
+.centercontent__listitem{
     /* width:20%; */
     /* padding:20px; */
     color: #fff;
