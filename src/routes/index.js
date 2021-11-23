@@ -5,15 +5,15 @@ const userRouter = require("./users");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-    res.render("index", { title: "Express" });
+  res.render("index", { title: "Express" });
 });
 
 router.get("/login", function (req, res, next) {
-    res.render("login", { layout: "other" });
+  res.render("login", { layout: "other" });
 });
 
 router.get("/review-detail-squid-game", function (req, res, next) {
-    res.render("review-detail");
+  res.render("review-detail");
 });
 
 router.use("/user", userRouter);
