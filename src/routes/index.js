@@ -85,6 +85,9 @@ router.get("/film-review", function (req, res, next) {
 router.get("/aboutus", function (req, res, next) {
     res.render("aboutus");
 });
+router.get("/personal-page", function (req, res, next) {
+    res.render("personal-page",{ layout: "other" });
+});
 
 router.use("/user", userRouter);
 
