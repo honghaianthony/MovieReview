@@ -1,0 +1,260 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"
+        ></script>
+
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+         <div class="vertical-nav bg-white" id="sidebar">
+            <div class="py-4 px-3 mb-4 bg-light">
+                <div class="media d-flex align-items-center">
+                    <img
+                        loading="lazy"
+                        src="images/logo.png"
+                        alt="..."
+                        width="180"
+                        class="admin-img"
+                    />
+                </div>
+            </div>
+
+            <p
+                class="
+                    text-gray
+                    font-weight-bold
+                    text-uppercase
+                    px-3
+                    small
+                    pb-4
+                    mb-0
+                "
+            >
+                Dashboard
+            </p>
+
+            <ul class="nav flex-column bg-white mb-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark bg-light">
+                        <img src="images/account 1.png" />
+                        Quản lý User
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark">
+                        <img src="images/admin 1.png" />
+                        Quản lý các Admin
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <img src="images/reviewphim 1.png" />
+                        Quản lý Review Phim
+                    </a>
+                    <ul
+                        class="dropdown-menu menu-review-film"
+                        aria-labelledby="navbarDropdown"
+                    >
+                        <li>
+                            <a class="dropdown-item" href="/admin/review-famous-movie"
+                                >Quản lý Review Phim Nổi bật</a
+                            >
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/admin/review-another-movie"
+                                >Quản lý Review Phim khác</a
+                            >
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a class="dropdown-item" href="#"
+                                >Quản lý Trang Review Phim</a
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark">
+                        <img src="images/actor 1.png" />
+                        Quản lý Diễn viên
+                    </a>
+                </li>
+            </ul>
+
+            <p
+                class="
+                    text-gray
+                    font-weight-bold
+                    text-uppercase
+                    px-3
+                    small
+                    py-4
+                    mb-0
+                "
+            >
+                Khác
+            </p>
+
+            <ul class="nav flex-column bg-white mb-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-dark">
+                        <img src="images/collaborators 1.png" />
+                        Quản lý Form CTV
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- End vertical navbar -->
+        <!-- Page content holder -->
+        <div class="page-content" id="content">
+            <!-- Toggle button -->
+            <!-- <button
+                id="sidebarCollapse"
+                type="button"
+                class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+            >
+                <i class="fa fa-bars mr-2"></i
+                ><small class="text-uppercase font-weight-bold">Toggle</small>
+            </button> -->
+            <!-- Demo content -->
+            <div class="header-admin">
+                <div class="content-header-left">
+                    <div class="col-md-6 header-title">
+                        <h4>Quản lý Review Phim Nổi bật</h4>
+                    </div>
+                </div>
+                <div class="content-header-right text-right">
+                    <div class="admin-info-left row">
+                        <span class="name">Anthony Hai</span>
+                        <span class="role">Admin</span>
+                    </div>
+                    <div class="admin-info-right">
+                        <img src="images/ava.png" alt="" class="avatar" />
+                        <div class="sub-menu-info active-info">
+                            <ul class="sub-menu-info-show">
+                                <li>
+                                    <a href="" class="user-banner">
+                                        <div class="info-user-left">
+                                            <img src="images/ava.png" alt="" />
+                                        </div>
+                                        <div
+                                            class="
+                                                info-user-right
+                                                text-left
+                                                row
+                                            "
+                                        >
+                                            <span class="username"
+                                                >Đặng Ngô Hồng Hải</span
+                                            >
+                                            <span class="name"
+                                                >@anthony.haidang</span
+                                            >
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li class="another-info-user">
+                                    <a href="">
+                                        <img src="images/post 1.png" />
+                                        <span>Đăng bài viết</span>
+                                    </a>
+                                </li>
+                                <li class="another-info-user">
+                                    <a href="">
+                                        <img src="images/personal.png" />
+                                        <span>Trang cá nhân</span>
+                                    </a>
+                                </li>
+                                <li class="another-info-user">
+                                    <a href="">
+                                        <img src="images/changepw 1.png" />
+                                        <span>Đổi mật khẩu</span>
+                                    </a>
+                                </li>
+                                <li class="another-info-user">
+                                    <a href="">
+                                        <img src="images/logout 1.png" />
+                                        <span>Đăng xuất</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{{body}}}
+
+        <script>
+            $(function () {
+                $("#sidebarCollapse").on("click", function () {
+                    $("#sidebar, #content").toggleClass("active");
+                });
+            });
+
+            const settingInfo = document.querySelector(".avatar");
+            if (settingInfo) {
+                settingInfo.addEventListener("click", function () {
+                    document
+                        .querySelector(".sub-menu-info")
+                        .classList.toggle("active-info");
+                });
+            }
+        </script>
+    </body>
+</html>

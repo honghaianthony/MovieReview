@@ -8,12 +8,18 @@
                 <img src="images/login_icon.png" />
                 <div class="register-title-text">Đăng ký</div>
             </div>
-            <form id="register" class="input-group row" action="/register" method="post">
+            <form
+                id="register"
+                class="input-group row"
+                action="/register"
+                method="post"
+            >
                 <div class="register-input-form">
                     <input
                         type="text"
                         class="input-field"
                         placeholder="Tên tài khoản"
+                        name="username"
                         required
                     />
                 </div>
@@ -23,15 +29,17 @@
                         class="input-field"
                         id="myInput"
                         placeholder="Mật khẩu"
+                        name="password"
                         required
                     />
                 </div>
                 <div class="register-input-form">
                     <input
-                        type="password"
+                        type="text"
                         class="input-field"
                         id="myInput"
-                        placeholder="Nhập lại mật khẩu"
+                        placeholder="Họ và tên"
+                        name="name"
                         required
                     />
                 </div>
@@ -41,16 +49,36 @@
                         class="input-field"
                         id="myInput"
                         placeholder="Email"
+                        name="email"
                         required
                     />
                 </div>
                 <div class="register-input-form">
-                    <button type="submit" class="toggle-btn" onclick="register()">
+                    <input
+                        type="text"
+                        class="input-field"
+                        id="myInput"
+                        placeholder="Số điện thoại"
+                        name="phone"
+                        required
+                    />
+                </div>
+                <div class="register-input-form">
+                    <input
+                        placeholder="Ngày sinh"
+                        class="textbox-n"
+                        type="text"
+                        onfocus="(this.type='date')"
+                        id="date"
+                        name="birth"
+                    />
+                </div>
+                <div class="register-input-form">
+                    <button type="submit" class="toggle-btn">
                         Đăng ký
                     </button>
                 </div>
             </form>
-
 
             <div class="copyright">
                 Bản quyền trực thuộc HongHai Entertainment
