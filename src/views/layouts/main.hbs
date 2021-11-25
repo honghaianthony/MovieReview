@@ -291,19 +291,19 @@
             }
             /*film*/
             /*personal-page*/
-            const settingPersonalMenu = document.querySelector(".personal-avt-small");
-            if (settingPersonalMenu) {
-                settingPersonalMenu.addEventListener("click", function () {
-                    document
-                        .querySelector(".personal-menu")
-                        .classList.toggle("active-three-dots");
-                });
+            /* three dots*/
+            var threeDots=document.querySelector(".icon-three-dots");
+            threeDots.addEventListener("click",displaymenu2);
+            function displaymenu2()
+            {
+                document.querySelector(".three-dots-tools").classList.toggle("tools-show")
             }
-            const settingPostinPersonalPage = document.querySelector(".icon-three-dots");
-            settingPostinPersonalPage.addEventListener("click", function () {
-                    var x=document.querySelector(".three-dots-tools")
-                    console.log(x);
-                    x.classList.toggle("active-three-dots");
+            /*avt*/
+            var threeDots=document.querySelector(".personal-avt-small");
+            threeDots.addEventListener("click",displaymenu1);
+            function displaymenu1()
+            {
+                document.querySelector(".personal-menu").classList.toggle("tools-show")
             }
         </script>
 </body>
