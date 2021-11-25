@@ -2,11 +2,21 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
 const hbs  = require('express-handlebars');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
+const methodOverride = require('method-override');
 
+const initializePassport = require('./config/passport').initialize;
+
+
+// DB sync
 const db = require('./models/index');
 
+
+// Router
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
@@ -22,11 +32,34 @@ app.set('view engine', 'hbs');
 
 
 
-app.use(logger('dev'));
+app.use(
+  morgan(
+    ':method :url :status :remote-addr - :remote-user [:date[iso]]',
+    {
+      skip: function (req, res) {
+        return req.url.indexOf('/images') == 0 
+      }
+    }
+  )
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+
+// Auth
+initializePassport(passport);
+app.use(flash());
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 app.use(indexRouter);
 
