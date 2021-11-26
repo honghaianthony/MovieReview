@@ -26,5 +26,14 @@ router.get("/aboutus", function (req, res, next) {
 router.get("/personal-page", function (req, res, next) {
     res.render("personal-page",{ layout: "other" });
 });
+router.get("/user-mannagement", function (req, res, next) {
+    res.render("user-mannagement-admin.hbs", { layout: "admin" });
+});
+router.get("/admin-mannagement", function (req, res, next) {
+  res.render("admin-mannagement-admin.hbs", { layout: "admin" });
+});
+router.get("/CTV-mannagement", function (req, res, next) {
+  res.render("CTV-mannagement-admin.hbs", { layout: "admin" });
+});
 
 module.exports = router;
