@@ -2,33 +2,63 @@
 const models = require("../models");
 
 module.exports = {
-  getAllMovie: async function (req, res, next) {
-    let result = [];
-    const movie = await models.Movie.findAll();
+  getIndexInfor: async function (req, res, next) {
+    let mainFilms = [];
+    let otherFilms = [];
+    let actor = [];
+    const movie = await models.Movie.findAll({
+      limit: 4,
+    });
     movie.forEach(async (item) => {
-      let sql = `select genres.type 
-                    from genremovie, genres
-                    where genremovie.genreId = genres.id
-                        and genremovie.movieId = :id limit 4`;
-      const genre = await models.sequelize.query(sql, {
-        replacements: {
+      let genres = [];
+      const genre = await models.Movie.findAll({
+        where: {
           id: item.id,
         },
-        type: models.Sequelize.QueryTypes.SELECT,
+        include: {
+          model: models.Genre,
+        },
       });
-
-      result.push({
+      genre[0]["Genres"].forEach((e) => {
+        genres.push(e.type);
+      });
+      mainFilms.push({
         name: item.name,
         description: item.description,
         rating: item.rating,
         releaseYear: item.releaseYear,
-        //nation: item.nation,
-        //length: item["length"],
         poster: item.poster,
-        genre: genre,
+        genre: genres.join(", ").toString(),
       });
     });
 
-    //res.render("film-review", { films: result });
+    const otherMovies = await models.Movie.findAll({
+      offset: 4,
+      limit: 5,
+    });
+    otherMovies.forEach((item) => {
+      otherFilms.push({
+        name: item.name,
+        releaseYear: item.releaseYear,
+        poster: item.poster,
+      });
+    });
+
+    const actorList = await models.Actor.findAll({
+      limit: 4,
+    });
+    actorList.forEach((item) => {
+      actor.push({
+        name: item.name,
+        description: item.description,
+        img: item.img,
+      });
+    });
+
+    res.render("index", {
+      mainFilms: mainFilms,
+      otherFilms: otherFilms,
+      actor: actor,
+    });
   },
 };
