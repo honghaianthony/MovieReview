@@ -21,6 +21,25 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+// add socket.io server 
+const {Server} = require('socket.io');
+const option = {
+  serveClient: true,
+  connectTimeout: 30000,
+};
+const io = new Server(server, option);
+
+const registerHandler = require('../src/realtime/handler')
+
+const onConnection = (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+  registerHandler(io, socket);
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  });
+}
+
+io.on("connection", onConnection);
 /**
  * Listen on provided port, on all network interfaces.
  */
