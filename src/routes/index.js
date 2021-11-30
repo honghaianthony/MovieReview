@@ -24,7 +24,14 @@ router.get("/aboutus", function (req, res, next) {
     res.render("aboutus");
 });
 router.get("/personal-page", function (req, res, next) {
-    res.render("personal-page");
+    res.render("personal-page",{layout :"other"});
 });
+router.get("/review-movie-admin", function (req, res, next) {
+  res.render("review-movie-admin",{layout :"admin"});
+});
+router.get("/famous-actor-admin", function (req, res, next) {
+  res.render("famous-actor-admin",{layout :"admin"});
+});
+
 
 module.exports = router;
