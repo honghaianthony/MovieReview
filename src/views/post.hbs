@@ -1,0 +1,15 @@
+<section class="post">
+    <div class="container">
+        <div class="post-editor">
+            <form method="post" action="/post">
+                <textarea name="context" id="context" rows="10" cols="80">
+                    This is my textarea to be replaced with CKEditor 4.
+                </textarea>
+                <script>
+                    CKEDITOR.replace("context");
+                </script>
+                <button type="submit" class="btn-post">Đăng bài</button>
+            </form>
+        </div>
+    </div>
+</section>
