@@ -251,3 +251,227 @@ body {
 .sub-menu-info-show a:hover {
     color: #1976d2;
 }
+//Giao
+//User management
+.user_mannagement_admin_container{
+    padding:40px 50px;
+}
+.user_mannagement_container{
+    border:1px solid #ccc;
+}
+.user_mannagement_admin_center{
+    padding:30px 30px;
+    // border: 1px solid #ccc;
+}
+.user_management_admin_top_btn button{
+    background-color: #497CFF;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px 10px;
+}
+.user_management_admin_top_decription{
+    display:flex;
+    align-items: center;
+}
+.user_management_admin_top_decription span{
+    color:#497CFF;
+    font-weight: 500;
+}
+.user_mannagement_admin_center table{
+    border:1px solid #000;
+    // border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+.user_mannagement_admin_center th{
+    padding:20px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+}
+.user_mannagement_admin_center td{
+    border-right:1px solid #000 ;
+    padding:20px;
+    border-bottom: 1px solid #000;
+}
+.user_mannagement_admin_top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E3E3E3;
+    // border-top: 1px solid #ccc;
+    // border-left: 1px solid #ccc;
+    // border-right:1px solid #ccc;
+    padding:20px;
+    align-items: center;
+
+}
+.user_mannagement_admin_center  button{
+    width: 100%;
+}
+.user_mannagement_admin_center button.Edit{
+    background-color: #1CE05F;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: 500;
+}
+.user_mannagement_admin_center button.Delete{
+    background-color: #FF0000;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: 500;
+
+}
+//admin-mannagement
+.admin_mannagement_admin_container{
+    padding:40px 50px;
+}
+.admin_mannagement_container{
+    border:1px solid #ccc;
+}
+.admin_mannagement_admin_center{
+    padding:30px 30px;
+    // border: 1px solid #ccc;
+}
+.admin_management_admin_top_btn button{
+    background-color: #497CFF;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px 10px;
+}
+.admin_management_admin_top_decription{
+    display:flex;
+    align-items: center;
+}
+.admin_management_admin_top_decription span{
+    color:#497CFF;
+    font-weight: 500;
+}
+.admin_mannagement_admin_center table{
+    border:1px solid #000;
+    // border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+.admin_mannagement_admin_center th{
+    padding:20px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+}
+.admin_mannagement_admin_center td{
+    border-right:1px solid #000 ;
+    padding:20px;
+    border-bottom: 1px solid #000;
+}
+.admin_mannagement_admin_top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E3E3E3;
+    // border-top: 1px solid #ccc;
+    // border-left: 1px solid #ccc;
+    // border-right:1px solid #ccc;
+    padding:20px;
+    align-items: center;
+
+}
+.admin_mannagement_admin_center  button{
+    width: 100%;
+}
+.admin_mannagement_admin_center button.Edit{
+    background-color: #1CE05F;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: 500;
+}
+.admin_mannagement_admin_center button.Delete{
+    background-color: #FF0000;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: 500;
+
+}
+//CTV_mannagement-admin
+.CTV_mannagement_admin_container{
+    padding:40px 50px;
+}
+.CTV_mannagement_container{
+    border:1px solid #ccc;
+}
+.CTV_mannagement_admin_center{
+    padding:30px 30px;
+    // border: 1px solid #ccc;
+}
+.CTV_management_admin_top_btn button{
+    background-color: #497CFF;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px 10px;
+}
+.CTV_management_admin_top_decription{
+    display:flex;
+    align-items: center;
+}
+.CTV_management_admin_top_decription span{
+    color:#497CFF;
+    font-weight: 500;
+}
+.CTV_mannagement_admin_center table{
+    border:1px solid #000;
+    // border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+.CTV_mannagement_admin_center th{
+    padding:20px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+}
+.CTV_mannagement_admin_center td{
+    border-right:1px solid #000 ;
+    padding:20px;
+    border-bottom: 1px solid #000;
+}
+.CTV_mannagement_admin_top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E3E3E3;
+    // border-top: 1px solid #ccc;
+    // border-left: 1px solid #ccc;
+    // border-right:1px solid #ccc;
+    padding:20px;
+    align-items: center;
+
+}
+// .CTV_mannagement_admin_center  button{
+//     width: 100%;
+// }
+.CTV_mannagement_admin_center button.Edit{
+    background-color: #1CE05F;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px 5px;
+    margin-right: 15px;
+    font-weight: 500;
+    display:flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+.CTV_mannagement_admin_center button.Delete{
+    background-color: #FF0000;
+    color:#fff;
+    border-radius: 5px;
+    padding:5px 5px;
+    font-weight: 500;
+    display:flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+.btn_CTV_List{
+    display:flex;
+   
+}
