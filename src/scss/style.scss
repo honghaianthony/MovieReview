@@ -1,4 +1,5 @@
 // Hải
+@import "admin";
 
 * {
     margin: 0;
@@ -367,7 +368,7 @@ a {
 .actor {
     padding: 50px 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url("images/agelina_bg.jpg");
+        url("../images/agelina_bg.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -959,7 +960,7 @@ a {
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url("images/banner1.png");
+        url("../images/banner1.png");
     background-position: center;
     background-size: 100%;
     background-attachment: fixed;
@@ -1238,6 +1239,7 @@ i.fas.fa-video.flim {
 }
 
 .login .save-password {
+    display: flex;
     margin-bottom: 10px;
     color: #607d8b;
     font-weight: 400;
@@ -1246,11 +1248,12 @@ i.fas.fa-video.flim {
 
 .login button {
     display: block;
-    width: 97%;
+    width: 100%;
     border: none;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #265ce9;
-    padding: 7px 28px;
+    padding: 7px 30px;
     color: white;
     font-size: 13px;
     font-weight: 500;
@@ -1407,7 +1410,7 @@ i.fas.fa-video.flim {
 
 .register button {
     display: block;
-    width: 97%;
+    width: 100%;
     border: none;
     margin-top: 20px;
     background-color: #265ce9;
@@ -1568,7 +1571,7 @@ i.fas.fa-video.flim {
 
 .forgot button {
     display: block;
-    width: 97%;
+    width: 100%;
     border: none;
     margin-top: 20px;
     background-color: #265ce9;
@@ -1732,7 +1735,7 @@ i.fas.fa-video.flim {
 
 .change-password button {
     display: block;
-    width: 97%;
+    width: 100%;
     border: none;
     margin-top: 20px;
     background-color: #265ce9;
@@ -1811,7 +1814,7 @@ i.fas.fa-video.flim {
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url("images/banner1.png");
+        url("../images/banner1.png");
     background-position: center;
     background-size: 100%;
     background-attachment: fixed;
@@ -2034,163 +2037,139 @@ i.fas.fa-video.flim {
     font-size: 15px;
 }
 /*personal-page*/
-.fas,.fab,.far 
-{
+.fas,
+.fab,
+.far {
     margin-right: 10px;
 }
-.personal-page-header
-{
+.personal-page-header {
     width: 100%;
     height: 350px;
 }
-.cover-image
-{
+.cover-image {
     display: flex;
     justify-content: space-between;
     background-color: #3e7fe1;
+    background-image: url("../images/banner_cover 1.png");
+    background-repeat: no-repeat;
+
+    background-size: 100%;
     width: 100%;
-    height:200px;
+    height: 200px;
 }
-.cover-image .logo img
-{
+.cover-image .logo img {
     width: 180px;
-    margin-top: -10px;
     margin-left: 60px;
 }
-.cover-image .personal-avt-small
-{   
+.cover-image .personal-avt-small {
     margin-top: 30px;
     margin-right: 30px;
     position: relative;
 }
-.cover-image .personal-avt-small img
-{
+.cover-image .personal-avt-small img {
     width: 50px;
 }
-.personal-menu
-{
+.personal-menu {
     position: absolute;
-    top:30px;
+    top: 30px;
     left: -300px;
     width: 280px;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #ccc;
-    text-align: l; 
+    text-align: l;
     margin-top: 10px;
     z-index: 1;
     line-height: 2;
     transition: 0.2s all ease-in-out;
 }
-.personal-menu ul li a
-{
+.personal-menu ul li a {
     text-decoration: none;
     color: #000;
 }
-.personal-menu ul li:hover
-{
+.personal-menu ul li:hover {
     cursor: pointer;
 }
-.personal-menu li:hover a
-{
+.personal-menu li:hover a {
     color: #265ce9;
 }
-.user-post
-{
+.user-post {
     display: flex;
 }
-.user-post .personal-avt-small img
-{
+.user-post .personal-avt-small img {
     width: 30px;
     margin: -10px 0 10px 10px;
 }
-.user-post .name .full-name
-{
+.user-post .name .full-name {
     margin: 15px 0 -10px;
     color: #000;
 }
-.user-post .username
-{
+.user-post .username {
     color: #3e7fe1;
     font-weight: 600;
     margin-bottom: -1px;
 }
-.personal-infor
-{
+.personal-infor {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-.personal-infor .personal-avt-info
-{
+.personal-infor .personal-avt-info {
     width: 30%;
     position: relative;
 }
-.personal-avt-big
-{
+.personal-avt-big {
     position: absolute;
     top: -50px;
     left: 60px;
 }
-.personal-avt-big img
-{
+.personal-avt-big img {
     border-radius: 50%;
     width: 150px;
 }
-.infor-inweb
-{
+.infor-inweb {
     position: absolute;
     left: 230px;
     font-weight: 600;
     padding-top: 10px;
 }
-.infor-inweb a
-{
+.infor-inweb a {
     text-decoration: none;
 }
-.infor-inweb a:hover
-{
-    text-decoration:underline;
+.infor-inweb a:hover {
+    text-decoration: underline;
 }
-.infor-inweb .name-in-page
-{
+.infor-inweb .name-in-page {
     margin-bottom: -1px;
 }
-.infor-inweb .role-in-page
-{
-    color:#f21e44;
+.infor-inweb .role-in-page {
+    color: #f21e44;
 }
-.personal-tools
-{
+.personal-tools {
     padding: 20px;
     margin-right: 20px;
     display: flex;
     justify-content: space-between;
     font-weight: 600;
 }
-.add-post
-{
+.add-post {
     margin-right: 15px;
 }
-.add-post:hover
-{
+.add-post:hover {
     cursor: pointer;
     color: #38c026;
 }
-.recycle-bin:hover
-{
+.recycle-bin:hover {
     cursor: pointer;
     color: #f43e3e;
 }
-.personal-page-body
-{
+.personal-page-body {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-.personal-page-body .personal-introduce
-{
+.personal-page-body .personal-introduce {
     margin-top: 40px;
     margin-left: 70px;
     padding: 20px;
@@ -2200,136 +2179,110 @@ i.fas.fa-video.flim {
     display: block;
     height: 230px;
 }
-.personal-page-body .personal-introduce .intro
-{
+.personal-page-body .personal-introduce .intro {
     font-weight: bold;
 }
-.personal-page-body .personal-introduce .interests
-{
+.personal-page-body .personal-introduce .interests {
     margin-top: 10px;
 }
-.personal-page-body .personal-introduce a
-{
+.personal-page-body .personal-introduce a {
     text-decoration: none;
 }
-.personal-page-body .personal-introduce a:hover
-{
-    text-decoration:underline;
+.personal-page-body .personal-introduce a:hover {
+    text-decoration: underline;
 }
-.personal-page-main
-{
+.personal-page-main {
     width: 55%;
     margin-left: 150px;
     margin-bottom: 50px;
 }
-.personal-page-main >p
-{
+.personal-page-main > p {
     font-weight: bold;
     font-size: 18px;
 }
-.personal-post
-{
-    display:block;
-    background-color:beige;
+.personal-post {
+    display: block;
+    background-color: beige;
     border-radius: 10px;
     padding: 20px;
 }
-.personal-post .infor-post
-{
+.personal-post .infor-post {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.personal-post .infor-post .user-post
-{
+.personal-post .infor-post .user-post {
     display: flex;
     justify-content: space-between;
 }
-.user-post .personal-avt-small img
-{
+.user-post .personal-avt-small img {
     width: 50px;
 }
-.user-post .name-and-time
-{
+.user-post .name-and-time {
     margin-left: 10px;
 }
-.user-post .name
-{
+.user-post .name {
     color: #3e7fe1;
     font-weight: 600;
     margin-bottom: -1px;
 }
-.user-post .time
-{
+.user-post .time {
     font-style: italic;
     font-size: 14px;
 }
-.three-dots-btn
-{
+.three-dots-btn {
     position: relative;
 }
-.icon-three-dots
-{
+.icon-three-dots {
     padding: 4px;
 }
-.three-dots-btn .icon-three-dots:hover
-{
+.three-dots-btn .icon-three-dots:hover {
     cursor: pointer;
 }
-.three-dots-btn .icon-three-dots:hover i
-{
-    color: #265ce9;  
+.three-dots-btn .icon-three-dots:hover i {
+    color: #265ce9;
     transform: scale(1.08);
 }
-.three-dots-tools
-{
+.three-dots-tools {
     position: absolute;
     left: -20px;
     width: 200px;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #ccc;
-    text-align: center; 
+    text-align: center;
     margin-top: 10px;
     z-index: 1;
     line-height: 2;
     transition: 0.2s all ease-in-out;
 }
-.three-dots-tools ul
-{
+.three-dots-tools ul {
     padding: 0;
     margin: 0;
 }
-.three-dots-tools ul li
-{
+.three-dots-tools ul li {
     padding: 5px;
 }
-.three-dots-tools ul li a
-{
+.three-dots-tools ul li a {
     text-decoration: none;
     color: #000;
 }
-.three-dots-tools ul li:hover a
-{
+.three-dots-tools ul li:hover a {
     transform: scale(1.08);
     color: #265ce9;
 }
-.post-content
-{
+.post-content {
     text-align: center;
 }
-.post-content .film-name
-{
+.post-content .film-name {
     font-weight: bold;
     font-size: 20px;
 }
-.post-content .film-name img
-{
-   width: 90%;
-   border-radius: 10px;
+.post-content .film-name img {
+    width: 90%;
+    border-radius: 10px;
 }
-.post-content .film-content
-{
+.post-content .film-content {
     text-align: justify;
 }
 /*personal-page*/
@@ -2474,10 +2427,10 @@ i.fas.fa-video.flim {
 .AboutUsSlide3__container {
     background-image: url("../images/anhnenaboutus.png");
     background-size: cover;
-    // height: 1000px; 
+    // height: 1000px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding:30px;
+    padding: 30px;
 }
 .AboutusSlide3__topcontent {
     color: #fff;
@@ -2497,18 +2450,18 @@ i.fas.fa-video.flim {
 //    grid-column-gap: 10px;
 //     grid-row-gap: 10px;
 // }
-.centercontent__listitem1__container{
-    display:flex;
+.centercontent__listitem1__container {
+    display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
-.centercontent__listitem2__container{
-    display:flex;
+.centercontent__listitem2__container {
+    display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     margin-top: 30px;
 }
-.centercontent__listitem{
+.centercontent__listitem {
     /* width:20%; */
     /* padding:20px; */
     color: #fff;
