@@ -5,6 +5,7 @@ const userRouter = require("./users");
 const adminRouter = require("./admin");
 const authRouter = require("./auth");
 const filmRouter = require("./film");
+const driveRouter = require("./drive");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -13,7 +14,8 @@ router.get("/", function (req, res, next) {
 
 router.use(authRouter);
 router.use("/film-review", filmRouter);
-router.use('/admin',adminRouter)
+router.use("/admin", adminRouter);
+router.use("/upload", driveRouter);
 
 router.get("/review-detail-squid-game", function (req, res, next) {
     res.render("review-detail");
@@ -33,7 +35,5 @@ router.get("/admin-review-famous-movie", function (req, res, next) {
 router.get("/admin-review-another-movie", function (req, res, next) {
     res.render("another-film-admin.hbs", { layout: "admin" });
 });
-
-
 
 module.exports = router;

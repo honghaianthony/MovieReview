@@ -1,5 +1,5 @@
 // Hải
-@import 'admin';
+@import "admin";
 
 * {
     margin: 0;
@@ -960,7 +960,7 @@ a {
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url("images/banner1.png");
+        url("../images/banner1.png");
     background-position: center;
     background-size: 100%;
     background-attachment: fixed;
@@ -2498,5 +2498,3 @@ i.fas.fa-video.flim {
     justify-content: center;
     margin-top: 5px;
 }
-
-
