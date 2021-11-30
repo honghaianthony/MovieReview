@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const uploadIndex = require("../../index");
+const uploadIndex = require('../index');
 
 const googleDriveController = require("../controllers/googleDriveController");
 
