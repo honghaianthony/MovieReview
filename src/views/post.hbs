@@ -2,6 +2,12 @@
     <div class="container">
         <div class="post-editor">
             <form method="post" action="/post">
+                <label for="movieId">Phim: </label>
+                <select name="movieId">
+                    {{#each data}}
+                    <option value={{this.id}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
                 <textarea name="context" id="context" rows="10" cols="80">
                     This is my textarea to be replaced with CKEditor 4.
                 </textarea>

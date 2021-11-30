@@ -5,8 +5,6 @@ const postController = require("../controllers/PostController");
 
 router.post("/post", postController.postInfo);
 
-router.get("/post", function (req, res, next) {
-    res.render("post", { layout: "main" });
-});
+router.get("/post", postController.getPostInterface);
 
 module.exports = router;

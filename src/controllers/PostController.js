@@ -2,15 +2,29 @@ const models = require("../models");
 
 module.exports = {
     postInfo: async function (req, res, next) {
-        const { context } = req.body;
+        const { context, movieId } = req.body;
         try {
             await models.Review.create({
-                movieId: 1,
-                userId: 1,
+                movieId,
+                userId: req.user.id,
                 context,
             });
+            res.redirect('/');
         } catch (error) {
             console.log(error);
         }
+    },
+    getPostInterface: async function (req, res, next) {
+        const movie = await models.Movie.findAll();
+
+        const result = []
+        movie.forEach((item) => {
+            result.push({
+                id: item.id,
+                name: item.name,
+            })
+        });
+        console.log(result)
+        res.render("post", { layout: "main", data: result});
     },
 };
