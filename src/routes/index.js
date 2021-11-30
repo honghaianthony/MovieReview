@@ -9,6 +9,7 @@ const driveRouter = require("./drive");
 const postRouter = require("./post");
 
 const indexController = require("../controllers/index");
+const movieController = require('../controllers/MovieController')
 
 /* GET home page. */
 router.get("/", indexController.getIndexInfor);
@@ -22,6 +23,7 @@ router.use(postRouter);
 router.get("/review-detail-squid-game", function (req, res, next) {
     res.render("review-detail");
 });
+router.get('/:id', movieController.getMovieReviewById);
 
 router.get("/aboutus", function (req, res, next) {
     res.render("aboutus");

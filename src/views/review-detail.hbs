@@ -1,4 +1,4 @@
-<section class="review-detail">
+{{!-- <section class="review-detail">
     <div class="container">
         <div class="row">
             <div class="review-detail-top">
@@ -209,6 +209,172 @@
                         có lẽ phải sản xuất thêm 1-2 phần phim nữa thì người xem
                         mới được giải đáp hết nè
                     </p>
+                    <span class="evaluate">Đánh giá tổng quan</span>
+                    <img src="images/danhgia.png" alt="" />
+                    <span class="source">Nguồn: Ghiền Review</span>
+                    <div class="review-detail-content-evaluate">
+                        <span class="evaluate-question">Bạn có thích bài Review
+                            này không?
+                        </span>
+                        <div class="review-detail-content-rating">
+                            <input type="radio" name="star" id="star1" /><label
+                                for="star1"
+                            ></label>
+                            <input type="radio" name="star" id="star2" /><label
+                                for="star2"
+                            ></label>
+                            <input type="radio" name="star" id="star3" /><label
+                                for="star3"
+                            ></label>
+                            <input type="radio" name="star" id="star4" /><label
+                                for="star4"
+                            ></label>
+                            <input type="radio" name="star" id="star5" /><label
+                                for="star5"
+                            ></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-detail-comment row">
+                    <span class="title">Bình luận</span>
+                    <div class="review-detail-comment-user">
+                        <div class="review-detail-comment-user-first">
+                            <div class="review-detail-comment-user-left">
+                                <img src="images/khanhvy_ava.jpg" alt="" />
+                            </div>
+                            <div class="review-detail-comment-user-right">
+                                <p
+                                    class="review-detail-comment-user-right-text"
+                                >
+                                    Review này hay ghê ha, nắm rõ được phim như
+                                    thế nào luôn<br />
+                                    <span>@khanhvyofficial</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-detail-comment-user-second">
+                            <div class="review-detail-comment-user-left">
+                                <img src="images/nltt_ava3.jpg" alt="" />
+                            </div>
+                            <div class="review-detail-comment-user-right">
+                                <p
+                                    class="review-detail-comment-user-right-text"
+                                >
+                                    Phim này hay quá, coi xong coi lại Review
+                                    cho dễ hiểu<br />
+                                    <span>@mia.soya.9</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-detail-comment-user-third">
+                            <div class="review-detail-comment-user-left">
+                                <img src="images/trucanh_ava.jpg" alt="" />
+                            </div>
+                            <div class="review-detail-comment-user-right">
+                                <p
+                                    class="review-detail-comment-user-right-text"
+                                >
+                                    Review có tâm dữ dằn vậy trời<br />
+                                    <span>@trucanhactress</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-detail-comment-user-forth">
+                            <div class="review-detail-comment-user-left">
+                                <img src="images/ava.png" alt="" />
+                            </div>
+                            <div class="review-detail-comment-user-right">
+                                <p
+                                    class="review-detail-comment-user-right-text"
+                                >
+                                    Bài hay quá, rõ ràng, rành mạch. Gút chóp<br
+                                    />
+                                    <span>@anthony.haidang</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="review-detail-comment-user-input">
+                            <div class="review-detail-comment-user-left">
+                                <img src="images/ava.png" alt="" />
+                            </div>
+                            <div
+                                class="review-detail-comment-user-right-text-input"
+                            >
+                                <input
+                                    type="text"
+                                    placeholder="Viết bình luận"
+                                />
+                            </div>
+                        </div>
+                        <div class="review-detail-comment-user-button">
+                            <button>Đăng bình luận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+<section class="review-detail">
+    <div class="container">
+        <div class="row">
+            <div class="review-detail-top">
+                <div class="title">
+                    {{data.movieName}}
+                    <span class="animate-border mt-2 mb-6"></span>
+                </div>
+                <div class="three-dots">
+                    <div class="three-dots-button">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="sub-menu-show active-three-dots">
+                        <ul class="sub-menu">
+                            <li><a href="">Chỉnh sửa bài viết</a></li>
+                            <li><a href="">Xóa bài viết</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="review-detail-info">
+                <div class="review-detail-author">
+                    <div class="review-detail-author-left">
+                        <img src="images/ava.png" alt="" />
+                    </div>
+                    <div class="review-detail-author-right row">
+                        <span class="name">anthony.haidang</span>
+                        <span class="role">Quản trị viên - Reviewer</span>
+                    </div>
+                </div>
+                <div class="review-detail-audience">
+                    Đánh giá từ khán giả: 4.5/5
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="review-detail-content-top row">
+                <div class="col-md-6 text-center">
+                    <img src={{data.poster}} alt="" />
+                </div>
+                <div class="col-md-6 text-justify">
+                    <div class="review-detail-content-top-info">
+                        <span>Thể loại: </span>
+                        <p>{{data.stringGenre}}</p>
+                        <span>Đạo diễn: </span>
+                        <p>Dong-Hyuk Wang</p>
+                        <span>Diễn viên: </span>
+                        <p>
+                            Lee Jung Jae, Park Hae Soo, Wi Ha-Joon,...
+                        </p>
+                        <span>Quốc Gia: </span>
+                        <p>{{data.nation}}</p>
+                        <span>Thời lượng: </span>
+                        <p>{{data.length}}</p>
+                        <span>Khởi chiếu: </span>
+                        <p>{{data.releaseYear}}</p>
+                    </div>
+                </div>
+
+                <div class="review-detail-content row">
+                    <p>{{data.content}}</p>
                     <span class="evaluate">Đánh giá tổng quan</span>
                     <img src="images/danhgia.png" alt="" />
                     <span class="source">Nguồn: Ghiền Review</span>
