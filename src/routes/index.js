@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-const passportAuth = require('../config/passport');
-
 const userRouter = require("./users");
 const adminRouter = require("./admin");
 const authRouter = require("./auth");
@@ -16,7 +14,7 @@ const indexController = require("../controllers/index");
 /* GET home page. */
 
 router.use(authRouter);
-router.use(passportAuth.checkAuthenticated, postRouter);
+router.use(postRouter);
 router.use("/film-review", filmRouter);
 router.use("/admin", adminRouter);
 router.use("/upload", driveRouter);
