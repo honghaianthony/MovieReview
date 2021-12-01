@@ -3,7 +3,10 @@ const bcrypt = require('bcrypt');
 const models = require('../models');
 
 async function getUserById(id) {
-    return await models.User.findByPk(id);
+    return await models.User.findByPk(id, {
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
 }
 
 function initialize(passport) {
@@ -11,8 +14,9 @@ function initialize(passport) {
     const user = await models.User.findOne({
         where: {
             username,
-        }
-    })
+        },
+        raw: true,
+    });
     if (user == null) {
       return done(null, false, { message: 'Tên truy cập không tồn tại' })
     }

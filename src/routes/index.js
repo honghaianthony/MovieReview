@@ -1,34 +1,35 @@
 const express = require("express");
 const router = express.Router();
 
+const passportAuth = require('../config/passport');
+
 const userRouter = require("./users");
 const adminRouter = require("./admin");
 const authRouter = require("./auth");
 const filmRouter = require("./film");
 const driveRouter = require("./drive");
 const postRouter = require("./post");
+const personalRouter = require('./personal');
 
 const indexController = require("../controllers/index");
-const movieController = require('../controllers/MovieController')
 
 /* GET home page. */
-router.get("/", indexController.getIndexInfor);
 
 router.use(authRouter);
+router.use(passportAuth.checkAuthenticated, postRouter);
 router.use("/film-review", filmRouter);
 router.use("/admin", adminRouter);
 router.use("/upload", driveRouter);
-router.use(postRouter);
+router.use("/personal-page", personalRouter);
 
-router.get("/review-detail-squid-game", function (req, res, next) {
-    res.render("review-detail");
-});
 
+router.get("/", indexController.getIndexInfor);
+router.post('/', indexController.formUpload);
 router.get("/aboutus", function (req, res, next) {
     res.render("aboutus");
 });
-router.get("/personal-page", function (req, res, next) {
-    res.render("personal-page", { layout: "other" });
-});
 
+// router.get("/review-detail-squid-game", function (req, res, next) {
+//     res.render("review-detail");
+// });
 module.exports = router;

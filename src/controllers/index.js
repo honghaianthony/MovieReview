@@ -43,7 +43,6 @@ module.exports = {
         poster: item.poster,
       });
     });
-
     const actorList = await models.Actor.findAll({
       limit: 4,
     });
@@ -59,5 +58,9 @@ module.exports = {
       otherFilms: otherFilms,
       actor: actor,
     });
+  },
+  formUpload: async function (req, res, next) {
+    
+    res.redirect('/');
   },
 };
