@@ -2,79 +2,139 @@
     <div class="admin_mannagement_admin_container">
         <div class="admin_mannagement_container">
             <div class="admin_mannagement_admin_top">
-            <div class="admin_management_admin_top_decription">
-                <span>Danh sách các admin</span>
+                <div class="admin_management_admin_top_decription">
+                    <span>Danh sách các admin</span>
+                </div>
+                <div class="admin_mannagement_admin_top_btn">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                    >
+                        Thêm người dùng
+                    </button>
+
+                    <form method="post" action="/">
+                        <div
+                            class="modal fade"
+                            id="exampleModal"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                        >
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5
+                                            class="modal-title"
+                                            id="exampleModalLabel"
+                                        >Thêm CTV</h5>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                        ></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label>Tên người dùng</label>
+                                        <input
+                                            class="form-control"
+                                            name="username"
+                                            placeholder="Nhập tên người dùng"
+                                        />
+                                        <label>Email</label>
+                                        <input
+                                            class="form-control"
+                                            name="email"
+                                            placeholder="Nhập email"
+                                        />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal"
+                                        >Hủy bỏ</button>
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                        >Lưu thay đổi</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-            <div class="admin_management_admin_top_btn">
-                <button type="button">Thêm Người dùng</button>
+            <div class="admin_mannagement_admin_center">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Sửa</th>
+                        <th>Xóa</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>anothyhaidang</td>
+                        <td>admin@admin.com</td>
+                        <td>
+                            <button type="button" class="Edit">Sửa</button>
+                        </td>
+                        <td>
+                            <button type="button" class="Delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>anothyhaidang</td>
+                        <td>admin@admin.com</td>
+                        <td>
+                            <button type="button" class="Edit">Sửa</button>
+                        </td>
+                        <td>
+                            <button type="button" class="Delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>anothyhaidang</td>
+                        <td>admin@admin.com</td>
+                        <td>
+                            <button type="button" class="Edit">Sửa</button>
+                        </td>
+                        <td>
+                            <button type="button" class="Delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>anothyhaidang</td>
+                        <td>admin@admin.com</td>
+                        <td>
+                            <button type="button" class="Edit">Sửa</button>
+                        </td>
+                        <td>
+                            <button type="button" class="Delete">Xóa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>anothyhaidang</td>
+                        <td>admin@admin.com</td>
+                        <td>
+                            <button type="button" class="Edit">Sửa</button>
+                        </td>
+                        <td>
+                            <button type="button" class="Delete">Xóa</button>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </div>
-        <div class="admin_mannagement_admin_center">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Sửa</th>
-                    <th>Xóa</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>anothyhaidang</td>
-                    <td>admin@admin.com</td>
-                    <td>
-                        <button type="button" class="Edit">Sửa</button>
-                    </td>
-                    <td>
-                        <button type="button" class="Delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>anothyhaidang</td>
-                    <td>admin@admin.com</td>
-                    <td>
-                        <button type="button" class="Edit">Sửa</button>
-                    </td>
-                    <td>
-                        <button type="button" class="Delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>anothyhaidang</td>
-                    <td>admin@admin.com</td>
-                    <td>
-                        <button type="button" class="Edit">Sửa</button>
-                    </td>
-                    <td>
-                        <button type="button" class="Delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>anothyhaidang</td>
-                    <td>admin@admin.com</td>
-                    <td>
-                        <button type="button" class="Edit">Sửa</button>
-                    </td>
-                    <td>
-                        <button type="button" class="Delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>anothyhaidang</td>
-                    <td>admin@admin.com</td>
-                    <td>
-                        <button type="button" class="Edit">Sửa</button>
-                    </td>
-                    <td>
-                        <button type="button" class="Delete">Xóa</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
         </div>
 
     </div>

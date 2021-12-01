@@ -7,29 +7,68 @@
             <form>
                 <div class="content-up-admin-film-review row">
                     <div class="col-6 text-justify">
-                        <label for="">Tên Diễn Viên</label>
+                        <label for="">Tên diễn viên</label>
                         <input
                             type="text"
-                            placeholder="Nhập tên diễn viên"
+                            placeholder="Nhập tên phim"
                             class="form-control"
+                            name="name"
                         />
                     </div>
                     <div class="col-6 text-justify">
-                        <label for="">Hình ảnh</label>
+                        <label for="">Mô tả</label>
                         <input
                             type="text"
-                            placeholder="Chọn hình ảnh"
+                            placeholder="Link hình ảnh"
                             class="form-control"
+                            name="description"
                         />
                     </div>
                 </div>
-                <div class="content-up-admin-film-review row">
+                <div class="content-middle-admin-film-review row">
+                    <div class="col-md-4 text-justify">
+                        <label for="">Tiêu đề</label>
+                        <input
+                            type="text"
+                            placeholder="Nhập số điểm đánh giá"
+                            class="form-control"
+                            name="title"
+                        />
+                    </div>
+                    <div class="col-md-4 text-justify">
+                        <label for="">Đánh giá</label>
+                        <input
+                            type="text"
+                            placeholder="Nhập năm sản xuất"
+                            class="form-control"
+                            name="rate"
+                        />
+                    </div>
+                    <div class="col-md-4 text-justify">
+                        <label for="">Hình ảnh</label>
+                        <input
+                            type="text"
+                            placeholder="Nhập thể loại"
+                            class="form-control"
+                            name="img"
+                        />
+                    </div>
+                </div>
+                <div class="content-up-admin-film-review">
 
                     <div>
                         <textarea
-                            class="form-write-review-actor form-control"
-                            placeholder="Nhập mô tả diễn viên"
-                        ></textarea>
+                            name="context"
+                            id="context"
+                            rows="10"
+                            cols="80"
+                            name="content"
+                        >
+                            Nhập mô tả diễn viên
+                        </textarea>
+                        <script>
+                            CKEDITOR.replace("context");
+                        </script>
                     </div>
 
                 </div>
