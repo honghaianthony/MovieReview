@@ -2,10 +2,14 @@
     <div class="container">
         <div class="post-editor">
             <form method="post" action="/post">
+                <label for="rate">Lượt bình chọn</label>
+                <input name="rate" class="form-control" />
+                <label for="image">Link Hình ảnh</label>
+                <input name="image" class="form-control" />
                 <label for="movieId">Phim: </label>
-                <select name="movieId">
+                <select name="movieId" class="form-control movie-selector">
                     {{#each data}}
-                    <option value={{this.id}}>{{this.name}}</option>
+                        <option value={{this.id}}>{{this.name}}</option>
                     {{/each}}
                 </select>
                 <textarea name="context" id="context" rows="10" cols="80">

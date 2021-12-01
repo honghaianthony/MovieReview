@@ -1933,10 +1933,14 @@ i.fas.fa-video.flim {
 /*review editor */
 .post-editor {
     margin: 100px 0;
-    .editor1 {
+    #context {
         margin-top: 100px;
     }
+    .movie-selector {
+        margin-bottom: 50px;
+    }
 }
+
 /*review content*/
 .button-watch {
     margin-top: 30px;
