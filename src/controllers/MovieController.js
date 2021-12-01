@@ -6,9 +6,9 @@ module.exports = {
     const movie = await models.Movie.findAll();
     movie.forEach(async (item) => {
       let sql = `select genres.type 
-                    from genremovie, genres
-                    where genremovie.genreId = genres.id
-                        and genremovie.movieId = :id`;
+                    from genremovies, genres
+                    where genremovies.genreId = genres.id
+                        and genremovies.movieId = :id`;
       const genre = await models.sequelize.query(sql, {
         replacements: {
           id: item.id,
@@ -38,9 +38,9 @@ module.exports = {
     } else {
       const movie = await models.Movie.findByPk(review.movieId);
       let sql = `select genres.type 
-            from genremovie, genres
-            where genremovie.genreId = genres.id
-                and genremovie.movieId = :id`;
+            from genremovies, genres
+            where genremovies.genreId = genres.id
+                and genremovies.movieId = :id`;
       const genre = await models.sequelize.query(sql, {
         replacements: {
           id: movie.id,
@@ -56,8 +56,7 @@ module.exports = {
         stringGenre: stringGenre,
         length: movie["length"],
         releaseYear: movie.releaseYear,
-        content: review.context,
-        
+        content: review.content,
       }
       res.render("review-detail", {data: result });
     }

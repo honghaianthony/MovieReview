@@ -12,6 +12,9 @@ module.exports = (sequelize, Sequelize) => {
 
   Review.init(
     {
+      movieId: {
+        type: Sequelize.INTEGER,
+      },
       content: {
         type: Sequelize.TEXT,
       },

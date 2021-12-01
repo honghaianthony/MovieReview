@@ -2,8 +2,7 @@ module.exports = (sequelize, Sequelize) => {
   class Movie extends Sequelize.Model {
     static associate(models) {
       Movie.hasOne(models.Review, { foreignKey: "movieId" });
-      Movie.belongsToMany(models.Genre, {
-        through: "GenreMovie",
+      Movie.hasMany(models.GenreMovie, {
         foreignKey: "movieId",
       });
     }

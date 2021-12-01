@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
 
   Post.init(
     {
+      userId: {
+        type: Sequelize.INTEGER,
+      },
       content: {
         type: Sequelize.TEXT,
       },

@@ -3,13 +3,13 @@ const models = require("../models");
 module.exports = {
     postInfo: async function (req, res, next) {
         const { context, movieId, rate, image } = req.body;
+        const mid = parseInt(movieId);
         try {
             await models.Review.create({
-                movieId,
-                rate,
-                image,
-                userId: req.user.id,
-                context,
+                movieId: mid,
+                rate: rate,
+                image: image,
+                content: context,
             });
             res.redirect("/");
         } catch (error) {
