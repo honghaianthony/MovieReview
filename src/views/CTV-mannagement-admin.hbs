@@ -32,7 +32,9 @@
                                 >Xác nhận</button>
                                 <button
                                     type="button"
-                                    class="Delete btn btn-primary"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                 >Từ chối</button>
                             </div>
                         </td>
@@ -53,7 +55,9 @@
                                 >Xác nhận</button>
                                 <button
                                     type="button"
-                                    class="Delete btn btn-primary"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                 >Từ chối</button>
                             </div>
                         </td>
@@ -74,7 +78,9 @@
                                 >Xác nhận</button>
                                 <button
                                     type="button"
-                                    class="Delete btn btn-primary"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                 >Từ chối</button>
                             </div>
                         </td>
@@ -95,7 +101,9 @@
                                 >Xác nhận</button>
                                 <button
                                     type="button"
-                                    class="Delete btn btn-primary"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                 >Từ chối</button>
                             </div>
                         </td>
@@ -116,12 +124,47 @@
                                 >Xác nhận</button>
                                 <button
                                     type="button"
-                                    class="Delete btn btn-primary"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                 >Từ chối</button>
                             </div>
                         </td>
                     </tr>
                 </table>
+            </div>
+            <div
+                class="modal fade"
+                id="deleteModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Xác
+                                nhận từ chối</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc chắn từ chối đơn CTV này?
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >Hủy bỏ</button>
+                            <button type="submit" class="btn btn-danger">Từ chối</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
