@@ -59,7 +59,20 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use(function(req, res, next) {
+  if(req.isAuthenticated()) {
+    res.locals.user = req.user;
+    // res.locals.user = {
+    //   id: req.user.id,
+    //   username: req.user.username,
+    //   fullName: req.user.fullName,
+    //   avatar: req.user.avatar,
+    // };
+  } else {
+    res.locals.user = null;
+  }
+  next();
+});
 
 app.use(indexRouter);
 

@@ -24,7 +24,6 @@ module.exports = {
                 name: item.name,
             })
         });
-        console.log(result)
         res.render("post", { layout: "main", data: result});
     },
 };
