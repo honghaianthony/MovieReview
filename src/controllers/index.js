@@ -54,7 +54,7 @@ module.exports = {
         img: item.img,
       });
     });
-    console.log(mainFilms)
+    console.log(mainFilms);
     res.render("index", {
       mainFilms: mainFilms,
       otherFilms: otherFilms,
