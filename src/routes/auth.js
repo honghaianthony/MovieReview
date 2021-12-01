@@ -21,12 +21,6 @@ router.post(
         failureFlash: true,
     })
 );
-
-router.post("/logout", (req, res) => {
-    req.logOut();
-    res.redirect("/");
-});
-
 router.get("/register", function (req, res, next) {
     res.render("register", { layout: "other" });
 });

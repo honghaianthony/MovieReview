@@ -2109,14 +2109,16 @@ i.fas.fa-video.flim {
     line-height: 2;
     transition: 0.2s all ease-in-out;
 }
-.personal-menu ul li a {
-    text-decoration: none;
+.personal-menu ul li button {
+    border: none;
+    padding: 0;
+    background-color: #fff;
     color: #000;
 }
 .personal-menu ul li:hover {
     cursor: pointer;
 }
-.personal-menu li:hover a {
+.personal-menu li:hover button{
     color: #265ce9;
 }
 .user-post {
@@ -2269,6 +2271,10 @@ i.fas.fa-video.flim {
     color: #265ce9;
     transform: scale(1.08);
 }
+.tools-show
+{
+    display: none;
+}
 .three-dots-tools {
     position: absolute;
     left: -20px;
@@ -2304,9 +2310,9 @@ i.fas.fa-video.flim {
     font-weight: bold;
     font-size: 20px;
 }
-.post-content .film-name img {
+.post-content .film-img img {
     width: 90%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .post-content .film-content {
     text-align: justify;
