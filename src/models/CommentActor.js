@@ -1,6 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
   class CommentActor extends Sequelize.Model {
-    static associate(models) {}
+    static associate(models) {
+      CommentActor.belongsTo(models.User, {
+        foreignKey: "userId",
+      });
+      CommentActor.belongsTo(models.Actor, {
+        foreignKey: "actorId",
+      });
+    }
   }
 
   CommentActor.init(

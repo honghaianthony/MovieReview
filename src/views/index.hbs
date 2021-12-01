@@ -60,8 +60,8 @@
             alt=""
           /></li> }}
         {{#each mainFilms}}
-          <li>
-            <img src={{this.poster}} alt="" />
+          <li id="container-{{this.id}}">
+            <img id={{this.id}} src={{this.poster}} alt="" />
           </li>
         {{/each}}
       </ul>

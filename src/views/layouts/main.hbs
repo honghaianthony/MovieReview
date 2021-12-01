@@ -403,37 +403,33 @@
             film1.addEventListener("click",displayfilm1);
             function displayfilm1()
             {
-                document.querySelector(".film-squidgame").style.display="none";
-                document.querySelector(".film-spiderman").style.display="block";
-                document.querySelector(".film-likeaboss").style.display="none";
-                document.querySelector(".film-insideout").style.display="none";   
+                let arr = document.querySelectorAll(".main-film > div");
+                arr.forEach((e)=> e.className="hidden")
+                arr[0].className = "visibly";
             }
             var film2=document.getElementById("film2");
             film2.addEventListener("click",displayfilm2);
             function displayfilm2()
             {
-                document.querySelector(".film-squidgame").style.display="none";
-                document.querySelector(".film-spiderman").style.display="none";
-                document.querySelector(".film-likeaboss").style.display="block";
-                document.querySelector(".film-insideout").style.display="none";   
+                let arr = document.querySelectorAll(".main-film > div");
+                arr.forEach((e)=> e.className="hidden")
+                arr[1].className = "visibly";
             }
             var film2=document.getElementById("film3");
             film2.addEventListener("click",displayfilm3);
             function displayfilm3()
             {
-                document.querySelector(".film-squidgame").style.display="none";
-                document.querySelector(".film-spiderman").style.display="none";
-                document.querySelector(".film-likeaboss").style.display="none";
-                document.querySelector(".film-insideout").style.display="block";   
+                let arr = document.querySelectorAll(".main-film > div");
+                arr.forEach((e)=> e.className="hidden")
+                arr[2].className = "visibly";   
             }
             var film2=document.getElementById("film4");
             film2.addEventListener("click",displayfilm4);
             function displayfilm4()
             {
-                document.querySelector(".film-squidgame").style.display="block";
-                document.querySelector(".film-spiderman").style.display="none";
-                document.querySelector(".film-likeaboss").style.display="none";
-                document.querySelector(".film-insideout").style.display="none";   
+                let arr = document.querySelectorAll(".main-film > div");
+                arr.forEach((e)=> e.className="hidden")
+                arr[3].className = "visibly";
             }
         </script>
 </body>
