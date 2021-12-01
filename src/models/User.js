@@ -4,15 +4,14 @@ module.exports = (sequelize, Sequelize) => {
       User.hasMany(models.Comment, {
         foreignKey: "userId",
       });
+      User.hasMany(models.CommentActor, {
+        foreignKey: "userId",
+      });
       User.hasMany(models.Post, {
         foreignKey: "userId",
       });
       User.belongsToMany(models.Review, {
         through: "Rate",
-        foreignKey: "userId",
-      });
-      User.belongsToMany(models.Actor, {
-        through: "CommentActor",
         foreignKey: "userId",
       });
     }

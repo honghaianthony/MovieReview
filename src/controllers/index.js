@@ -23,6 +23,7 @@ module.exports = {
         genres.push(e.type);
       });
       mainFilms.push({
+        id: "film" + item.id,
         name: item.name,
         description: item.description,
         rating: item.rating,

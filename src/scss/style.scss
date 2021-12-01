@@ -1000,8 +1000,17 @@ a {
   padding: 40px;
   display: none;
 }
+
 .main-film > div:first-child {
   display: block;
+}
+
+.visibly {
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
 }
 //test
 main .logo {
