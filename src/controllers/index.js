@@ -62,6 +62,17 @@ module.exports = {
     });
   },
   formUpload: async function (req, res, next) {
-    res.redirect("/");
+    const {fullname, email, phone, forte} = req.body;
+    try {
+      await models.CTV.create({
+        fullname,
+        email,
+        phone,
+        forte,
+      })
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

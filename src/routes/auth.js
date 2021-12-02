@@ -33,4 +33,11 @@ router.get("/change-password", function (req, res, next) {
   res.render("change-password", { layout: "other" });
 });
 
+ 
+router.post("/logout", (req, res) => { 
+  req.logOut(); 
+  res.redirect("/"); 
+}); 
+
+
 module.exports = router;

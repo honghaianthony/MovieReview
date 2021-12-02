@@ -77,7 +77,7 @@ module.exports = {
         rate: rate,
       }
 
-      let limit = 5;
+      let limit = 10;
       if (loadMoreComment) {
         limit += (5 * loadMoreComment);
       }

@@ -66,19 +66,19 @@
                             này không?
                         </span>
                         <div class="review-detail-content-rating">
-                            <input type="radio" name="star" id="star1" /><label
+                            <input type="radio" name="star" id="star1" onclick="rate()"/><label
                                 for="star1"
                             ></label>
-                            <input type="radio" name="star" id="star2" /><label
+                            <input type="radio" name="star" id="star2" onclick="rate()"/><label
                                 for="star2"
                             ></label>
-                            <input type="radio" name="star" id="star3" /><label
+                            <input type="radio" name="star" id="star3" onclick="rate()"/><label
                                 for="star3"
                             ></label>
-                            <input type="radio" name="star" id="star4" /><label
+                            <input type="radio" name="star" id="star4" onclick="rate()"/><label
                                 for="star4"
                             ></label>
-                            <input type="radio" name="star" id="star5" /><label
+                            <input type="radio" name="star" id="star5" onclick="rate()"/><label
                                 for="star5"
                             ></label>
                         </div>
@@ -173,6 +173,27 @@
                             </div>`;
         let base = document.querySelector(".review-detail-comment-user");
         base.appendChild(item);
+    }
+
+    function rate() {
+        const rate = document.querySelector('input[name="star"]:checked').id;
+        let result = parseInt(rate.slice(4,5));
+        let res = 3;
+        switch(result) {
+            case 1: 
+                res = 5;
+                break;
+            case 2: 
+                res = 4;
+                break;
+            case 4: 
+                res = 2;
+                break;
+            case 5: 
+                res = 1;
+                break;
+        }
+        console.log(res)
     }
 
 </script>
