@@ -15,23 +15,31 @@ module.exports = {
         },
         type: models.Sequelize.QueryTypes.SELECT,
       });
-
-      result.push({
-        name: item.name,
-        description: item.description,
-        rating: item.rating,
-        releaseYear: item.releaseYear,
-        nation: item.nation,
-        length: item["length"],
-        poster: item.poster,
-        genre: genre,
-      });
+      const genreArr = genre.map((i) => {
+        return i.type;
+      })
+      const stringGenre = genreArr.join(" - ");
+      const review = await models.Review.findOne({where: {movieId: item.id}})
+      if(review) {
+        result.push({
+          reviewId: review.id,
+          name: item.name,
+          description: item.description,
+          rating: item.rating,
+          releaseYear: item.releaseYear,
+          nation: item.nation,
+          length: item["length"],
+          poster: item.poster,
+          genre: stringGenre,
+        });
+      }
     });
 
     res.render("film-review", { films: result });
   },
   getMovieReviewById: async function (req, res, next) {
     const {id} = req.params;
+    const {loadMoreComment} = req.query;
     const review = await models.Review.findByPk(id);
     if (!review) {
       res.render("review-detail", {review: null});
@@ -47,9 +55,18 @@ module.exports = {
         },
         type: models.Sequelize.QueryTypes.SELECT,
       });
-
-      const stringGenre = genre.join(" - ");
+      const genreArr = genre.map((i) => {
+        return i.type;
+      })
+      const stringGenre = genreArr.join(" - ");
+      let rate;
+      if (review.rate) {
+        rate = review.rate;
+      } else {
+        rate = 0;
+      }
       const result = {
+        reviewId: review.id,
         movieName: movie.name,
         nation: movie.nation,
         poster: movie.poster,
@@ -57,8 +74,28 @@ module.exports = {
         length: movie["length"],
         releaseYear: movie.releaseYear,
         content: review.content,
+        rate: rate,
       }
-      res.render("review-detail", {data: result });
+
+      let limit = 5;
+      if (loadMoreComment) {
+        limit += (5 * loadMoreComment);
+      }
+      const comment = await models.Comment.findAll({
+        where: {
+          reviewId: review.id,
+        },
+        limit: limit,
+        raw: true,
+        order: [
+          ['createdAt', 'DESC'],
+        ],
+      });
+      comment.forEach(async i => {
+        i.user = await models.User.findByPk(i.userId, {raw: true,});
+      });
+      comment.reverse();
+      res.render("review-detail", {data: result, comment: comment});
     }
   }
 };

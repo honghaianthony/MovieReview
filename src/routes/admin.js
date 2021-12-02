@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const passportAuth = require('../config/passport');
+
+router.use(passportAuth.checkAdmin);
+
 router.get("/review-movie", function (req, res, next) {
     res.render("review-movie-admin", { layout: "admin" });
 });
