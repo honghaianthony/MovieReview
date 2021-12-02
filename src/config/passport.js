@@ -58,8 +58,21 @@ function checkNotAuthenticated(req, res, next) {
   next()
 }
 
+function checkAdmin (req, res, next) {
+  if(req.isAuthenticated()) {
+    if(req.user.role == 2 || req.user.role == 3) {
+      return next();
+    } else {
+      res.redirect("/");
+    }
+  }
+
+  res.redirect("/login");
+}
+
 module.exports = {
   initialize,
   checkAuthenticated,
   checkNotAuthenticated,
+  checkAdmin,
 };

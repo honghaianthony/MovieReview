@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="review-detail-audience">
-                    Đánh giá từ khán giả: 4.5/5
+                    Đánh giá từ khán giả: {{data.rate}}/5
                     <i class="fas fa-star"></i>
                 </div>
             </div>
@@ -41,12 +41,12 @@
                     <div class="review-detail-content-top-info">
                         <span>Thể loại: </span>
                         <p>{{data.stringGenre}}</p>
-                        <span>Đạo diễn: </span>
+                        {{!-- <span>Đạo diễn: </span>
                         <p>Dong-Hyuk Wang</p>
                         <span>Diễn viên: </span>
                         <p>
                             Lee Jung Jae, Park Hae Soo, Wi Ha-Joon,...
-                        </p>
+                        </p> --}}
                         <span>Quốc Gia: </span>
                         <p>{{data.nation}}</p>
                         <span>Thời lượng: </span>
@@ -58,9 +58,9 @@
 
                 <div class="review-detail-content row">
                     <p>{{{data.content}}}</p>
-                    <span class="evaluate">Đánh giá tổng quan</span>
-                    <img src="/images/danhgia.png" alt="" />
-                    <span class="source">Nguồn: Ghiền Review</span>
+                    {{!-- <span class="evaluate">Đánh giá tổng quan</span>
+                    <img src="/images/danhgia.png" alt="" /> --}}
+                    {{!-- <span class="source">Nguồn: Ghiền Review</span> --}}
                     <div class="review-detail-content-evaluate">
                         <span class="evaluate-question">Bạn có thích bài Review
                             này không?
@@ -87,64 +87,26 @@
                 <div class="review-detail-comment row">
                     <span class="title">Bình luận</span>
                     <div class="review-detail-comment-user">
+                        {{#each comment}}
                         <div class="review-detail-comment-user-first">
                             <div class="review-detail-comment-user-left">
-                                <img src="/images/khanhvy_ava.jpg" alt="" />
+                                <img src={{this.user.avatar}} alt="" />
                             </div>
                             <div class="review-detail-comment-user-right">
                                 <p
                                     class="review-detail-comment-user-right-text"
                                 >
-                                    Review này hay ghê ha, nắm rõ được phim như
-                                    thế nào luôn<br />
-                                    <span>@khanhvyofficial</span>
+                                    {{this.content}}<br />
+                                    <span>@{{this.user.username}}</span>
                                 </p>
                             </div>
                         </div>
-                        <div class="review-detail-comment-user-second">
-                            <div class="review-detail-comment-user-left">
-                                <img src="/images/nltt_ava3.jpg" alt="" />
-                            </div>
-                            <div class="review-detail-comment-user-right">
-                                <p
-                                    class="review-detail-comment-user-right-text"
-                                >
-                                    Phim này hay quá, coi xong coi lại Review
-                                    cho dễ hiểu<br />
-                                    <span>@mia.soya.9</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="review-detail-comment-user-third">
-                            <div class="review-detail-comment-user-left">
-                                <img src="/images/trucanh_ava.jpg" alt="" />
-                            </div>
-                            <div class="review-detail-comment-user-right">
-                                <p
-                                    class="review-detail-comment-user-right-text"
-                                >
-                                    Review có tâm dữ dằn vậy trời<br />
-                                    <span>@trucanhactress</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="review-detail-comment-user-forth">
-                            <div class="review-detail-comment-user-left">
-                                <img src="/images/ava.png" alt="" />
-                            </div>
-                            <div class="review-detail-comment-user-right">
-                                <p
-                                    class="review-detail-comment-user-right-text"
-                                >
-                                    Bài hay quá, rõ ràng, rành mạch. Gút chóp<br
-                                    />
-                                    <span>@anthony.haidang</span>
-                                </p>
-                            </div>
-                        </div>
+                        {{/each}}
+                    </div>
+                    {{#if user}}
                         <div class="review-detail-comment-user-input">
                             <div class="review-detail-comment-user-left">
-                                <img src="/images/ava.png" alt="" />
+                                <img src={{user.avatar}} alt="" />
                             </div>
                             <div
                                 class="review-detail-comment-user-right-text-input"
@@ -152,15 +114,65 @@
                                 <input
                                     type="text"
                                     placeholder="Viết bình luận"
+                                    id="comment"
+                                    name="comment"
                                 />
+                                <div class="review-detail-comment-user-button">
+                                    <button onclick="sendMessage()">Đăng bình luận</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="review-detail-comment-user-button">
-                            <button>Đăng bình luận</button>
-                        </div>
-                    </div>
+                        {{/if}}
                 </div>
             </div>
         </div>
     </div>
 </section>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    console.log("test");
+    const socket = io();
+    socket.emit('join-room', {{ data.reviewId }})
+    socket.on('receive-message', (comment) => {
+        console.log(comment);
+        setComment(comment);
+    });
+    {{#if user}}
+    function sendMessage() {
+        let user = {{user.id}};
+        let reviewId = {{data.reviewId}};
+        const comment = document.getElementById("comment").value;
+        if(comment != "") {
+            socket.emit('send-message', comment, user, reviewId); 
+            const show = {
+                content: comment,
+                user: {
+                    avatar: "{{user.avatar}}",
+                    username: "{{user.username}}",
+                }
+            }
+            setComment(show);
+            document.getElementById("comment").value = '';
+        }
+    }
+    {{/if}}
+
+    function setComment(comment) {
+        let item = document.createElement("div");
+        item.classList.add("review-detail-comment-user-first")
+        item.innerHTML = `<div class="review-detail-comment-user-left">
+                                <img src="${comment.user.avatar}"" alt="" />
+                            </div>
+                            <div class="review-detail-comment-user-right">
+                                <p
+                                    class="review-detail-comment-user-right-text"
+                                >
+                                    ${comment.content}<br />
+                                    <span>@${comment.user.username}</span>
+                                </p>
+                            </div>`;
+        let base = document.querySelector(".review-detail-comment-user");
+        base.appendChild(item);
+    }
+
+</script>
