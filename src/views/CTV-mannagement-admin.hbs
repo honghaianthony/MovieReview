@@ -1,11 +1,11 @@
 <section class="CTV_mannagement_admin">
     <div class="CTV_mannagement_admin_container">
         <div class="CTV_mannagement_container">
-                <div class="CTV_mannagement_admin_top">
+            <div class="CTV_mannagement_admin_top">
                 <div class="CTV_management_admin_top_decription">
                     <span>Danh sách các Cộng tác viên đang chờ xác nhận</span>
                 </div>
-                
+
             </div>
             <div class="CTV_mannagement_admin_center">
                 <table>
@@ -21,13 +21,21 @@
                         <td>admin@admin.com</td>
                         <td>0123456789</td>
                         <td>
-                            {{!-- <button type="button" class="Edit">Sửa</button> --}}
+                            {{! <button type="button" class="Edit">Sửa</button> }}
                             Có khả năng Review những bộ phim vô cùng chất lượng
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button type="button" class="Edit">Xác nhận</button>
-                                <button type="button" class="Delete">Từ chối</button>
+                                <button
+                                    type="button"
+                                    class="Edit btn btn-primary"
+                                >Xác nhận</button>
+                                <button
+                                    type="button"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                >Từ chối</button>
                             </div>
                         </td>
                     </tr>
@@ -36,13 +44,21 @@
                         <td>admin@admin.com</td>
                         <td>0123456789</td>
                         <td>
-                            {{!-- <button type="button" class="Edit">Sửa</button> --}}
+                            {{! <button type="button" class="Edit">Sửa</button> }}
                             Có khả năng Review những bộ phim vô cùng chất lượng
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button type="button" class="Edit">Xác nhận</button>
-                                <button type="button" class="Delete">Từ chối</button>
+                                <button
+                                    type="button"
+                                    class="Edit btn btn-primary"
+                                >Xác nhận</button>
+                                <button
+                                    type="button"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                >Từ chối</button>
                             </div>
                         </td>
                     </tr>
@@ -51,13 +67,21 @@
                         <td>admin@admin.com</td>
                         <td>0123456789</td>
                         <td>
-                            {{!-- <button type="button" class="Edit">Sửa</button> --}}
+                            {{! <button type="button" class="Edit">Sửa</button> }}
                             Có khả năng Review những bộ phim vô cùng chất lượng
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button type="button" class="Edit">Xác nhận</button>
-                                <button type="button" class="Delete">Từ chối</button>
+                                <button
+                                    type="button"
+                                    class="Edit btn btn-primary"
+                                >Xác nhận</button>
+                                <button
+                                    type="button"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                >Từ chối</button>
                             </div>
                         </td>
                     </tr>
@@ -66,13 +90,21 @@
                         <td>admin@admin.com</td>
                         <td>0123456789</td>
                         <td>
-                            {{!-- <button type="button" class="Edit">Sửa</button> --}}
+                            {{! <button type="button" class="Edit">Sửa</button> }}
                             Có khả năng Review những bộ phim vô cùng chất lượng
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button type="button" class="Edit">Xác nhận</button>
-                                <button type="button" class="Delete">Từ chối</button>
+                                <button
+                                    type="button"
+                                    class="Edit btn btn-primary"
+                                >Xác nhận</button>
+                                <button
+                                    type="button"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                >Từ chối</button>
                             </div>
                         </td>
                     </tr>
@@ -81,17 +113,58 @@
                         <td>admin@admin.com</td>
                         <td>0123456789</td>
                         <td>
-                            {{!-- <button type="button" class="Edit">Sửa</button> --}}
+                            {{! <button type="button" class="Edit">Sửa</button> }}
                             Có khả năng Review những bộ phim vô cùng chất lượng
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button type="button" class="Edit">Xác nhận</button>
-                                <button type="button" class="Delete">Từ chối</button>
+                                <button
+                                    type="button"
+                                    class="Edit btn btn-primary"
+                                >Xác nhận</button>
+                                <button
+                                    type="button"
+                                    class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                >Từ chối</button>
                             </div>
                         </td>
                     </tr>
                 </table>
+            </div>
+            <div
+                class="modal fade"
+                id="deleteModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Xác
+                                nhận từ chối</h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            Bạn có chắc chắn từ chối đơn CTV này?
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >Hủy bỏ</button>
+                            <button type="submit" class="btn btn-danger">Từ chối</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
