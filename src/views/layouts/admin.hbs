@@ -181,17 +181,17 @@
                 </div>
                 <div class="content-header-right text-right">
                     <div class="admin-info-left row">
-                        <span class="name">Anthony Hai</span>
+                        <span class="name">{{{user.username}}}</span>
                         <span class="role">Admin</span>
                     </div>
                     <div class="admin-info-right">
-                        <img src="/images/ava.png" alt="" class="avatar" />
+                        <img src={{user.avatar}} alt="" class="avatar" />
                         <div class="sub-menu-info active-info">
                             <ul class="sub-menu-info-show">
                                 <li>
                                     <a href="" class="user-banner">
                                         <div class="info-user-left">
-                                            <img src="/images/ava.png" alt="" />
+                                            <img src="{{user.avatar}}" alt="" />
                                         </div>
                                         <div
                                             class="
@@ -201,10 +201,10 @@
                                             "
                                         >
                                             <span class="username"
-                                                >Đặng Ngô Hồng Hải</span
+                                                >{{{user.fullName}}}</span
                                             >
                                             <span class="name"
-                                                >@anthony.haidang</span
+                                                >{{{user.email}}}</span
                                             >
                                         </div>
                                     </a>
