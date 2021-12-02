@@ -1,43 +1,46 @@
 <div class="separator">
-    <div class="admin-title text-center">
-        TẠO THÔNG TIN CHO REVIEW DIỄN VIÊN
-    </div>
-    <div class="container">
-        <div class="row">
-            <form>
-                <div class="content-up-admin-film-review row">
-                    <div class="col-6 text-justify">
-                        <label for="">Tên Diễn Viên</label>
-                        <input
-                            type="text"
-                            placeholder="Nhập tên diễn viên"
-                            class="form-control"
-                        />
-                    </div>
-                    <div class="col-6 text-justify">
-                        <label for="">Hình ảnh</label>
-                        <input
-                            type="text"
-                            placeholder="Chọn hình ảnh"
-                            class="form-control"
-                        />
-                    </div>
-                </div>
-                <div class="content-up-admin-film-review row">
-
-                    <div>
-                        <textarea
-                            class="form-write-review-actor form-control"
-                            placeholder="Nhập mô tả diễn viên"
-                        ></textarea>
-                    </div>
-
-                </div>
-                <button type="submit" class="btn-admin-film-content">
-                    Đăng bài
-                </button>
-            </form>
+  <div class="admin-title text-center">
+    TẠO THÔNG TIN CHO REVIEW DIỄN VIÊN
+  </div>
+  <div class="container">
+    <div class="row">
+      <form method="post">
+        <div class="content-up-admin-film-review row">
+          <div class="col-6 text-justify">
+            <label for="">Tên Diễn Viên</label>
+            <input
+              type="text"
+              placeholder="Nhập tên diễn viên"
+              class="form-control"
+              name="name"
+            />
+          </div>
+          <div class="col-6 text-justify">
+            <label for="">Hình ảnh</label>
+            <input
+              type="text"
+              placeholder="Chọn hình ảnh"
+              class="form-control"
+              name="img"
+            />
+          </div>
         </div>
+        <div class="content-up-admin-film-review row">
+
+          <div>
+            <textarea
+              class="form-write-review-actor form-control"
+              placeholder="Nhập mô tả diễn viên"
+              name="description"
+            ></textarea>
+          </div>
+
+        </div>
+        <button type="submit" class="btn-admin-film-content">
+          Đăng bài
+        </button>
+      </form>
     </div>
+  </div>
 
 </div>
