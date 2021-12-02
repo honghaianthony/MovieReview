@@ -5,21 +5,23 @@ module.exports = {
   getIndexInfor: async function (req, res, next) {
     let mainFilms = [];
     let otherFilms = [];
-    let actor = [];
+    // let actor = [];
     const movie = await models.Movie.findAll({
       limit: 4,
     });
     movie.forEach(async (item) => {
       let genres = [];
-      const genre = await models.Movie.findAll({
-        where: {
+      let sql = `select genres.type 
+                    from genremovies, genres
+                    where genremovies.genreId = genres.id
+                        and genremovies.movieId = :id`;
+      const genre = await models.sequelize.query(sql, {
+        replacements: {
           id: item.id,
         },
-        include: {
-          model: models.Genre,
-        },
+        type: models.Sequelize.QueryTypes.SELECT,
       });
-      genre[0]["Genres"].forEach((e) => {
+      genre.forEach((e) => {
         genres.push(e.type);
       });
       mainFilms.push({
@@ -27,7 +29,6 @@ module.exports = {
         name: item.name,
         description: item.description,
         rating: item.rating,
-        releaseYear: item.releaseYear,
         poster: item.poster,
         genre: genres.join(", ").toString(),
       });
@@ -44,24 +45,23 @@ module.exports = {
         poster: item.poster,
       });
     });
-    const actorList = await models.Actor.findAll({
-      limit: 4,
-    });
-    actorList.forEach((item) => {
-      actor.push({
-        name: item.name,
-        description: item.description,
-        img: item.img,
-      });
-    });
+    // const actorList = await models.Actor.findAll({
+    //   limit: 4,
+    // });
+    // actorList.forEach((item) => {
+    //   actor.push({
+    //     name: item.name,
+    //     description: item.description,
+    //     img: item.img,
+    //   });
+    // });
     res.render("index", {
       mainFilms: mainFilms,
       otherFilms: otherFilms,
-      actor: actor,
+      // actor: actor,
     });
   },
   formUpload: async function (req, res, next) {
-    
-    res.redirect('/');
+    res.redirect("/");
   },
 };

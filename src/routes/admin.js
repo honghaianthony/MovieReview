@@ -1,36 +1,39 @@
 const express = require("express");
 const router = express.Router();
+const adminController = require("../controllers/AdminController");
 
 const passportAuth = require('../config/passport');
 
 router.use(passportAuth.checkAdmin);
 
 router.get("/review-movie", function (req, res, next) {
-    res.render("review-movie-admin", { layout: "admin" });
+  res.render("review-movie-admin", { layout: "admin" });
 });
 router.get("/famous-actor-list", function (req, res, next) {
     res.render("famous-actor-list", { layout: "admin" });
 });
 
 router.get("/famous-actor", function (req, res, next) {
-    res.render("famous-actor-admin", { layout: "admin" });
+  res.render("famous-actor-admin", { layout: "admin" });
 });
 
+router.post("/famous-actor", adminController.CreateActorPost);
+
 router.get("/review-famous-movie", function (req, res, next) {
-    res.render("review-famous-admin", { layout: "admin" });
+  res.render("review-famous-admin", { layout: "admin" });
 });
 
 router.get("/review-another-movie", function (req, res, next) {
-    res.render("another-film-admin", { layout: "admin" });
+  res.render("another-film-admin", { layout: "admin" });
 });
 router.get("/user-management", function (req, res, next) {
-    res.render("user-mannagement-admin", { layout: "admin" });
+  res.render("user-mannagement-admin", { layout: "admin" });
 });
 router.get("/admin-management", function (req, res, next) {
-    res.render("admin-mannagement-admin", { layout: "admin" });
+  res.render("admin-mannagement-admin", { layout: "admin" });
 });
 router.get("/CTV-management", function (req, res, next) {
-    res.render("CTV-mannagement-admin", { layout: "admin" });
+  res.render("CTV-mannagement-admin", { layout: "admin" });
 });
 
 module.exports = router;
