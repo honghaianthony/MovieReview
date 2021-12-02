@@ -2557,3 +2557,49 @@ i.fas.fa-video.flim {
     justify-content: center;
     margin-top: 5px;
 }
+@media (max-width:46.1875em){
+    .AboutUsSlide3__container {
+        padding: 15px;
+    }
+    .AboutUsSlide2__container {
+        background-color: #d0d0d0;
+        padding: 0px 0px;
+        width: 100%;
+    }
+    .AboutUs__Item_img__2 {
+        width: 50%;
+        padding: 20px;
+    }
+    .TopAboutUs__Item{
+        flex-direction: column;
+    }
+    .AboutUs__Item_img {
+        width: 100%;
+    }
+    .AboutUs__Item_decripsion {
+        width: 100%;
+    }
+    .BottomAboutUs__Item {
+        
+        flex-direction: column;
+    }
+    .AboutUs__Item_decripsion__2 {
+        width: 100%; 
+    }
+    .AboutUs__Item_img__2 {
+        width: 100%;
+    }
+    .centercontent__listitem1__container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }.centercontent__listitem2__container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .AboutusSlide3__topcontent h2{
+        font-size: 30px;
+    }
+}
