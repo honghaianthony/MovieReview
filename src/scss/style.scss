@@ -110,6 +110,37 @@ a {
     text-decoration: none;
     text-align: center;
 }
+/*menu avt*/
+.nav-item .avt-user-login
+{
+    position: relative;
+}
+.nav-item .personal-menu
+{
+    top: 20px;
+    left: -160px;
+}
+.nav-item .personal-menu .personal-avt-small
+{
+    margin: 20px 5px 0 5px;
+}
+.nav-item :hover .avt-user-login
+{
+    cursor: pointer !important;
+}
+.nav-item .personal-menu ul
+{
+    display: block;
+}
+.nav-item .personal-menu  li a
+{
+    color: #000 !important;
+}
+.nav-item .personal-menu  li:hover a
+{
+    color:#1f84e1 !important;
+}
+
 
 .navbar span {
     color: white;
@@ -2082,8 +2113,8 @@ i.fas.fa-video.flim {
     margin-right: 10px;
 }
 .personal-page-header {
-    width: 100%;
-    height: 350px;
+  width: 100%;
+
 }
 .cover-image {
     display: flex;
@@ -2092,46 +2123,44 @@ i.fas.fa-video.flim {
     background-image: url("../images/banner_cover 1.png");
     background-repeat: no-repeat;
 
-    background-size: 100%;
-    width: 100%;
-    height: 200px;
+  background-size: 100%;
+  width: 100%;
+  height: 300px;
 }
 .cover-image .logo img {
     width: 180px;
     margin-left: 60px;
 }
 .cover-image .personal-avt-small {
-    margin-top: 30px;
-    margin-right: 30px;
-    position: relative;
+  margin-top: 25px;
+  margin-right: 40px;
+  position: relative;
 }
 .cover-image .personal-avt-small img {
     width: 50px;
 }
 .personal-menu {
-    position: absolute;
-    top: 30px;
-    left: -300px;
-    width: 280px;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    text-align: l;
-    margin-top: 10px;
-    z-index: 1;
-    line-height: 2;
-    transition: 0.2s all ease-in-out;
+  position: absolute;
+  top: 40px;
+  left: -230px;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: l;
+  margin-top: 10px;
+  z-index: 1;
+  line-height: 2;
+  transition: 0.2s all ease-in-out;
 }
-.personal-menu ul li button {
-    border: none;
-    padding: 0;
-    background-color: #fff;
+.personal-menu ul li a {
+    text-decoration: none;
     color: #000;
 }
 .personal-menu ul li:hover {
     cursor: pointer;
 }
-.personal-menu li:hover button {
+.personal-menu li:hover a{
     color: #265ce9;
 }
 .user-post {
@@ -2196,19 +2225,36 @@ i.fas.fa-video.flim {
 .add-post {
     margin-right: 15px;
 }
+.add-post a
+{
+    color: #000 ;
+    text-decoration: none;
+}
 .add-post:hover {
     cursor: pointer;
     color: #38c026;
 }
+.add-post:hover a {
+    color: #38c026;
+  }
+  .recycle-bin a {
+    color: #000 ;
+    text-decoration: none;
+  }
 .recycle-bin:hover {
     cursor: pointer;
     color: #f43e3e;
 }
+.recycle-bin:hover a {
+    cursor: pointer;
+    color: #f43e3e;
+  }
+
 .personal-page-body {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .personal-page-body .personal-introduce {
     margin-top: 40px;
@@ -2238,8 +2284,8 @@ i.fas.fa-video.flim {
     margin-bottom: 50px;
 }
 .personal-page-main > p {
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 20px;
 }
 .personal-post {
     display: block;
@@ -2343,7 +2389,98 @@ i.fas.fa-video.flim {
     background-color: #f21e44;
     color: #fff;
 }
-
+/* responesive personal-page*/
+@media  (min-width:740px) and (max-width:1023px)
+{
+    .personal-page-body
+    {
+        margin-top: 100px;
+    }
+    .cover-image
+    {
+        height: 145px;
+    }   
+    .personal-page-body
+    {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .personal-introduce
+    {
+       margin: auto !important;
+    }
+    .personal-page-main
+    {
+        margin: 0;
+        padding: 10px 60px !important;
+        width: 100%;
+        text-align: center;
+    }
+}
+/*MOBILE*/
+@media (max-width:740px)
+{
+    .cover-image
+    {
+        height: 8%;
+    }
+    .logo 
+    {
+        margin-left: 0;
+    }
+    .cover-image .logo img
+    {
+        margin-left: 0;
+    }
+    .cover-image .personal-avt-small
+    {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .personal-infor 
+    {
+        display: block;
+        text-align: center;
+    }
+    .personal-infor 
+    {
+        width:100%;
+    }
+    .personal-infor .personal-avt-info {
+        width: 100%;
+        position: relative;
+        text-align: center;
+    }
+    .personal-avt-big
+    {     
+        margin-bottom: 10px;
+        margin-top: -30px;
+        position: static;
+    }
+    .personal-avt-big img {
+        width: 80px;
+    }
+    .infor-inweb 
+    {
+        position: static;
+    }   
+    .personal-page-body 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .personal-page-main 
+    {
+        margin: auto;
+    }
+    .personal-page-main
+    {      
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+}
 /*personal-page*/
 //end KhanhDuy
 // Giao

@@ -10,6 +10,7 @@
                 </a>    
             </div>
             <div class="personal-avt-small">
+                
                 <img src="/images/ava.png" alt="avt">
                 <div class="personal-menu tools-show">
                     <div class="user-post">
@@ -17,17 +18,17 @@
                             <img src="/images/ava.png" alt="avt">
                         </div>
                         <div class="name">
-                            <p class="full-name">Đặng Ngô Hồng Hải</p>
-                            <p class="username">anthony.HaiDang</p>
+                            <p class="full-name">{{{user.username}}}</p>
+                            <p class="username">{{{user.email}}}</p>
                         </div>     
                      </div>
                      <ul>
-                         <li><i class="fas fa-pencil-alt"></i><button type="button" href="">Đăng bài viết</button></li>
-                         <li><i class="fas fa-id-card"></i><button type="button" href="">Trang cá nhân</button></li>
-                         <li><i class="fas fa-lock"></i><button type="button" href="">Đổi mật khẩu</button></li>
-                         <li><i class="fas fa-sign-out-alt"></i><button type="button" href="">>Đăng xuất</button></li>
+                         <li><i class="fas fa-pencil-alt"></i><a type="button" href="/login">Đăng bài viết</a></li>
+                         <li><i class="fas fa-id-card"></i><a type="button" href="/personal-page">Trang cá nhân</a></li>
+                         <li><i class="fas fa-lock"></i><a type="button" href="/change-password">Đổi mật khẩu</a></li>
+                         <li><i class="fas fa-sign-out-alt"></i><a type="button" href="/">Đăng xuất</a></li>
                      </ul>
-                </div>
+                </div>  
             </div>
         </div>
         <div class="personal-infor">
@@ -42,8 +43,8 @@
                 </div>
             </div>
             <div class="personal-tools">
-                <div class="add-post"><i class="fas fa-pencil-alt"></i>Thêm bài viết</div>
-                <div class="recycle-bin"><i class="fas fa-trash-alt"></i>Thùng rác</div>
+                <div class="add-post"><i class="fas fa-pencil-alt"></i><a href="">Thêm bài viết</a> </div>
+                <div class="recycle-bin"><i class="fas fa-trash-alt"></i><a href="">Thùng rác</a></div>
             </div>
         </div>
      </div>
