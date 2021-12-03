@@ -27,9 +27,18 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('hbs', hbs({extname: '.hbs'}));
+app.engine(
+  "hbs",
+  hbs({
+    extname: ".hbs",
+    helpers: {
+      ifeq: function(arg1, arg2, options) {
+        return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+      },
+    },
+  })
+);
 app.set('view engine', 'hbs');
-
 
 
 app.use(

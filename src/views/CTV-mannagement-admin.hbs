@@ -8,7 +8,7 @@
 
             </div>
             <div class="CTV_mannagement_admin_center">
-                <table>
+                <table id="table">
                     <tr>
                         <th>Họ và tên</th>
                         <th>Email</th>
@@ -16,13 +16,14 @@
                         <th>Sở thích</th>
                         <th>Xác nhận</th>
                     </tr>
-                    <tr>
-                        <td>anthonyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>0123456789</td>
+                    {{#each data}}
+                    <tr id={{this.id}}>
+                        <td>{{this.fullname}}</td>
+                        <td>{{this.email}}</td>
+                        <td>{{this.phone}}</td>
                         <td>
                             {{! <button type="button" class="Edit">Sửa</button> }}
-                            Có khả năng Review những bộ phim vô cùng chất lượng
+                            {{this.forte}}
                         </td>
                         <td>
                             <div class="btn_CTV_List">
@@ -33,107 +34,16 @@
                                 <button
                                     type="button"
                                     class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
+                                    onclick="deleteCTV(this)"
+                                    value={{this.id}}
                                 >Từ chối</button>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>anthonyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>0123456789</td>
-                        <td>
-                            {{! <button type="button" class="Edit">Sửa</button> }}
-                            Có khả năng Review những bộ phim vô cùng chất lượng
-                        </td>
-                        <td>
-                            <div class="btn_CTV_List">
-                                <button
-                                    type="button"
-                                    class="Edit btn btn-primary"
-                                >Xác nhận</button>
-                                <button
-                                    type="button"
-                                    class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                >Từ chối</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>anthonyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>0123456789</td>
-                        <td>
-                            {{! <button type="button" class="Edit">Sửa</button> }}
-                            Có khả năng Review những bộ phim vô cùng chất lượng
-                        </td>
-                        <td>
-                            <div class="btn_CTV_List">
-                                <button
-                                    type="button"
-                                    class="Edit btn btn-primary"
-                                >Xác nhận</button>
-                                <button
-                                    type="button"
-                                    class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                >Từ chối</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>anthonyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>0123456789</td>
-                        <td>
-                            {{! <button type="button" class="Edit">Sửa</button> }}
-                            Có khả năng Review những bộ phim vô cùng chất lượng
-                        </td>
-                        <td>
-                            <div class="btn_CTV_List">
-                                <button
-                                    type="button"
-                                    class="Edit btn btn-primary"
-                                >Xác nhận</button>
-                                <button
-                                    type="button"
-                                    class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                >Từ chối</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>anthonyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>0123456789</td>
-                        <td>
-                            {{! <button type="button" class="Edit">Sửa</button> }}
-                            Có khả năng Review những bộ phim vô cùng chất lượng
-                        </td>
-                        <td>
-                            <div class="btn_CTV_List">
-                                <button
-                                    type="button"
-                                    class="Edit btn btn-primary"
-                                >Xác nhận</button>
-                                <button
-                                    type="button"
-                                    class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                >Từ chối</button>
-                            </div>
-                        </td>
-                    </tr>
+                    {{/each}}
                 </table>
             </div>
-            <div
+            {{!-- <div
                 class="modal fade"
                 id="deleteModal"
                 tabindex="-1"
@@ -161,12 +71,17 @@
                                 class="btn btn-secondary"
                                 data-bs-dismiss="modal"
                             >Hủy bỏ</button>
-                            <button type="submit" class="btn btn-danger">Từ chối</button>
+                            <button type="submit" class="btn btn-danger" id="delete-hard" onclick="delete()">Từ chối</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
     </div>
 </section>
+<script>
+    function deleteCTV(btn) {
+        console.log(btn.value);
+    }
+</script>
