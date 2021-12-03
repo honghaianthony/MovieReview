@@ -2,21 +2,20 @@ const express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/AdminController");
 
-const passportAuth = require('../config/passport');
+const passportAuth = require("../config/passport");
 
 router.use(passportAuth.checkAdmin);
 
 router.get("/review-movie", function (req, res, next) {
   res.render("review-movie-admin", { layout: "admin" });
 });
-router.get("/famous-actor-list", function (req, res, next) {
-    res.render("famous-actor-list", { layout: "admin" });
-});
+
+router.get("/famous-actor-list", adminController.getInforActor);
+router.post("/famous-actor-list/:id", adminController.deleteSelectedActor);
 
 router.get("/famous-actor", function (req, res, next) {
   res.render("famous-actor-admin", { layout: "admin" });
 });
-
 router.post("/famous-actor", adminController.CreateActorPost);
 
 router.get("/review-famous-movie", function (req, res, next) {

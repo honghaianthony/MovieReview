@@ -3,7 +3,7 @@
     <div class="main-film">
 
       {{#each mainFilms}}
-        <div>
+        <div id="infor-{{this.id}}">
           <div class="logo">
             <img src="/images/netflix.png" alt="logo" />
             <p class="head">FILM</p>
@@ -58,8 +58,8 @@
             alt=""
           /></li> }}
         {{#each mainFilms}}
-          <li id="container-{{this.id}}">
-            <img id={{this.id}} src={{this.poster}} alt="" />
+          <li id="container-{{this.id}}" >
+            <img id={{this.id}} src={{this.poster}} alt="" onclick="clickElementMainFilms(this)"/>
           </li>
         {{/each}}
       </ul>
