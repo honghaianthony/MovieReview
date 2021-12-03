@@ -111,24 +111,63 @@ a {
     text-align: center;
 }
 /*menu avt*/
-.nav-item .avt-user-login {
-  position: relative;
-}
-.nav-item .personal-menu {
-  top: 20px;
-  left: -160px;
-}
-.nav-item .personal-menu .personal-avt-small {
-  margin: 20px 5px 0 5px;
-}
-.nav-item :hover .avt-user-login {
+.nav-item-avt:hover img
+{
   cursor: pointer !important;
+ padding: 0;
+}
+.nav-item .avt-user-login
+{
+    position: relative;
+}
+.nav-item .avt-user-login img
+{
+   width: 50px;
+   border-radius: 49%;
+   margin-top: -15px;
+}
+.nav-item .personal-menu
+{
+    top: 30px;
+    left: -180px;
+}
+.nav-item .personal-menu img
+{
+  border-radius: 49%;
+}
+.nav-item .personal-menu .personal-avt-small
+{
+    margin: 30px 20px 0 5px;
+}
+
+.nav-item :hover .avt-user-login
+{
+    cursor: pointer !important;
 }
 .nav-item .personal-menu ul {
   display: block;
 }
-.nav-item .personal-menu li a {
-  color: #000 !important;
+.nav-item .personal-menu ul form
+{
+    display: inline-block;
+   
+}
+.personal-menu ul form button
+{
+   
+    background-color: #fff;
+    padding: 0;
+    border: none;
+    font-weight: 600;
+}
+.personal-menu ul form:hover button
+{
+   
+    color: #1f84e1;
+}
+.nav-item .personal-menu  li a
+{
+    color: #000 !important;
 }
 .nav-item .personal-menu li:hover a {
   color: #1f84e1 !important;
@@ -1081,9 +1120,10 @@ main .logo {
     width: 50px;
 }
 .rate-info > p {
-    position: absolute;
-    top: 5px;
-    left: 60px;
+    margin-top: 10px;
+  position: absolute;
+  top: 5px;
+  left: 60px;
 }
 /*review content*/
 .review-content {
@@ -1133,8 +1173,9 @@ main .logo {
     margin-right: 100px;
 }
 .others-film {
-    margin-top: 20px;
-    margin-left: -30px;
+  margin-top: 20px;
+  margin-left: -30px;
+  width: 20%;
 }
 .others-film img {
     width: 150px;
@@ -2125,9 +2166,9 @@ i.fas.fa-video.flim {
   background-image: url("../images/banner_cover 1.png");
   background-repeat: no-repeat;
 
-    background-size: 100%;
-    width: 100%;
-    height: 300px;
+  background-size: 100%;
+  width: 100%;
+  height: 250px;
 }
 .cover-image .logo img {
   width: 180px;
@@ -2142,18 +2183,18 @@ i.fas.fa-video.flim {
   width: 50px;
 }
 .personal-menu {
-    position: absolute;
-    top: 40px;
-    left: -230px;
-    width: 280px;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    text-align: l;
-    margin-top: 10px;
-    z-index: 1;
-    line-height: 2;
-    transition: 0.2s all ease-in-out;
+  position: absolute;
+  top: 40px;
+  left: -230px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: l;
+  margin-top: 10px;
+  z-index: 1;
+  line-height: 2;
+  transition: 0.2s all ease-in-out;
 }
 .personal-menu ul li a {
   text-decoration: none;
@@ -2171,6 +2212,10 @@ i.fas.fa-video.flim {
 .user-post .personal-avt-small img {
   width: 30px;
   margin: -10px 0 10px 10px;
+}
+.user-post .name
+{
+    margin-left: -10px;
 }
 .user-post .name .full-name {
   margin: 15px 0 -10px;
