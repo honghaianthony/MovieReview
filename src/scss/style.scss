@@ -2020,7 +2020,28 @@ i.fas.fa-video.flim {
         margin-bottom: 50px;
     }
 }
-
+/*khanh duy*/
+.post-editor form
+{
+    position: relative;
+}
+.fa-chevron-down
+{
+    position: absolute;
+    top:158px;
+    right: 0px;
+    opacity: 0.5;
+}
+.fa-chevron-down:hover
+{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+.movie-selector:hover
+{
+    cursor: pointer;
+}
+/*khanh duy*/
 /*review content*/
 .button-watch {
     margin-top: 30px;
@@ -2519,6 +2540,11 @@ i.fas.fa-video.flim {
   }
 }
 /*personal-page*/
+/*post*/
+.post-title
+{
+    text-align: center  ;
+}
 //end KhanhDuy
 // Giao
 /* Another film*/
