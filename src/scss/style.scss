@@ -132,6 +132,10 @@ a {
     top: 30px;
     left: -180px;
 }
+.nav-item .personal-menu .personal-avt-small
+{
+    display: flex;
+}
 .nav-item .personal-menu img
 {
   border-radius: 49%;
@@ -2179,9 +2183,11 @@ i.fas.fa-video.flim {
     margin-top: 25px;
     margin-right: 40px;
     position: relative;
+    display: flex;
 }
 .cover-image .personal-avt-small img {
   width: 50px;
+  height: 50px;
 }
 .personal-menu {
   position: absolute;
@@ -2209,6 +2215,7 @@ i.fas.fa-video.flim {
 }
 .user-post {
   display: flex;
+  flex-direction: column;
 }
 .user-post .personal-avt-small img {
   width: 30px;
@@ -2216,16 +2223,18 @@ i.fas.fa-video.flim {
 }
 .user-post .name
 {
-    margin-left: -10px;
+    margin-left: 20px;
+
 }
 .user-post .name .full-name {
-  margin: 15px 0 -10px;
   color: #000;
 }
 .user-post .username {
   color: #3e7fe1;
   font-weight: 600;
   margin-bottom: -1px;
+  margin-left: 20px;
+  margin-top: -10px;
 }
 .personal-infor {
   display: flex;
