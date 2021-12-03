@@ -61,28 +61,32 @@
                     {{!-- <span class="evaluate">Đánh giá tổng quan</span>
                     <img src="/images/danhgia.png" alt="" /> --}}
                     {{!-- <span class="source">Nguồn: Ghiền Review</span> --}}
+                    {{#if user}}
                     <div class="review-detail-content-evaluate">
                         <span class="evaluate-question">Bạn có thích bài Review
                             này không?
                         </span>
-                        <div class="review-detail-content-rating">
-                            <input type="radio" name="star" id="star1" onclick="rate()"/><label
-                                for="star1"
-                            ></label>
-                            <input type="radio" name="star" id="star2" onclick="rate()"/><label
-                                for="star2"
-                            ></label>
-                            <input type="radio" name="star" id="star3" onclick="rate()"/><label
-                                for="star3"
-                            ></label>
-                            <input type="radio" name="star" id="star4" onclick="rate()"/><label
-                                for="star4"
-                            ></label>
-                            <input type="radio" name="star" id="star5" onclick="rate()"/><label
-                                for="star5"
-                            ></label>
-                        </div>
+                        <form method="post" id="rate">
+                            <div class="review-detail-content-rating">
+                                <input type="radio" name="star" id="star1" onclick="rate()"/><label
+                                    for="star1"
+                                ></label>
+                                <input type="radio" name="star" id="star2" onclick="rate()"/><label
+                                    for="star2"
+                                ></label>
+                                <input type="radio" name="star" id="star3" onclick="rate()"/><label
+                                    for="star3"
+                                ></label>
+                                <input type="radio" name="star" id="star4" onclick="rate()"/><label
+                                    for="star4"
+                                ></label>
+                                <input type="radio" name="star" id="star5" onclick="rate()"/><label
+                                    for="star5"
+                                ></label>
+                            </div>
+                        </form>
                     </div>
+                    {{/if}}
                 </div>
                 <div class="review-detail-comment row">
                     <span class="title">Bình luận</span>
@@ -129,6 +133,7 @@
     </div>
 </section>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     console.log("test");
     const socket = io();
@@ -155,6 +160,50 @@
             document.getElementById("comment").value = '';
         }
     }
+
+    function rate() {
+        const rate = document.querySelector('input[name="star"]:checked').id;
+        let result = parseInt(rate.slice(4, 5));
+        let res = 3;
+        switch (result) {
+            case 1:
+                res = 5;
+                break;
+            case 2:
+                res = 4;
+                break;
+            case 4:
+                res = 2;
+                break;
+            case 5:
+                res = 1;
+                break;
+        }
+        let url = "/film-review/" + {{ data.reviewId }} + "?rate=" + res
+        $.post(url);
+    }
+
+        {{#if rate}}
+            const rateShow = {{rate}};
+            let res = 3;
+            switch (rateShow) {
+                case 1:
+                    res = 5;
+                    break;
+                case 2:
+                    res = 4;
+                    break;
+                case 4:
+                    res = 2;
+                    break;
+                case 5:
+                    res = 1;
+                    break;
+            }
+            let star = document.getElementById("star" + res);
+            star.checked = true;
+            console.log(star, "hi")
+        {{/if}}
     {{/if}}
 
     function setComment(comment) {
@@ -174,26 +223,4 @@
         let base = document.querySelector(".review-detail-comment-user");
         base.appendChild(item);
     }
-
-    function rate() {
-        const rate = document.querySelector('input[name="star"]:checked').id;
-        let result = parseInt(rate.slice(4,5));
-        let res = 3;
-        switch(result) {
-            case 1: 
-                res = 5;
-                break;
-            case 2: 
-                res = 4;
-                break;
-            case 4: 
-                res = 2;
-                break;
-            case 5: 
-                res = 1;
-                break;
-        }
-        console.log(res)
-    }
-
 </script>

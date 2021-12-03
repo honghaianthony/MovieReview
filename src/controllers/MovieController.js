@@ -40,6 +40,8 @@ module.exports = {
   getMovieReviewById: async function (req, res, next) {
     const {id} = req.params;
     const {loadMoreComment} = req.query;
+
+    //get review
     const review = await models.Review.findByPk(id);
     if (!review) {
       res.render("review-detail", {review: null});
@@ -76,7 +78,7 @@ module.exports = {
         content: review.content,
         rate: rate,
       }
-
+      //get comment
       let limit = 10;
       if (loadMoreComment) {
         limit += (5 * loadMoreComment);
@@ -95,7 +97,56 @@ module.exports = {
         i.user = await models.User.findByPk(i.userId, {raw: true,});
       });
       comment.reverse();
-      res.render("review-detail", {data: result, comment: comment});
+
+      //get rate
+      let rateShow;
+      if(req.user) {
+        rateShow = await models.Rate.findOne({
+          where: { userId: req.user.id, reviewId: id },
+          raw: true,
+          attributes: ["rate"],
+        });
+      } else {
+        rateShow = {rate: null};
+      }
+      console.log(rateShow.rate)
+      res.render("review-detail", {
+        data: result,
+        comment: comment,
+        rate: rateShow.rate,
+      });
     }
-  }
+  },
+  rate: async function (req, res, next) {
+    const { id } = req.params;
+    const {rate} = req.query;
+    console.log(rate);
+    const found = await models.Rate.findOne({
+      where: { userId: req.user.id, reviewId: id },
+    });
+    if(found) {
+      try {
+        await models.Rate.update(
+          { rate: rate },
+          {
+            where: { userId: req.user.id, reviewId: id },
+          }
+        );
+        res.redirect("/film-review/" + id);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        await models.Rate.create({
+          reviewId: id,
+          userId: req.user.id,
+          rate: rate,
+        });
+        res.redirect('/film-review/'+ id);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  },
 };

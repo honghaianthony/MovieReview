@@ -26,8 +26,4 @@ router.post('/', indexController.formUpload);
 router.get("/aboutus", function (req, res, next) {
     res.render("aboutus");
 });
-
-// router.get("/review-detail-squid-game", function (req, res, next) {
-//     res.render("review-detail");
-// });
 module.exports = router;

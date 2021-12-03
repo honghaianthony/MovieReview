@@ -32,8 +32,7 @@ router.get("/user-management", function (req, res, next) {
 router.get("/admin-management", function (req, res, next) {
   res.render("admin-mannagement-admin", { layout: "admin" });
 });
-router.get("/CTV-management", function (req, res, next) {
-  res.render("CTV-mannagement-admin", { layout: "admin" });
-});
+router.get("/CTV-management", adminController.getCTVForm);
+router.post("/CTV-management/:id", adminController.deleteCTVRequest);
 
 module.exports = router;
