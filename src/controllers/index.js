@@ -11,10 +11,10 @@ module.exports = {
     });
     movie.forEach(async (item) => {
       let genres = [];
-      let sql = `select genres.type 
-                    from genremovies, genres
-                    where genremovies.genreId = genres.id
-                        and genremovies.movieId = :id`;
+      let sql = `select Genres.type 
+                    from GenreMovies, Genres
+                    where GenreMovies.genreId = Genres.id
+                        and GenreMovies.movieId = :id`;
       const genre = await models.sequelize.query(sql, {
         replacements: {
           id: item.id,

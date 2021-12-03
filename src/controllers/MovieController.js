@@ -47,10 +47,10 @@ module.exports = {
       res.render("review-detail", {review: null});
     } else {
       const movie = await models.Movie.findByPk(review.movieId);
-      let sql = `select genres.type 
-            from genremovies, genres
-            where genremovies.genreId = genres.id
-                and genremovies.movieId = :id`;
+      let sql = `select Genres.type 
+            from GenreMovies, Genres
+            where GenreMovies.genreId = Genres.id
+                and GenreMovies.movieId = :id`;
       const genre = await models.sequelize.query(sql, {
         replacements: {
           id: movie.id,
