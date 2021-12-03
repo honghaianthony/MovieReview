@@ -103,13 +103,15 @@ module.exports = {
       if(req.user) {
         rateShow = await models.Rate.findOne({
           where: { userId: req.user.id, reviewId: id },
-          raw: true,
           attributes: ["rate"],
+          raw: true,
         });
+        if(rateShow == null) {
+          rateShow = {rate: 0};
+        }
       } else {
-        rateShow = {rate: null};
+        rateShow = {rate: 0};
       }
-      console.log(rateShow.rate)
       res.render("review-detail", {
         data: result,
         comment: comment,
@@ -120,7 +122,6 @@ module.exports = {
   rate: async function (req, res, next) {
     const { id } = req.params;
     const {rate} = req.query;
-    console.log(rate);
     const found = await models.Rate.findOne({
       where: { userId: req.user.id, reviewId: id },
     });

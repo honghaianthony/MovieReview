@@ -4,10 +4,15 @@ const models = require("../models");
 module.exports = {
   CreateActorPost: async function (req, res, next) {
     const { name, img, description, rate, context, title } = req.body;
+    let image;
+    if (img.indexOf("sharing")) {
+      const arr = img.split("/");
+      image = "https://drive.google.com/uc?id=" + arr[5];
+    }
     try {
       await models.Actor.create({
         name,
-        img,
+        img: image,
         description,
         rate,
         content: context,
