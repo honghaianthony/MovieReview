@@ -1,151 +1,118 @@
 <section class="review_list_admin">
-    <div class="review_list_admin_container">
-        <div class="review_list_container">
-            <div class="review_list_admin_top">
-                <div class="review_list_admin_top_description">
-                    <span>Danh sách các Review</span>
-                </div>
-            <div class="review_list_admin_top_btn">
-                <a class="btn btn-primary" href="/post" role="button">Thêm bài Review</a>
-            </div>
-            </div>
-            <div class="review_list_admin_center">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Tên bài Review</th>
-                        <th>Mô tả</th>
-                        <th>Đánh giá</th>
-                        <th>Thao tác</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
-                        <td>Một câu chuyện về những người thất bại trong cuộc
-                            sống vì nhiều lý do khác nhau...</td>
-                        <td>
-                            4.5/5
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
-                        <td>Một câu chuyện về những người thất bại trong cuộc
-                            sống vì nhiều lý do khác nhau...</td>
-
-                        <td>
-                            4.5/5
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
-                        <td>Một câu chuyện về những người thất bại trong cuộc
-                            sống vì nhiều lý do khác nhau...</td>
-
-                        <td>
-                            4.5/5
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
-                        <td>Một câu chuyện về những người thất bại trong cuộc
-                            sống vì nhiều lý do khác nhau...</td>
-
-                        <td>
-                            4.5/5
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
-                        <td>Một câu chuyện về những người thất bại trong cuộc
-                            sống vì nhiều lý do khác nhau...</td>
-
-                        <td>
-                            4.5/5
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div
-                class="modal fade"
-                id="deleteModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-            >
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Xác
-                                nhận xóa</h5>
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-                        <div class="modal-body">
-                            Bạn có chắc chắn xóa Review này?
-                        </div>
-                        <div class="modal-footer">
-                            <button
-                                type="button"
-                                class="btn btn-secondary"
-                                data-bs-dismiss="modal"
-                            >Hủy bỏ</button>
-                            <button
-                                type="submit"
-                                class="btn btn-danger"
-                            >Xóa</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="review_list_admin_container">
+    <div class="review_list_container">
+      <div class="review_list_admin_top">
+        <div class="review_list_admin_top_description">
+          <span>Danh sách các Review</span>
         </div>
+        <div class="review_list_admin_top_btn">
+          <a class="btn btn-primary" href="/post" role="button">Thêm bài Review</a>
+        </div>
+      </div>
+      <div class="review_list_admin_center">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Tên bài Review</th>
+            <th>Mô tả</th>
+            <th>Đánh giá</th>
+            <th>Thao tác</th>
+          </tr>
+          {{#each review}}
+            <form method="post">
+              <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.content}}</td>
+                <td>
+                  {{this.rate}}/5
+                </td>
+                <td>
+                  <button
+                    class="Delete"
+                    type="submit"
+                    name="id"
+                    value={{this.id}}
+                  >Xóa</button>
+                </td>
+              </tr>
+            </form>
+          {{/each}}
+          {{! <tr>
+            <td>2</td>
+            <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
+            <td>Một câu chuyện về những người thất bại trong cuộc sống vì nhiều
+              lý do khác nhau...</td>
 
+            <td>
+              4.5/5
+            </td>
+            <td>
+              <button
+                type="button"
+                class="Delete"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
+            <td>Một câu chuyện về những người thất bại trong cuộc sống vì nhiều
+              lý do khác nhau...</td>
+
+            <td>
+              4.5/5
+            </td>
+            <td>
+              <button
+                type="button"
+                class="Delete"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
+            <td>Một câu chuyện về những người thất bại trong cuộc sống vì nhiều
+              lý do khác nhau...</td>
+
+            <td>
+              4.5/5
+            </td>
+            <td>
+              <button
+                type="button"
+                class="Delete"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Squid Game: Trò chơi con mực - Không hay như kì vọng</td>
+            <td>Một câu chuyện về những người thất bại trong cuộc sống vì nhiều
+              lý do khác nhau...</td>
+
+            <td>
+              4.5/5
+            </td>
+            <td>
+              <button
+                type="button"
+                class="Delete"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >Xóa</button>
+            </td>
+          </tr> }}
+        </table>
+      </div>
     </div>
+
+  </div>
 </section>
