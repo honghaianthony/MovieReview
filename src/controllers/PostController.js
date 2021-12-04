@@ -13,7 +13,7 @@ module.exports = {
         try {
             await models.Review.create({
                 movieId: mid,
-                rate: rate,
+                // rate: rate,
                 image: image,
                 content: context,
             });

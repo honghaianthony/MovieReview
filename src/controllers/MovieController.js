@@ -1,24 +1,12 @@
 const models = require("../models");
+const { getStringGenre} = require ('../utilities/Genre');
 
 module.exports = {
   getAllMovie: async function (req, res, next) {
-    let result = [];
+    const result = [];
     const movie = await models.Movie.findAll();
-    movie.forEach(async (item) => {
-      let sql = `select genres.type 
-                    from genremovies, genres
-                    where genremovies.genreId = genres.id
-                        and genremovies.movieId = :id`;
-      const genre = await models.sequelize.query(sql, {
-        replacements: {
-          id: item.id,
-        },
-        type: models.Sequelize.QueryTypes.SELECT,
-      });
-      const genreArr = genre.map((i) => {
-        return i.type;
-      })
-      const stringGenre = genreArr.join(" - ");
+    await movie.forEach(async (item) => {
+      const stringGenre = await getStringGenre(item.id);
       const review = await models.Review.findOne({where: {movieId: item.id}})
       if(review) {
         result.push({
@@ -34,7 +22,6 @@ module.exports = {
         });
       }
     });
-
     res.render("film-review", { films: result });
   },
   getMovieReviewById: async function (req, res, next) {
@@ -47,26 +34,8 @@ module.exports = {
       res.render("review-detail", {review: null});
     } else {
       const movie = await models.Movie.findByPk(review.movieId);
-      let sql = `select genres.type 
-            from genremovies, genres
-            where genremovies.genreId = genres.id
-                and genremovies.movieId = :id`;
-      const genre = await models.sequelize.query(sql, {
-        replacements: {
-          id: movie.id,
-        },
-        type: models.Sequelize.QueryTypes.SELECT,
-      });
-      const genreArr = genre.map((i) => {
-        return i.type;
-      })
-      const stringGenre = genreArr.join(" - ");
-      let rate;
-      if (review.rate) {
-        rate = review.rate;
-      } else {
-        rate = 0;
-      }
+      const stringGenre = await getStringGenre(movie.id);
+      
       const result = {
         reviewId: review.id,
         movieName: movie.name,
@@ -76,7 +45,7 @@ module.exports = {
         length: movie["length"],
         releaseYear: movie.releaseYear,
         content: review.content,
-        rate: rate,
+        rate: review.rate,
       }
       //get comment
       let limit = 10;
@@ -133,9 +102,9 @@ module.exports = {
             where: { userId: req.user.id, reviewId: id },
           }
         );
-        res.redirect("/film-review/" + id);
       } catch (error) {
-        console.log(error);
+        res.status(500);
+        res.render("error", { message: error, layout: false });
       }
     } else {
       try {
@@ -144,10 +113,26 @@ module.exports = {
           userId: req.user.id,
           rate: rate,
         });
-        res.redirect('/film-review/'+ id);
       } catch (error) {
-        console.log(error);
+        res.status(500);
+        res.render("error", { message: error, layout: false });
       }
     }
+    //end if found 
+
+    //update rate of review 
+    const count = await models.Rate.count({
+      where: {
+        reviewId: id,
+      },
+    });
+
+    const rateSum = await models.Rate.sum("rate", { where: { reviewId: id } });
+
+    const rateAvg = Math.round((rateSum / count) * 2) / 2;
+
+    await models.Review.update({ rate: rateAvg }, { where: { id: id } });
+
+    res.redirect('/film-review/'+ id);
   },
 };

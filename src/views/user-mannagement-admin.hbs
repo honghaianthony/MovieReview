@@ -16,10 +16,11 @@
                         <th>Sửa</th>
                         <th>Xóa</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
+                    {{#each data}}
+                    <tr id={{this.id}}>
+                        <td>{{this.id}}</td>
+                        <td>{{this.username}}</td>
+                        <td>{{this.email}}</td>
                         <td>
                             <button type="button" class="Edit">Sửa</button>
                         </td>
@@ -29,73 +30,12 @@
                                 class="Delete"
                                 data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"
+                                value={{this.id}}
+                                onclick="setId(this)"
                             >Xóa</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
+                    {{/each}}
                 </table>
             </div>
             <div
@@ -129,6 +69,8 @@
                             <button
                                 type="submit"
                                 class="btn btn-danger"
+                                data-bs-dismiss="modal"
+                                id="delete-post"
                             >Xóa</button>
                         </div>
                     </div>
@@ -138,3 +80,17 @@
 
     </div>
 </section>
+<script>
+    function setId (btn) {
+        let deletepost = document.getElementById("delete-post");
+        
+        deletepost.onclick = () => {
+            let url = "/admin/user-management/" + btn.value
+            $.post(url, function(data) {
+                alert(data);
+                document.getElementById(btn.value).remove();
+            });
+        }
+
+    }
+</script>

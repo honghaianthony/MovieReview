@@ -12,6 +12,7 @@ module.exports = {
                 password: hashedPassword,
                 fullName: name,
                 email,
+                avatar: "https://drive.google.com/uc?id=1eV7Nrlh3A5NKUHlyr8Dyn6nKNvpMP0pM",
                 phone, 
                 role: 1,
                 dateOfBirth: birth,

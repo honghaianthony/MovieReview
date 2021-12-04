@@ -25,13 +25,12 @@ router.get("/review-famous-movie", function (req, res, next) {
 router.get("/review-another-movie", function (req, res, next) {
   res.render("another-film-admin", { layout: "admin" });
 });
-router.get("/user-management", function (req, res, next) {
-  res.render("user-mannagement-admin", { layout: "admin" });
-});
-router.get("/admin-management", function (req, res, next) {
-  res.render("admin-mannagement-admin", { layout: "admin" });
-});
+router.get("/user-management", adminController.getUserList);
+router.post("/user-management/:id", adminController.deleteUserById);
+router.get("/admin-management", adminController.getAdminList);
+router.post("/admin-management/:id", adminController.deleteUserById);
 router.get("/CTV-management", adminController.getCTVForm);
 router.post("/CTV-management/:id", adminController.deleteCTVRequest);
+router.post("/role", adminController.updateRole);
 
 module.exports = router;

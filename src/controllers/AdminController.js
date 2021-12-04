@@ -1,5 +1,6 @@
 const e = require("cors");
 const models = require("../models");
+const { Op } = require("sequelize");
 
 module.exports = {
   CreateActorPost: async function (req, res, next) {
@@ -80,12 +81,69 @@ module.exports = {
     }
   },
   deleteCTVRequest: async function (req, res, next) {
-    const {id} = req.params;
+    const { id } = req.params;
     try {
-      await models.CTV.destroy({where: {id}});
+      await models.CTV.destroy({ where: { id } });
+      res.send("Xóa thành công")
     } catch (error) {
       res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+      res.send("Lỗi!!!");
     }
+  },
+  getUserList: async function (req, res, next) {
+    const users = await models.User.findAll({
+      where: {
+        role: 1,
+        id: { [Op.ne]: req.user.id },
+      },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    res.render("user-mannagement-admin", { layout: "admin", data: users });
+  },
+  deleteUserById: async function (req, res, next) {
+    const { id } = req.params;
+    if (req.user.role !== 2) {
+      res.send("Lỗi user không có quyền xóa!");
+    } else {
+      try {
+        await models.User.destroy({ where: { id } });
+        res.send("Thành công!");
+      } catch (error) {
+        res.send("Lỗi!!!");
+      }
+    }
+  },
+  getAdminList: async function (req, res, next) {
+    const users = await models.User.findAll({
+      where: { role: 2, id: { [Op.ne]: req.user.id } },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    res.render("admin-mannagement-admin", { layout: "admin", data: users });
+  },
+  updateRole: async function (req, res, next) {
+    const {username, email} = req.body;
+    const user = await models.User.findOne({
+      where: {
+        username,
+        email,
+        role: 1,
+      },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    if (user) {
+      await models.User.update(
+        { role: 2 },
+        {
+          where: {
+            username,
+            email,
+          },
+        }
+      );
+    }
+    res.send(user);
   },
 };
