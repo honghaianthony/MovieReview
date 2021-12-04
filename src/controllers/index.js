@@ -9,9 +9,9 @@ module.exports = {
     const movie = await models.Movie.findAll({
       limit: 4,
     });
-    movie.forEach(async (item) => {
-      let genres = await getStringGenre(item.id);
-      const review = await models.Review.findOne({where: {movieId: item.id}});
+    for (let i = 0; i < movie.length; i++) {
+      let genres = await getStringGenre(movie[i].id);
+      const review = await models.Review.findOne({where: {movieId: movie[i].id}});
       let reviewId;
       if (!review) {
         reviewId = null;
@@ -19,16 +19,16 @@ module.exports = {
         reviewId = review.id;
       }
       mainFilms.push({
-        id: "film" + item.id,
-        name: item.name,
-        description: item.description,
-        rating: item.rating,
-        poster: item.poster,
+        id: "film" + movie[i].id,
+        name: movie[i].name,
+        description: movie[i].description,
+        rating: movie[i].rating,
+        poster: movie[i].poster,
         genre: genres,
-        trailer: item.trailer,
+        trailer: movie[i].trailer,
         reviewId: reviewId,
       });
-    });
+    }
 
     const otherMovies = await models.Movie.findAll({
       offset: 4,

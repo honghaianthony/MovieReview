@@ -65,18 +65,9 @@ module.exports = {
     }
   },
   getInforActor: async function (req, res, next) {
-    let actorList = [];
-    const actor = await models.Actor.findAll();
-    actor.forEach((element) => {
-      actorList.push({
-        id: element.id,
-        name: element.name,
-        description: element.description,
-        img: element.img,
-      });
-    });
+    const actor = await models.Actor.findAll({ raw: true });
     res.render("famous-actor-list", {
-      actorList: actorList,
+      actorList: actor,
       layout: "admin",
     });
   },
@@ -169,19 +160,19 @@ module.exports = {
     try {
       let result = [];
       const movie = await models.Movie.findAll();
-      movie.forEach(async (item) => {
-        let genres = await getStringGenre(item.id);
+      for (let i = 0; i < movie.length; i++) {
+        let genres = await getStringGenre(movie[i].id);
         result.push({
-          id: item.id,
-          name: item.name,
-          nation: item.nation,
-          description: item.description,
-          rating: item.rating,
-          poster: item.poster,
-          releaseYear: item.releaseYear,
+          id: movie[i].id,
+          name: movie[i].name,
+          nation: movie[i].nation,
+          description: movie[i].description,
+          rating: movie[i].rating,
+          poster: movie[i].poster,
+          releaseYear: movie[i].releaseYear,
           genre: genres,
         });
-      });
+      }
       res.render("review-movie-admin", { layout: "admin", movie: result });
     } catch (error) {
       res.status(500);
@@ -207,14 +198,14 @@ module.exports = {
         raw: true,
       });
       let result = [];
-      reviewList.forEach((e) => {
+      for (let i = 0; i < reviewList.length; i++) {
         result.push({
-          name: e["Movie.name"],
-          id: e.id,
-          content: e.content,
-          rate: e.rate,
+          name: reviewList[i]["Movie.name"],
+          id: reviewList[i].id,
+          content: reviewList[i].content,
+          rate: reviewList[i].rate,
         });
-      });
+      }
       res.render("another-film-admin", { layout: "admin", review: result });
     } catch (error) {
       res.status(500);

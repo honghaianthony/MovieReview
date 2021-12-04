@@ -26,15 +26,15 @@ module.exports = {
         const movie = await models.Movie.findAll();
 
         const result = [];
-        movie.forEach(async (item) => {
-            const review = await models.Review.findOne({where: {movieId: item.id}});
+        for (let i = 0; i < movie.length; i++) {
+            const review = await models.Review.findOne({where: {movieId: movie[i].id}});
             if(!review) {
                 result.push({
-                    id: item.id,
-                    name: item.name,
+                    id: movie[i].id,
+                    name: movie[i].name,
                 });
             }
-        });
+        }
         res.render("post", { layout: "main", data: result});
     },
 };

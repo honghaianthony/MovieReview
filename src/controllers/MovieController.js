@@ -64,9 +64,9 @@ module.exports = {
           ['createdAt', 'DESC'],
         ],
       });
-      comment.forEach(async i => {
-        i.user = await models.User.findByPk(i.userId, {raw: true,});
-      });
+      for (let i = 0; i < comment.length; i++) {
+        comment[i].user = await models.User.findByPk(comment[i].userId, {raw: true,});
+      }
       comment.reverse();
 
       //get rate
