@@ -1,5 +1,6 @@
 //viết các logic chính
 const models = require("../models");
+const { getStringGenre } = require('../utilities/Genre');
 
 module.exports = {
   getIndexInfor: async function (req, res, next) {
@@ -10,27 +11,14 @@ module.exports = {
       limit: 4,
     });
     movie.forEach(async (item) => {
-      let genres = [];
-      let sql = `select Genres.type 
-                    from GenreMovies, Genres
-                    where GenreMovies.genreId = Genres.id
-                        and GenreMovies.movieId = :id`;
-      const genre = await models.sequelize.query(sql, {
-        replacements: {
-          id: item.id,
-        },
-        type: models.Sequelize.QueryTypes.SELECT,
-      });
-      genre.forEach((e) => {
-        genres.push(e.type);
-      });
+      let genres = await getStringGenre(item.id);
       mainFilms.push({
         id: "film" + item.id,
         name: item.name,
         description: item.description,
         rating: item.rating,
         poster: item.poster,
-        genre: genres.join(", ").toString(),
+        genre: genres,
       });
     });
 

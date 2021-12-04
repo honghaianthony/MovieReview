@@ -159,9 +159,9 @@ body {
   margin-left: 30px;
   cursor: pointer;
 }
-.admin-info-right img{
-   width: 50px;
-   border-radius: 49%;
+.admin-info-right img {
+  width: 50px;
+  border-radius: 49%;
 }
 
 .admin-info-left .name {
@@ -185,18 +185,18 @@ body {
 }
 
 .sub-menu-info-show {
-    background-color: #fff;
-    width: 280px;
-    height: 300px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-    transition: 0.2s all ease-in-out;
-    margin-top: 10px;
-    top: 0px;
-    margin-left: -220px;
-    z-index: 1;
-    line-height: 2;
+  background-color: #fff;
+  width: 280px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  transition: 0.2s all ease-in-out;
+  margin-top: 10px;
+  top: 0px;
+  margin-left: -220px;
+  z-index: 1;
+  line-height: 2;
 }
 
 .sub-menu-info ul {
@@ -232,22 +232,26 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
-.info-user-left  img{
-    width: 50px;
-    border-radius: 49%;
+.info-user-left img {
+  width: 50px;
+  border-radius: 49%;
 }
 
 .info-user-right .username {
-  font-size: 13px;
-  font-weight: 700;
-  font-family: Arial;
-}
-
-.info-user-right .name {
   font-size: 15px;
   font-weight: 700;
   font-family: Arial;
   color: #4c9dfb;
+  display: block;
+  margin: 15px;
+}
+
+.admin-email {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Arial;
+  color: #4c9dfb;
+  margin: 10px 0 0 20px;
 }
 
 .another-info-user img {

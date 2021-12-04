@@ -15,6 +15,9 @@
                 method="post"
             >
                 <div class="login-input-form">
+                    {{#if messages.error}}
+                    <p>{{messages.error}}</p>
+                    {{/if}}
                     <input
                         type="text"
                         class="input-field"
