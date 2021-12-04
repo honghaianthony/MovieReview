@@ -15,7 +15,7 @@
                         Thêm người dùng
                     </button>
 
-                    <form method="post" action="/">
+                    <form method="post" action="/admin/role">
                         <div
                             class="modal fade"
                             id="exampleModal"
@@ -59,6 +59,8 @@
                                         >Hủy bỏ</button>
                                         <button
                                             type="button"
+                                            onclick="updateRole()"
+                                            data-bs-dismiss="modal"
                                             class="btn btn-primary"
                                         >Lưu thay đổi</button>
                                     </div>
@@ -70,7 +72,7 @@
                 </div>
             </div>
             <div class="admin_mannagement_admin_center">
-                <table>
+                <table id="table">
                     <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -78,86 +80,20 @@
                         <th>Sửa</th>
                         <th>Xóa</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
+                    {{#each data}}
+                    <tr id={{this.id}}>
+                        <td>{{this.id}}</td>
+                        <td>{{this.username}}</td>
+                        <td>{{this.email}}</td>
                         <td>
                             <button type="button" class="Edit">Sửa</button>
                         </td>
                         <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
+                            <button type="button" class="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal" value={{this.id}}
+                                onclick="dalete(this)">Xóa</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>anothyhaidang</td>
-                        <td>admin@admin.com</td>
-                        <td>
-                            <button type="button" class="Edit">Sửa</button>
-                        </td>
-                        <td>
-                            <button
-                                type="button"
-                                class="Delete"
-                                data-bs-toggle="modal"
-                                data-bs-target="#deleteModal"
-                            >Xóa</button>
-                        </td>
-                    </tr>
+                    {{/each}}
                 </table>
             </div>
             <div
@@ -190,7 +126,9 @@
                             >Hủy bỏ</button>
                             <button
                                 type="submit"
+                                data-bs-dismiss="modal"
                                 class="btn btn-danger"
+                                id="delete-post"
                             >Xóa</button>
                         </div>
                     </div>
@@ -200,3 +138,46 @@
 
     </div>
 </section>
+<script>
+    function dalete(btn) {
+        let deletepost = document.getElementById("delete-post");
+
+        deletepost.onclick = () => {
+            let url = "/admin/admin-management/" + btn.value;
+            try{
+                $.post(url, function(data, status) {
+                    if(status == 'success') {
+                        document.getElementById(btn.value).remove();    
+                    }
+                });
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    }
+    function updateRole () {
+        const username = document.querySelector("input[name='username']").value;
+        const email = document.querySelector("input[name='email']").value;
+        const url = "/admin/role";
+        $.post(url, {username: username, email: email}, function(data) {
+            if(data === '') {
+                alert("Không tìm thấy người dùng phù hợp!")
+            } else {
+                let tr = document.createElement("tr");
+                tr.id = data.id;
+                tr.innerHTML = `<td>${data.id}</td>
+                                <td>${data.username}</td>
+                                <td>${data.email}</td>
+                                <td>
+                                    <button type="button" class="Edit">Sửa</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal" value=${data.id}
+                                        onclick="dalete(this)">Xóa</button>
+                                </td>`;
+                let table = document.getElementById("table");
+                table.appendChild(tr);
+            }
+        })
+    }
+</script>

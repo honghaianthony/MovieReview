@@ -1,6 +1,7 @@
 const e = require("cors");
 const { admin } = require("googleapis/build/src/apis/admin");
 const models = require("../models");
+const { Op } = require("sequelize");
 
 module.exports = {
   CreateActorPost: async function (req, res, next) {
@@ -91,89 +92,66 @@ module.exports = {
     const { id } = req.params;
     try {
       await models.CTV.destroy({ where: { id } });
+      res.send("Xóa thành công")
     } catch (error) {
       res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+      res.send("Lỗi!!!");
     }
   },
-  getReviewList: async function (req, res, next) {
-    try {
-      const reviewList = await models.Review.findAll({
-        include: [{ model: models.Movie }],
-        raw: true,
-      });
-      let result = [];
-      reviewList.forEach((e) => {
-        result.push({
-          name: e["Movie.name"],
-          id: e.id,
-          content: e.content,
-          rate: e.rate,
-        });
-      });
-      res.render("another-film-admin", { layout: "admin", review: result });
-    } catch (error) {
-      res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+  getUserList: async function (req, res, next) {
+    const users = await models.User.findAll({
+      where: {
+        role: 1,
+        id: { [Op.ne]: req.user.id },
+      },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    res.render("user-mannagement-admin", { layout: "admin", data: users });
+  },
+  deleteUserById: async function (req, res, next) {
+    const { id } = req.params;
+    if (req.user.role !== 2) {
+      res.send("Lỗi user không có quyền xóa!");
+    } else {
+      try {
+        await models.User.destroy({ where: { id } });
+        res.send("Thành công!");
+      } catch (error) {
+        res.send("Lỗi!!!");
+      }
     }
   },
-  deleteSelectedReview: async function (req, res, next) {
-    const { id } = req.body;
-    try {
-      await models.Review.destroy({ where: { id } });
-      res.redirect("review-another-movie");
-    } catch (error) {
-      res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
-    }
+  getAdminList: async function (req, res, next) {
+    const users = await models.User.findAll({
+      where: { role: 2, id: { [Op.ne]: req.user.id } },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    res.render("admin-mannagement-admin", { layout: "admin", data: users });
   },
-
-  getMovieList: async function (req, res, next) {
-    try {
-      let result = [];
-      const movie = await models.Movie.findAll();
-      movie.forEach(async (item) => {
-        let genres = [];
-        let sql = `select genres.type 
-                      from genremovies, genres
-                      where genremovies.genreId = genres.id
-                          and genremovies.movieId = :id`;
-        const genre = await models.sequelize.query(sql, {
-          replacements: {
-            id: item.id,
+  updateRole: async function (req, res, next) {
+    const {username, email} = req.body;
+    const user = await models.User.findOne({
+      where: {
+        username,
+        email,
+        role: 1,
+      },
+      raw: true,
+      attributes: { exclude: ["password"] },
+    });
+    if (user) {
+      await models.User.update(
+        { role: 2 },
+        {
+          where: {
+            username,
+            email,
           },
-          type: models.Sequelize.QueryTypes.SELECT,
-        });
-        genre.forEach((e) => {
-          genres.push(e.type);
-        });
-        result.push({
-          id: item.id,
-          name: item.name,
-          nation: item.nation,
-          description: item.description,
-          rating: item.rating,
-          poster: item.poster,
-          releaseYear: item.releaseYear,
-          genre: genres.join(", ").toString(),
-        });
-      });
-      res.render("review-movie-admin", { layout: "admin", movie: result });
-    } catch (error) {
-      res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+        }
+      );
     }
-  },
-  deleteSelectedMovie: async function (req, res, next) {
-    const { id } = req.body;
-    try {
-      await models.GenreMovie.destroy({ where: { movieId: id } });
-      await models.Review.destroy({ where: { movieId: id } });
-      await models.Movie.destroy({ where: { id } });
-      res.redirect("review-movie");
-    } catch (error) {
-      res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
-    }
+    res.send(user);
   },
 };
