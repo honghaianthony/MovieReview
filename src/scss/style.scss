@@ -1974,7 +1974,6 @@ i.fas.fa-video.flim {
 }
 /*review content*/
 .review-content {
-    padding-left: 35px;
     font-size: 20px;
     line-height: 1.5;
     color: #fff;
@@ -1983,7 +1982,6 @@ i.fas.fa-video.flim {
 .review-content .content-left,
 .content-right {
     width: 50%;
-    display: inline-block;
 }
 .review-content .content-right {
     margin-top: -150px;
@@ -1995,7 +1993,9 @@ i.fas.fa-video.flim {
 }
 .content-left .content {
     width: 90%;
-    margin-top: 20px;
+    margin-top: 20px;   
+    margin-left: -35px;
+
 }
 /*review editor */
 .post-editor {
