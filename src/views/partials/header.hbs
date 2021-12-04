@@ -1,8 +1,9 @@
+
 <header>
     <section class="header">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"> <img src="/images/logo.png" /></a></a>
+                <a class="navbar-brand" href="#"> <img src="/images/logo.png" /></a></a>
                 <div class="search">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Tìm kiếm Review Phim" />
@@ -37,12 +38,12 @@
                                 <div class="personal-menu tools-show">
                                     <div class="user-post">
                                         <div class="personal-avt-small">
-                                            <img src={{user.avatar}} alt="avt">
-                                            <div class="name">
-                                                <p class="full-name">{{{user.fullName}}}</p>  
-                                            </div>  
+                                            <img src={{user.avatar}} alt="avt">   
                                         </div>
-                                        <p class="username">{{{user.email}}}</p>
+                                        <div class="name">
+                                            <p class="full-name">{{{user.fullName}}}</p>  
+                                            <p class="username">{{{user.email}}}</p>
+                                        </div> 
                                     </div>
                                     <ul>
                                         {{#ifeq user.role 2}}

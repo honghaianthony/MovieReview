@@ -28,7 +28,7 @@ module.exports = {
     }
   },
   CreateMovie: async function (req, res, next) {
-    const { name, rating, releaseYear, type, description, trailer } = req.body;
+    const { name, rating, releaseYear, type, description, trailer, time, nation } = req.body;
 
     let poster = req.body.poster;
 
@@ -44,7 +44,9 @@ module.exports = {
         description,
         rating,
         releaseYear,
-        trailer
+        trailer,
+        length: time,
+        nation,
       });
       let types = type.split(", ");
       types.forEach(async (element) => {
@@ -79,13 +81,13 @@ module.exports = {
     });
   },
   deleteSelectedActor: async function (req, res, next) {
-    const { id } = req.body;
+    const { id } = req.params;
     try {
       await models.Actor.destroy({ where: { id } });
-      res.redirect("famous-actor-list");
+      res.send("Xóa thành công!");
     } catch (error) {
       res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+      res.send("Lỗi");
     }
   },
   getCTVForm: async function (req, res, next) {
@@ -101,10 +103,10 @@ module.exports = {
     const { id } = req.params;
     try {
       await models.CTV.destroy({ where: { id } });
-      res.send("Xóa thành công");
+      res.send("Xóa thành công!");
     } catch (error) {
       res.status(500);
-      res.send("Lỗi!!!");
+      res.send("Lỗi!");
     }
   },
   getUserList: async function (req, res, next) {
@@ -187,15 +189,15 @@ module.exports = {
     }
   },
   deleteSelectedMovie: async function (req, res, next) {
-    const { id } = req.body;
+    const { id } = req.params;
     try {
       await models.GenreMovie.destroy({ where: { movieId: id } });
       await models.Review.destroy({ where: { movieId: id } });
       await models.Movie.destroy({ where: { id } });
-      res.redirect("review-movie");
+      res.send("Xóa thành công");
     } catch (error) {
       res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+      res.send("Lỗi");
     }
   },
   getReviewList: async function (req, res, next) {
@@ -220,13 +222,13 @@ module.exports = {
     }
   },
   deleteSelectedReview: async function (req, res, next) {
-    const { id } = req.body;
+    const { id } = req.params;
     try {
       await models.Review.destroy({ where: { id } });
-      res.redirect("review-another-movie");
+      res.send("Xóa thành công!");
     } catch (error) {
       res.status(500);
-      res.render("error", { message: "Something went wrong!", layout: false });
+      res.send("Lỗi!");
     }
   },
 };

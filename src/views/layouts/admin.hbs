@@ -195,7 +195,7 @@
                             <ul class="sub-menu-info-show">
                                 <li>
                                     <a href="" class="user-banner">
-                                        <div class="info-user-left">
+                                        {{!-- <div class="info-user-left">
                                             <img src="{{user.avatar}}" alt="" />
                                         </div>
                                         <div
@@ -209,7 +209,16 @@
                                                 >{{{user.fullName}}}</span
                                             >
                                         </div>
-                                        <div class="admin-email"><span class="useremail">duydao591@gmail.com</span></div>
+                                        <div class="admin-email"><span class="useremail">duydao591@gmail.com</span></div> --}}
+                                    <div class="user-post">
+                                        <div class="personal-avt-small">
+                                            <img src={{user.avatar}} alt="avt">   
+                                        </div>
+                                        <div class="name">
+                                            <p class="full-name">{{{user.fullName}}}</p>  
+                                            <p class="username">{{{user.email}}}</p>
+                                        </div> 
+                                    </div>
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider" /></li>

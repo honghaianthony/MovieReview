@@ -7,10 +7,10 @@ const passportAuth = require("../config/passport");
 router.use(passportAuth.checkAdmin);
 
 router.get("/review-movie", adminController.getMovieList);
-router.post("/review-movie", adminController.deleteSelectedMovie);
+router.post("/review-movie/:id", adminController.deleteSelectedMovie);
 
 router.get("/famous-actor-list", adminController.getInforActor);
-router.post("/famous-actor-list", adminController.deleteSelectedActor);
+router.post("/famous-actor-list/:id", adminController.deleteSelectedActor);
 
 router.get("/famous-actor", function (req, res, next) {
   res.render("famous-actor-admin", { layout: "admin" });
@@ -23,7 +23,7 @@ router.get("/review-famous-movie", function (req, res, next) {
 router.post("/review-famous-movie", adminController.CreateMovie);
 
 router.get("/review-another-movie", adminController.getReviewList);
-router.post("/review-another-movie", adminController.deleteSelectedReview);
+router.post("/review-another-movie/:id", adminController.deleteSelectedReview);
 
 router.get("/user-management", adminController.getUserList);
 router.post("/user-management/:id", adminController.deleteUserById);

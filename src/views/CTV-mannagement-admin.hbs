@@ -27,53 +27,34 @@
                         </td>
                         <td>
                             <div class="btn_CTV_List">
-                                <button
-                                    type="button"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                    onclick="deleteCTV(this)"
-                                    value={{this.id}}
-                                    class="Edit btn btn-primary"
-                                >Xác nhận</button>
-                                <button
-                                    type="button"
-                                    class="Delete"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal"
-                                    onclick="deleteCTV(this)"
-                                    value={{this.id}}
-                                >Từ chối</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                    onclick="deleteCTV(this)" value={{this.id}} class="Edit btn btn-primary">Xác
+                                    nhận</button>
+                                <button type="button" class="Delete" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal" onclick="deleteCTV(this)" value={{this.id}}>Từ
+                                    chối</button>
                             </div>
                         </td>
                     </tr>
                     {{/each}}
                 </table>
             </div>
-            <div
-                class="modal fade"
-                id="deleteModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-            >
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Xác
                                 nhận từ chối</h5>
-                            <button
-                                type="button"
-                                class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            ></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             Bạn có chắc chắn từ chối đơn CTV này?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
-                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="delete-hard">Từ chối</button>
+                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="delete-hard">Từ
+                                chối</button>
                         </div>
                     </div>
                 </div>
@@ -84,13 +65,13 @@
 </section>
 <script>
     function deleteCTV(btn) {
-            let deletepost = document.getElementById("delete-hard");
-            deletepost.onclick = () => {
-                const url = "/admin/CTV-management/" + btn.value;
-                $.post(url, function(data) {
-                    alert(data);
-                    document.getElementById(btn.value).remove();
-                });
-            }
+        let deletepost = document.getElementById("delete-hard");
+        deletepost.onclick = () => {
+            const url = "/admin/CTV-management/" + btn.value;
+            $.post(url, function (data) {
+                alert(data);
+                document.getElementById(btn.value).remove();
+            });
         }
+    }
 </script>

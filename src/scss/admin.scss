@@ -159,9 +159,9 @@ body {
   margin-left: 30px;
   cursor: pointer;
 }
-.admin-info-right img {
-  width: 50px;
-  border-radius: 49%;
+.admin-info-right img{
+   width: 50px;
+   border-radius: 49%;
 }
 
 .admin-info-left .name {
@@ -185,18 +185,18 @@ body {
 }
 
 .sub-menu-info-show {
-  background-color: #fff;
-  width: 280px;
-  height: 300px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px 10px 10px 10px;
-  transition: 0.2s all ease-in-out;
-  margin-top: 10px;
-  top: 0px;
-  margin-left: -220px;
-  z-index: 1;
-  line-height: 2;
+    background-color: #fff;
+    width: 280px;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    transition: 0.2s all ease-in-out;
+    margin-top: 10px;
+    top: 0px;
+    margin-left: -220px;
+    z-index: 1;
+    line-height: 2;
 }
 
 .sub-menu-info ul {
@@ -208,7 +208,7 @@ body {
 }
 
 .sub-menu-info ul li {
-  padding: 10px 0;
+  padding: 7px 0;
   list-style-type: none;
   float: left;
 }
@@ -232,9 +232,9 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
-.info-user-left img {
-  width: 50px;
-  border-radius: 49%;
+.info-user-left  img{
+    width: 50px;
+    border-radius: 49%;
 }
 
 .info-user-right .username {
