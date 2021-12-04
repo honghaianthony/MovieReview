@@ -12,6 +12,7 @@ module.exports = {
     });
     movie.forEach(async (item) => {
       let genres = await getStringGenre(item.id);
+      const review = await models.Review.findOne({where: {movieId: item.id}});
       mainFilms.push({
         id: "film" + item.id,
         name: item.name,
@@ -19,6 +20,8 @@ module.exports = {
         rating: item.rating,
         poster: item.poster,
         genre: genres,
+        trailer: item.trailer,
+        reviewId: review.id,
       });
     });
 

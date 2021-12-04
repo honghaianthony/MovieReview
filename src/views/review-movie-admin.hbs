@@ -9,7 +9,7 @@
       <div class="review_movie_admin_center">
         <table>
           <tr>
-            <th>ID</th>
+            {{!-- <th>ID</th> --}}
             <th>Tên phim</th>
             <th>Mô tả</th>
             <th>Đánh giá</th>
@@ -21,9 +21,9 @@
           {{#each movie}}
             <form method="post">
               <tr>
-                <td>{{this.id}}</td>
+                {{!-- <td>{{this.id}}</td> --}}
                 <td>{{this.name}}</td>
-                <td>{{this.description}}</td>
+                <td style="overflow: hidden; text-overflow: ellipsis;">{{{this.description}}}</td>
                 <td>
                   {{this.rating}}/10
                 </td>
