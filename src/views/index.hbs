@@ -3,64 +3,48 @@
     <div class="main-film">
 
       {{#each mainFilms}}
-        <div id="infor-{{this.id}}">
-          <div class="logo">
-            <img src="/images/netflix.png" alt="logo" />
-            <p class="head">FILM</p>
-          </div>
-          <div class="info_film">
-            <p id="film-title" class="info-film-title">{{this.name}}</p>
-            <pre class="info-film-information">IMDb Rating 2021 Thể loại: {{this.genre}}</pre>
+      <div id="infor-{{this.id}}">
+        <div class="logo">
+          <img src="/images/netflix.png" alt="logo" />
+          <p class="head">FILM</p>
+        </div>
+        <div class="info_film">
+          <p id="film-title" class="info-film-title">{{this.name}}</p>
+          <pre class="info-film-information">IMDb Rating 2021 Thể loại: {{this.genre}}</pre>
 
-            <div class="rate-info">
-              <img class="rate-icon" src="/images/staricon.png" alt="star" />
-              <p>{{this.rating}}/10</p>
-            </div>
-          </div>
-          <div class="review-content">
-            <div class="content-left">
-              <div class="content">
-                {{this.description}}
-              </div>
-              <div class="button-watch">
-                <button class="button-watch-trailer">Xem Trailer</button>
-                <button class="button-watch-review">Xem Review</button>
-              </div>
-            </div>
-            <div class="content-right">
-              <img id="img-poster" src="{{this.poster}}" alt="poster" />
-            </div>
+          <div class="rate-info">
+            <img class="rate-icon" src="/images/staricon.png" alt="star" />
+            <p>{{this.rating}}/10</p>
           </div>
         </div>
+        <div class="review-content">
+          <div class="content-left">
+            <div class="content">
+              {{{this.description}}}
+            </div>
+            <div class="button-watch">
+              <button class="button-watch-trailer">Xem Trailer</button>
+              <button class="button-watch-review">Xem Review</button>
+            </div>
+          </div>
+          <div class="content-right">
+            <img id="img-poster" src="{{this.poster}}" alt="poster" />
+          </div>
+        </div>
+      </div>
       {{/each}}
 
     </div>
     <div class="others-film">
       <ul>
-        {{! <li id="container-film1"><img
-            id="film1"
-            src="/images/firm_spiderman.jpg"
-            alt=""
-          /></li>
-        <li id="container-film2"><img
-            id="film2"
-            src="/images/firm_like_a_boss.jpg"
-            alt=""
-          /></li>
-        <li id="container-film3"><img
-            id="film3"
-            src="/images/firm_inside_out.jpg"
-            alt=""
-          /></li>
-        <li id="container-film3"><img
-            id="film4"
-            src="/images/squid_game-1000.png"
-            alt=""
-          /></li> }}
+        {{! <li id="container-film1"><img id="film1" src="/images/firm_spiderman.jpg" alt="" /></li>
+        <li id="container-film2"><img id="film2" src="/images/firm_like_a_boss.jpg" alt="" /></li>
+        <li id="container-film3"><img id="film3" src="/images/firm_inside_out.jpg" alt="" /></li>
+        <li id="container-film3"><img id="film4" src="/images/squid_game-1000.png" alt="" /></li> }}
         {{#each mainFilms}}
-          <li id="container-{{this.id}}" >
-            <img id={{this.id}} src={{this.poster}} alt="" onclick="clickElementMainFilms(this)"/>
-          </li>
+        <li id="container-{{this.id}}">
+          <img id={{this.id}} src={{this.poster}} alt="" onclick="clickElementMainFilms(this)" />
+        </li>
         {{/each}}
       </ul>
     </div>
@@ -82,13 +66,13 @@
       <div class="middle-container">
         <div class="middle-content">
           {{#each otherFilms}}
-            <div class="content-item">
-              <img src={{this.poster}} alt={{this.name}}({{this.releaseYear}}) class="item-img" />
-              <div class="text-content">
-                <p>{{this.name}}</p>
-                <p>{{this.releaseYear}}</p>
-              </div>
+          <div class="content-item">
+            <img src={{this.poster}} alt={{this.name}}({{this.releaseYear}}) class="item-img" />
+            <div class="text-content">
+              <p>{{this.name}}</p>
+              <p>{{this.releaseYear}}</p>
             </div>
+          </div>
           {{/each}}
         </div>
       </div>
@@ -299,10 +283,10 @@
         </p>
 
         <form class="collaborators-form row" action="/" method="post">
-          <input type="text" placeholder="Họ và tên" name="fullname"/>
-          <input type="email" placeholder="Email" name="email"/>
-          <input type="tel" placeholder="Số điện thoại" name="phone"/>
-          <input type="text" placeholder="Sở trường" name="forte"/>
+          <input type="text" placeholder="Họ và tên" name="fullname" />
+          <input type="email" placeholder="Email" name="email" />
+          <input type="tel" placeholder="Số điện thoại" name="phone" />
+          <input type="text" placeholder="Sở trường" name="forte" />
           <button type="submit">Đăng ký</button>
         </form>
 

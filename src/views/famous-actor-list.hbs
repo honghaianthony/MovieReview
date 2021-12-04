@@ -6,12 +6,7 @@
           <span>Danh sách các diễn viên</span>
         </div>
         <div class="famous_actor_list_admin_top_btn">
-          <a
-            href="/admin/famous-actor"
-            class="btn btn-primary"
-            role="button"
-            aria-pressed="true"
-          >Thêm diễn viên</a>
+          <a href="/admin/famous-actor" class="btn btn-primary" role="button" aria-pressed="true">Thêm diễn viên</a>
         </div>
       </div>
       <div class="famous_actor_list_admin_center">
@@ -24,27 +19,49 @@
             <th>Thao tác</th>
           </tr>
           {{#each actorList}}
-            <form method="post">
-              <tr id={{this.id}}>
-                <td>{{this.id}}</td>
-                <td>{{this.name}}</td>
-                <td>{{this.img}}</td>
-                <td>
-                  {{this.description}}
-                </td>
-                <td>
-                  <button
-                    type="submit"
-                    class="Delete"
-                    name="id"
-                    value={{this.id}}
-                  >Xóa</button>
-                </td>
-              </tr>
-            </form>
+          <tr id={{this.id}}>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.img}}</td>
+            <td>
+              {{this.description}}
+            </td>
+            <td>
+              <button type="button" class="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                onclick="deleteActor(this)" value={{this.id}}>Xóa</button>
+            </td>
+          </tr>
           {{/each}}
         </table>
+      </div>
+      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có chắc chắn xóa diễn viên này?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+              <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="delete-hard">Đồng ý</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+  function deleteActor(btn) {
+    let deletepost =
+      document.getElementById("delete-hard"); deletepost.onclick = () => {
+        const url
+          = "/admin/famous-actor-list/" + btn.value; $.post(url, function (actorList) {
+            alert(actorList); document.getElementById(btn.value).remove();
+          });
+      }
+  }
+</script>
