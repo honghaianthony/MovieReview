@@ -28,7 +28,7 @@ module.exports = {
     }
   },
   CreateMovie: async function (req, res, next) {
-    const { name, rating, releaseYear, type, description, trailer } = req.body;
+    const { name, rating, releaseYear, type, description, trailer, time, nation } = req.body;
 
     let poster = req.body.poster;
 
@@ -44,7 +44,9 @@ module.exports = {
         description,
         rating,
         releaseYear,
-        trailer
+        trailer,
+        length: time,
+        nation,
       });
       let types = type.split(", ");
       types.forEach(async (element) => {
