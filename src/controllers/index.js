@@ -13,6 +13,9 @@ module.exports = {
     movie.forEach(async (item) => {
       let genres = await getStringGenre(item.id);
       const review = await models.Review.findOne({where: {movieId: item.id}});
+      if (!review) {
+        review.id = null
+      }
       mainFilms.push({
         id: "film" + item.id,
         name: item.name,

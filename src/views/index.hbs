@@ -23,12 +23,16 @@
                 {{this.description}}
               </div>
               <div class="button-watch">
+                {{#if this.trailer}}
                 <button class="button-watch-trailer" onclick="location.href='{{this.trailer}}'">
                   Xem Trailer
                 </button>
+                {{/if}}
+                {{#if this.reviewId}}
                 <button class="button-watch-review" onclick="location.href='/film-review/{{this.reviewId}}'">
                   Xem Review
                 </button>
+                {{/if}}
               </div>
             </div>
             <div class="content-right">
