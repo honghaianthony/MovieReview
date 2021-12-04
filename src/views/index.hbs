@@ -18,30 +18,30 @@
           </div>
           <div class="review-content">
             <div class="content-left">
-              <div class="content">
-                {{{this.description}}}
-              </div>
-              <div class="button-watch">
-                {{#if this.trailer}}
-                <button class="button-watch-trailer" onclick="location.href='{{this.trailer}}'">
-                  Xem Trailer
-                </button>
-                {{/if}}
-                {{#if this.reviewId}}
-                <button class="button-watch-review" onclick="location.href='/film-review/{{this.reviewId}}'">
-                  Xem Review
-                </button>
-                {{/if}}
-              </div>
+                <div class="content">
+                    {{{this.description}}}
+                </div>
+                <div class="button-watch-and-review">
+                    <div class="button-watch">
+                    {{#if this.trailer}}
+                    <button class="button-watch-trailer" onclick="location.href='{{this.trailer}}'">
+                      Xem Trailer
+                    </button>
+                    {{/if}}
+                    {{#if this.reviewId}}
+                    <button class="button-watch-review" onclick="location.href='/film-review/{{this.reviewId}}'">
+                      Xem Review
+                    </button>
+                    {{/if}}
+                </div>
+              </div>               
             </div>
-            <div class="button-watch">
-              <button class="button-watch-trailer">Xem Trailer</button>
-              <button class="button-watch-review">Xem Review</button>
+            <div class="content-right">
+              <img id="img-poster" src="{{this.poster}}" alt="poster" />
             </div>
           </div>
-          <div class="content-right">
-            <img id="img-poster" src="{{this.poster}}" alt="poster" />
-          </div>
+
+
         </div>
       </div>
       {{/each}}
