@@ -28,7 +28,15 @@ module.exports = {
     }
   },
   CreateMovie: async function (req, res, next) {
-    const { name, poster, rating, releaseYear, type, description } = req.body;
+    const { name, rating, releaseYear, type, description, trailer } = req.body;
+
+    let poster = req.body.poster;
+
+    if (poster.indexOf("sharing")) {
+      const arr = poster.split("/");
+      poster = "https://drive.google.com/uc?id=" + arr[5];
+    }
+
     try {
       const getMovie = await models.Movie.create({
         name,
@@ -36,8 +44,8 @@ module.exports = {
         description,
         rating,
         releaseYear,
+        trailer
       });
-      console.log(getMovie.id);
       let types = type.split(", ");
       types.forEach(async (element) => {
         const getGenre = await models.Genre.create({
@@ -48,7 +56,7 @@ module.exports = {
           genreId: getGenre.id,
         });
       });
-      res.redirect("review-famous-movie");
+      res.redirect("/review-movie");
     } catch (error) {
       res.status(500);
       res.render("error", { message: "Something went wrong!", layout: false });

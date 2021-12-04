@@ -31,6 +31,9 @@ module.exports = (sequelize, Sequelize) => {
       poster: {
         type: Sequelize.STRING,
       },
+      trailer: {
+        type: Sequelize.STRING,
+      }
     },
     {
       sequelize,

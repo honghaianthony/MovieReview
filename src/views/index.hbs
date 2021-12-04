@@ -23,8 +23,12 @@
                 {{this.description}}
               </div>
               <div class="button-watch">
-                <button class="button-watch-trailer">Xem Trailer</button>
-                <button class="button-watch-review">Xem Review</button>
+                <button class="button-watch-trailer" onclick="location.href='{{this.trailer}}'">
+                  Xem Trailer
+                </button>
+                <button class="button-watch-review" onclick="location.href='/film-review/{{this.reviewId}}'">
+                  Xem Review
+                </button>
               </div>
             </div>
             <div class="content-right">
@@ -37,26 +41,6 @@
     </div>
     <div class="others-film">
       <ul>
-        {{! <li id="container-film1"><img
-            id="film1"
-            src="/images/firm_spiderman.jpg"
-            alt=""
-          /></li>
-        <li id="container-film2"><img
-            id="film2"
-            src="/images/firm_like_a_boss.jpg"
-            alt=""
-          /></li>
-        <li id="container-film3"><img
-            id="film3"
-            src="/images/firm_inside_out.jpg"
-            alt=""
-          /></li>
-        <li id="container-film3"><img
-            id="film4"
-            src="/images/squid_game-1000.png"
-            alt=""
-          /></li> }}
         {{#each mainFilms}}
           <li id="container-{{this.id}}" >
             <img id={{this.id}} src={{this.poster}} alt="" onclick="clickElementMainFilms(this)"/>
