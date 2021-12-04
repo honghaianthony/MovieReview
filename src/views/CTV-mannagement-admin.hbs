@@ -32,6 +32,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#deleteModal"
                                     onclick="deleteCTV(this)"
+                                    value={{this.id}}
                                     class="Edit btn btn-primary"
                                 >Xác nhận</button>
                                 <button
@@ -84,7 +85,6 @@
 <script>
     function deleteCTV(btn) {
             let deletepost = document.getElementById("delete-hard");
-
             deletepost.onclick = () => {
                 const url = "/admin/CTV-management/" + btn.value;
                 $.post(url, function(data) {
@@ -92,6 +92,5 @@
                     document.getElementById(btn.value).remove();
                 });
             }
-
         }
 </script>
