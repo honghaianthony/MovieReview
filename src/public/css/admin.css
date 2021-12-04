@@ -203,15 +203,19 @@ body {
   border-radius: 49%; }
 
 .info-user-right .username {
-  font-size: 13px;
-  font-weight: 700;
-  font-family: Arial; }
-
-.info-user-right .name {
   font-size: 15px;
   font-weight: 700;
   font-family: Arial;
-  color: #4c9dfb; }
+  color: #4c9dfb;
+  display: block;
+  margin: 15px; }
+
+.admin-email {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Arial;
+  color: #4c9dfb;
+  margin: 10px 0 0 20px; }
 
 .another-info-user img {
   padding-right: 20px; }

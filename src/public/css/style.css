@@ -203,15 +203,19 @@ body {
   border-radius: 49%; }
 
 .info-user-right .username {
-  font-size: 13px;
-  font-weight: 700;
-  font-family: Arial; }
-
-.info-user-right .name {
   font-size: 15px;
   font-weight: 700;
   font-family: Arial;
-  color: #4c9dfb; }
+  color: #4c9dfb;
+  display: block;
+  margin: 15px; }
+
+.admin-email {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Arial;
+  color: #4c9dfb;
+  margin: 10px 0 0 20px; }
 
 .another-info-user img {
   padding-right: 20px; }
@@ -773,6 +777,9 @@ a {
 .nav-item .personal-menu {
   top: 30px;
   left: -180px; }
+
+.nav-item .personal-menu .personal-avt-small {
+  display: flex; }
 
 .nav-item .personal-menu img {
   border-radius: 49%; }
@@ -2386,6 +2393,24 @@ i.fas.fa-video.flim {
   .post-editor .movie-selector {
     margin-bottom: 50px; }
 
+/*khanh duy*/
+.post-editor form {
+  position: relative; }
+
+.fa-chevron-down {
+  position: absolute;
+  top: 158px;
+  right: 0px;
+  opacity: 0.5; }
+
+.fa-chevron-down:hover {
+  cursor: pointer;
+  transform: scale(1.08); }
+
+.movie-selector:hover {
+  cursor: pointer; }
+
+/*khanh duy*/
 /*review content*/
 .button-watch {
   margin-top: 30px; }
@@ -2545,10 +2570,13 @@ i.fas.fa-video.flim {
 .cover-image .personal-avt-small {
   margin-top: 25px;
   margin-right: 40px;
-  position: relative; }
+  position: relative;
+  display: flex; }
 
 .cover-image .personal-avt-small img {
-  width: 50px; }
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%; }
 
 .personal-menu {
   position: absolute;
@@ -2575,23 +2603,25 @@ i.fas.fa-video.flim {
   color: #265ce9; }
 
 .user-post {
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
 
 .user-post .personal-avt-small img {
   width: 30px;
   margin: -10px 0 10px 10px; }
 
 .user-post .name {
-  margin-left: -10px; }
+  margin-left: 20px; }
 
 .user-post .name .full-name {
-  margin: 15px 0 -10px;
   color: #000; }
 
 .user-post .username {
   color: #3e7fe1;
   font-weight: 600;
-  margin-bottom: -1px; }
+  margin-bottom: -1px;
+  margin-left: 20px;
+  margin-top: -10px; }
 
 .personal-infor {
   display: flex;
@@ -2856,6 +2886,10 @@ i.fas.fa-video.flim {
     margin-top: 20px; } }
 
 /*personal-page*/
+/*post*/
+.post-title {
+  text-align: center; }
+
 /* Another film*/
 .another-flim-container {
   position: relative; }
