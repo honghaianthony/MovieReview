@@ -190,4 +190,35 @@ module.exports = {
       res.render("error", { message: "Something went wrong!", layout: false });
     }
   },
+  getReviewList: async function (req, res, next) {
+    try {
+      const reviewList = await models.Review.findAll({
+        include: [{ model: models.Movie }],
+        raw: true,
+      });
+      let result = [];
+      reviewList.forEach((e) => {
+        result.push({
+          name: e["Movie.name"],
+          id: e.id,
+          content: e.content,
+          rate: e.rate,
+        });
+      });
+      res.render("another-film-admin", { layout: "admin", review: result });
+    } catch (error) {
+      res.status(500);
+      res.render("error", { message: "Something went wrong!", layout: false });
+    }
+  },
+  deleteSelectedReview: async function (req, res, next) {
+    const { id } = req.body;
+    try {
+      await models.Review.destroy({ where: { id } });
+      res.redirect("review-another-movie");
+    } catch (error) {
+      res.status(500);
+      res.render("error", { message: "Something went wrong!", layout: false });
+    }
+  },
 };
