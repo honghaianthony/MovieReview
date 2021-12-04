@@ -37,12 +37,12 @@
                                 <div class="personal-menu tools-show">
                                     <div class="user-post">
                                         <div class="personal-avt-small">
-                                            <img src={{user.avatar}} alt="avt">
-                                            <div class="name">
-                                                <p class="full-name">{{{user.fullName}}}</p>  
-                                            </div>  
+                                            <img src={{user.avatar}} alt="avt">   
                                         </div>
-                                        <p class="username">{{{user.email}}}</p>
+                                        <div class="name">
+                                            <p class="full-name">{{{user.fullName}}}</p>  
+                                            <p class="username">{{{user.email}}}</p>
+                                        </div> 
                                     </div>
                                     <ul>
                                         {{#ifeq user.role 2}}

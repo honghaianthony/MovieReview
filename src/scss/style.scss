@@ -132,19 +132,6 @@ a {
     top: 30px;
     left: -180px;
 }
-.nav-item .personal-menu .personal-avt-small
-{
-    display: flex;
-}
-.nav-item .personal-menu img
-{
-  border-radius: 49%;
-}
-.nav-item .personal-menu .personal-avt-small
-{
-    margin: 30px 20px 0 5px;
-}
-
 .nav-item :hover .avt-user-login
 {
     cursor: pointer !important;
@@ -2214,7 +2201,6 @@ i.fas.fa-video.flim {
   position: absolute;
   top: 40px;
   left: -230px;
-  width: 300px;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -2238,24 +2224,38 @@ i.fas.fa-video.flim {
   display: flex;
   flex-direction: column;
 }
+.user-post .personal-avt-small
+{
+    margin:auto;
+    margin-top: 20px;
+}
 .user-post .personal-avt-small img {
-  width: 30px;
-  margin: -10px 0 10px 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 49%;
 }
 .user-post .name
 {
-    margin-left: 20px;
-
+    margin:auto;
+    text-align: center;
 }
-.user-post .name .full-name {
-  color: #000;
+.full-name,.username{
+    margin-bottom: -1rem;
+}
+.user-post .full-name
+{
+    color: #000;
+    margin: 0px 5px 1px;
+
 }
 .user-post .username {
   color: #3e7fe1;
   font-weight: 600;
-  margin-bottom: -1px;
-  margin-left: 20px;
-  margin-top: -10px;
+  transform: rotateY(45deg);
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+
+
 }
 .personal-infor {
   display: flex;
@@ -2375,12 +2375,9 @@ i.fas.fa-video.flim {
   width: 100%;
   justify-content: space-between;
 }
-.personal-post .infor-post .user-post {
-  display: flex;
-  justify-content: space-between;
-}
 .user-post .personal-avt-small img {
   width: 50px;
+  height: 50px;
 }
 .user-post .name-and-time {
   margin-left: 10px;
