@@ -29,11 +29,17 @@
                             <div class="btn_CTV_List">
                                 <button
                                     type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                    onclick="deleteCTV(this)"
+                                    value={{this.id}}
                                     class="Edit btn btn-primary"
                                 >Xác nhận</button>
                                 <button
                                     type="button"
                                     class="Delete"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
                                     onclick="deleteCTV(this)"
                                     value={{this.id}}
                                 >Từ chối</button>
@@ -43,7 +49,7 @@
                     {{/each}}
                 </table>
             </div>
-            {{!-- <div
+            <div
                 class="modal fade"
                 id="deleteModal"
                 tabindex="-1"
@@ -66,22 +72,25 @@
                             Bạn có chắc chắn từ chối đơn CTV này?
                         </div>
                         <div class="modal-footer">
-                            <button
-                                type="button"
-                                class="btn btn-secondary"
-                                data-bs-dismiss="modal"
-                            >Hủy bỏ</button>
-                            <button type="submit" class="btn btn-danger" id="delete-hard" onclick="delete()">Từ chối</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="delete-hard">Từ chối</button>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
 
     </div>
 </section>
 <script>
     function deleteCTV(btn) {
-        console.log(btn.value);
-    }
+            let deletepost = document.getElementById("delete-hard");
+            deletepost.onclick = () => {
+                const url = "/admin/CTV-management/" + btn.value;
+                $.post(url, function(data) {
+                    alert(data);
+                    document.getElementById(btn.value).remove();
+                });
+            }
+        }
 </script>

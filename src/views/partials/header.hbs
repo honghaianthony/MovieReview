@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header>
     <section class="header">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -97,4 +98,105 @@
             {
                 document.querySelector(".personal-menu").classList.toggle("tools-show")
             }
+=======
+<header>
+    <section class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"> <img src="/images/logo.png" /></a></a>
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm Review Phim" />
+                </div>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+                </button>
+                   <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="/"
+                            >Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Điều khoản</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/film-review">Review Phim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/aboutus">Về chúng tôi</a>
+                        </li>
+                        {{#if user}}
+                            <li class="nav-item nav-item-avt">
+                                <a class="avt-user-login nav-link" ><img src={{user.avatar}} alt=""></a>
+                                <div class="personal-menu tools-show">
+                                    <div class="user-post">
+                                        <div class="personal-avt-small">
+                                            <img src={{user.avatar}} alt="avt">
+                                            <div class="name">
+                                                <p class="full-name">{{{user.fullName}}}</p>  
+                                            </div>  
+                                        </div>
+                                        <p class="username">{{{user.email}}}</p>
+                                    </div>
+                                    <ul>
+                                        {{#ifeq user.role 2}}
+                                        <li><i class="fas fa-pencil-alt"></i><a href="/admin/user-management">Admin Page</a></li>
+                                        <li><i class="fas fa-pencil-alt"></i><a href="/post">Đăng bài viết</a></li>
+                                        {{/ifeq}}
+                                        <li><i class="fas fa-id-card"></i><a href="/personal-page">Trang cá nhân</a></li>
+                                        <li><i class="fas fa-lock"></i><a href="/change-password">Đổi mật khẩu</a></li>
+                                        <li><i class="fas fa-sign-out-alt"></i>
+                                            <form action="/logout" method="post">
+                                                <button type="submit">Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        {{else}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Đăng nhập</a>
+                            </li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="slider">
+        <div class="aspect-ratio-169">
+            <img src="/images/banner1.jpg" />
+            <img src="/images/banner.jpg" />
+            <img src="/images/banner3.jpg" />
+            <img src="/images/banner2.jpg" />
+
+        </div>
+
+        <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+    </section>
+</header>
+<script>
+     var avt=document.querySelector(".avt-user-login");
+             if(avt)
+             {
+                avt.addEventListener("click",displaymenu2); 
+             }
+            function displaymenu2()
+            {
+                document.querySelector(".personal-menu").classList.toggle("tools-show")
+            }
+>>>>>>> 4da9d5a15a853e85890549bc101634eb9a1ecee1
 </script>

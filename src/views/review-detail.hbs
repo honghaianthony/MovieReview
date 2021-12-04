@@ -29,7 +29,11 @@
                     </div>
                 </div>
                 <div class="review-detail-audience">
+                    {{#if data.rate}}
                     Đánh giá từ khán giả: {{data.rate}}/5
+                    {{else}}
+                    Đánh giá từ khán giả: Chưa được đánh giá.
+                    {{/if}}
                     <i class="fas fa-star"></i>
                 </div>
             </div>
