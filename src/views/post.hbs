@@ -1,17 +1,22 @@
 <section class="post">
     <div class="container">
         <div class="post-editor">
+            <div class="post-title">
+                <h2>Đăng bài Review</h2>
+            </div>
             <form method="post" action="/post">
                 <label for="rate">Lượt bình chọn</label>
                 <input name="rate" class="form-control" />
                 <label for="image">Link Hình ảnh</label>
                 <input name="image" class="form-control" />
-                <label for="movieId">Phim: </label>
+                <label for="movieId"><i class="fas fa-clipboard-list"></i>Phim: </label>
+                <i class="fas fa-chevron-down"></i>
                 <select name="movieId" class="form-control movie-selector">
                     {{#each data}}
-                        <option value={{this.id}}>{{this.name}}</option>
+                        <option value={{this.id}}>{{this.name}} </option>
                     {{/each}}
                 </select>
+               
                 <textarea name="context" id="context" rows="10" cols="80">
                     This is my textarea to be replaced with CKEditor 4.
                 </textarea>

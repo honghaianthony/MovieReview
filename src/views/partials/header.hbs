@@ -38,11 +38,11 @@
                                     <div class="user-post">
                                         <div class="personal-avt-small">
                                             <img src={{user.avatar}} alt="avt">
+                                            <div class="name">
+                                                <p class="full-name">{{{user.fullName}}}</p>  
+                                            </div>  
                                         </div>
-                                        <div class="name">
-                                            <p class="full-name">{{{user.fullName}}}</p>
-                                            <p class="username">{{{user.email}}}</p>
-                                        </div>     
+                                        <p class="username">{{{user.email}}}</p>
                                     </div>
                                     <ul>
                                         {{#ifeq user.role 2}}

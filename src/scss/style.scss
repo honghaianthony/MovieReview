@@ -128,7 +128,12 @@ a {
   top: 30px;
   left: -180px;
 }
-.nav-item .personal-menu img {
+.nav-item .personal-menu .personal-avt-small
+{
+    display: flex;
+}
+.nav-item .personal-menu img
+{
   border-radius: 49%;
 }
 .nav-item .personal-menu .personal-avt-small {
@@ -2001,7 +2006,28 @@ i.fas.fa-video.flim {
     margin-bottom: 50px;
   }
 }
-
+/*khanh duy*/
+.post-editor form
+{
+    position: relative;
+}
+.fa-chevron-down
+{
+    position: absolute;
+    top:158px;
+    right: 0px;
+    opacity: 0.5;
+}
+.fa-chevron-down:hover
+{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+.movie-selector:hover
+{
+    cursor: pointer;
+}
+/*khanh duy*/
 /*review content*/
 .button-watch {
   margin-top: 30px;
@@ -2161,12 +2187,14 @@ i.fas.fa-video.flim {
   margin-left: 60px;
 }
 .cover-image .personal-avt-small {
-  margin-top: 25px;
-  margin-right: 40px;
-  position: relative;
+    margin-top: 25px;
+    margin-right: 40px;
+    position: relative;
+    display: flex;
 }
 .cover-image .personal-avt-small img {
   width: 50px;
+  height: 50px;
 }
 .personal-menu {
   position: absolute;
@@ -2194,22 +2222,26 @@ i.fas.fa-video.flim {
 }
 .user-post {
   display: flex;
+  flex-direction: column;
 }
 .user-post .personal-avt-small img {
   width: 30px;
   margin: -10px 0 10px 10px;
 }
-.user-post .name {
-  margin-left: -10px;
+.user-post .name
+{
+    margin-left: 20px;
+
 }
 .user-post .name .full-name {
-  margin: 15px 0 -10px;
   color: #000;
 }
 .user-post .username {
   color: #3e7fe1;
   font-weight: 600;
   margin-bottom: -1px;
+  margin-left: 20px;
+  margin-top: -10px;
 }
 .personal-infor {
   display: flex;
@@ -2494,6 +2526,11 @@ i.fas.fa-video.flim {
   }
 }
 /*personal-page*/
+/*post*/
+.post-title
+{
+    text-align: center  ;
+}
 //end KhanhDuy
 // Giao
 /* Another film*/
