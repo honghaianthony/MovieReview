@@ -5,23 +5,25 @@ module.exports = {
   getAllMovie: async function (req, res, next) {
     const result = [];
     const movie = await models.Movie.findAll();
-    await movie.forEach(async (item) => {
-      const stringGenre = await getStringGenre(item.id);
-      const review = await models.Review.findOne({where: {movieId: item.id}})
-      if(review) {
+    for(let i = 0; i < movie.length; i++) {
+      const stringGenre = await getStringGenre(movie[i].id);
+      const review = await models.Review.findOne({
+        where: { movieId: movie[i].id },
+      });
+      if(review !== null) {
         result.push({
           reviewId: review.id,
-          name: item.name,
-          description: item.description,
-          rating: item.rating,
-          releaseYear: item.releaseYear,
-          nation: item.nation,
-          length: item["length"],
-          poster: item.poster,
+          name: movie[i].name,
+          poster: movie[i].poster,
           genre: stringGenre,
+          rating: movie[i].rating,
+          // description: movie[i].description,
+          // releaseYear: movie[i].releaseYear,
+          // nation: movie[i].nation,
+          // length: movie[i]["length"],
         });
       }
-    });
+    };
     res.render("film-review", { films: result });
   },
   getMovieReviewById: async function (req, res, next) {
