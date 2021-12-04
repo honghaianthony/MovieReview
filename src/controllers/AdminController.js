@@ -8,7 +8,7 @@ module.exports = {
   CreateActorPost: async function (req, res, next) {
     const { name, img, description, rate, context, title } = req.body;
     let image;
-    if (img.indexOf("sharing")) {
+    if (img.indexOf("/view?usp=sharing") !== -1) {
       const arr = img.split("/");
       image = "https://drive.google.com/uc?id=" + arr[5];
     }
@@ -32,7 +32,7 @@ module.exports = {
 
     let poster = req.body.poster;
 
-    if (poster.indexOf("sharing")) {
+    if (poster.indexOf("/view?usp=sharing") !== -1) {
       const arr = poster.split("/");
       poster = "https://drive.google.com/uc?id=" + arr[5];
     }

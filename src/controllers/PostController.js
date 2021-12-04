@@ -5,9 +5,9 @@ module.exports = {
         const { context, movieId, rate } = req.body;
         let image = req.body.image;
 
-        if(image.indexOf("sharing")) {
-            const arr = image.split("/");
-            image = "https://drive.google.com/uc?id="+ arr[5];
+        if (image.indexOf("/view?usp=sharing") !== -1) {
+          const arr = image.split("/");
+          image = "https://drive.google.com/uc?id=" + arr[5];
         }
         const mid = parseInt(movieId);
         try {
