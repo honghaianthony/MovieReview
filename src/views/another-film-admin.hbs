@@ -14,18 +14,24 @@
           <tr>
             <th>ID</th>
             <th>Tên bài Review</th>
-            <th>Mô tả</th>
             <th>Đánh giá</th>
-            <th>Thao tác</th>
+            <th>Xem</th>
+            <th>Xóa</th>
           </tr>
           {{#each review}}
             <form method="post">
               <tr>
                 <td>{{this.id}}</td>
                 <td>{{this.name}}</td>
-                <td>{{this.content}}</td>
                 <td>
                   {{this.rate}}/5
+                </td>
+                <td>
+                  <button
+                    class="Edit"
+                    type="button"
+                    onclick="location.href='/film-review/{{this.id}}';"
+                  >Xem</button>
                 </td>
                 <td>
                   <button

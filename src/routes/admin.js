@@ -22,9 +22,8 @@ router.get("/review-famous-movie", function (req, res, next) {
 });
 router.post("/review-famous-movie", adminController.CreateMovie);
 
-router.get("/review-another-movie", function (req, res, next) {
-  res.render("another-film-admin", { layout: "admin" });
-});
+router.get("/review-another-movie", adminController.getReviewList);
+router.post("/review-another-movie", adminController.deleteSelectedReview);
 
 router.get("/user-management", adminController.getUserList);
 router.post("/user-management/:id", adminController.deleteUserById);
