@@ -14,7 +14,7 @@
           >Thêm diễn viên</a>
         </div>
       </div>
-      <form class="famous_actor_list_admin_center" method="post">
+      <div class="famous_actor_list_admin_center">
         <table>
           <tr>
             <th>ID</th>
@@ -24,21 +24,27 @@
             <th>Thao tác</th>
           </tr>
           {{#each actorList}}
-            <tr>
-              <td>{{this.id}}</td>
-              <td>{{this.name}}</td>
-              <td>{{this.img}}</td>
-              <td>
-                {{this.description}}
-              </td>
-              <td>
-                <button name="action" type="submit" class="Delete">Xóa</button>
-              </td>
-            </tr>
+            <form method="post">
+              <tr id={{this.id}}>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.img}}</td>
+                <td>
+                  {{this.description}}
+                </td>
+                <td>
+                  <button
+                    type="submit"
+                    class="Delete"
+                    name="id"
+                    value={{this.id}}
+                  >Xóa</button>
+                </td>
+              </tr>
+            </form>
           {{/each}}
         </table>
-      </form>
+      </div>
     </div>
-
   </div>
 </section>
