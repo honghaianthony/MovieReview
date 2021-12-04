@@ -5,7 +5,6 @@ const { getStringGenre } = require('../utilities/Genre');
 module.exports = {
   getIndexInfor: async function (req, res, next) {
     let mainFilms = [];
-    let otherFilms = [];
     // let actor = [];
     const movie = await models.Movie.findAll({
       limit: 4,
@@ -13,8 +12,11 @@ module.exports = {
     movie.forEach(async (item) => {
       let genres = await getStringGenre(item.id);
       const review = await models.Review.findOne({where: {movieId: item.id}});
+      let reviewId;
       if (!review) {
-        review.id = null
+        reviewId = null;
+      } else {
+        reviewId = review.id;
       }
       mainFilms.push({
         id: "film" + item.id,
@@ -24,20 +26,14 @@ module.exports = {
         poster: item.poster,
         genre: genres,
         trailer: item.trailer,
-        reviewId: review.id,
+        reviewId: reviewId,
       });
     });
 
     const otherMovies = await models.Movie.findAll({
       offset: 4,
-      limit: 5,
-    });
-    otherMovies.forEach((item) => {
-      otherFilms.push({
-        name: item.name,
-        releaseYear: item.releaseYear,
-        poster: item.poster,
-      });
+      limit: 3,
+      raw: true,
     });
     // const actorList = await models.Actor.findAll({
     //   limit: 4,
@@ -51,7 +47,7 @@ module.exports = {
     // });
     res.render("index", {
       mainFilms: mainFilms,
-      otherFilms: otherFilms,
+      otherFilms: otherMovies,
       // actor: actor,
     });
   },

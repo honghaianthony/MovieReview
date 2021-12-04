@@ -58,7 +58,7 @@ module.exports = {
           genreId: getGenre.id,
         });
       });
-      res.redirect("/review-movie");
+      res.redirect("/admin/review-movie");
     } catch (error) {
       res.status(500);
       res.render("error", { message: "Something went wrong!", layout: false });
