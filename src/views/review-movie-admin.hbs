@@ -19,31 +19,51 @@
             <th>Thao tác</th>
           </tr>
           {{#each movie}}
-            <form method="post">
-              <tr>
-                {{!-- <td>{{this.id}}</td> --}}
-                <td>{{this.name}}</td>
-                <td style="overflow: hidden; text-overflow: ellipsis;">{{{this.description}}}</td>
-                <td>
-                  {{this.rating}}/10
-                </td>
-                <td>{{this.nation}}</td>
-                <td>{{this.releaseYear}}</td>
-                <td>{{this.genre}}</td>
-                <td>
-                  <button
-                    name="id"
-                    value={{this.id}}
-                    type="submit"
-                    class="Delete"
-                  >Xóa</button>
-                </td>
-              </tr>
-            </form>
+          <tr id={{this.id}}>
+            <td>{{this.name}}</td>
+            <td>{{{this.description}}}</td>
+            <td>
+              {{this.rating}}/10
+            </td>
+            <td>{{this.nation}}</td>
+            <td>{{this.releaseYear}}</td>
+            <td>{{this.genre}}</td>
+            <td>
+              <button type="button" class="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                onclick="deleteMovie(this)" value={{this.id}}>Xóa</button>
+            </td>
+          </tr>
           {{/each}}
         </table>
       </div>
+      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Bạn có chắc chắn xóa bộ phim này?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+              <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="delete-hard">Đồng ý</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 </section>
+<script>
+  function deleteMovie(btn) {
+    let deletepost =
+      document.getElementById("delete-hard"); deletepost.onclick = () => {
+        const url
+          = "/admin/review-movie/" + btn.value; $.post(url, function (movie) {
+            alert(movie); document.getElementById(btn.value).remove();
+          });
+      }
+  }
+</script>
