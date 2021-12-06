@@ -37,4 +37,29 @@ module.exports = {
         }
         res.render("post", { layout: "main", data: result});
     },
+    getEditPost: async function (req, res, next) {
+        const {id} = req.params;
+        const review = await models.Review.findByPk(id, {raw: true});
+        const movie = await models.Movie.findByPk(review.movieId, {
+          raw: true,
+        });
+
+        res.render("post-edit", { layout: "main", data: review, movie: movie });
+    },
+    editPost: async function (req, res, next) {
+        const {context, id} = req.body;
+        try {
+            await models.Review.update(
+              { content: context },
+              {
+                where: {
+                  id: id,
+                },
+              }
+            );
+            res.redirect("/film-review/" + id);
+        } catch (error) {
+            next(error);
+        }
+    },
 };

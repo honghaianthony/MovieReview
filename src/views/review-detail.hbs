@@ -6,17 +6,19 @@
                     {{data.movieName}}
                     <span class="animate-border mt-2 mb-6"></span>
                 </div>
+                {{#ifeq user.role 2}}
                 <div class="three-dots">
                     <div class="three-dots-button">
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                     <div class="sub-menu-show active-three-dots">
                         <ul class="sub-menu">
-                            <li><a href="">Chỉnh sửa bài viết</a></li>
-                            <li><a href="">Xóa bài viết</a></li>
+                            <li><a href="/post/{{data.reviewId}}">Chỉnh sửa bài viết</a></li>
+                            <li><a href="/admin/review-another-movie">Xóa bài viết</a></li>
                         </ul>
                     </div>
                 </div>
+                {{/ifeq}}
             </div>
             <div class="review-detail-info">
                 <div class="review-detail-author">
@@ -28,7 +30,7 @@
                         <span class="role">Quản trị viên - Reviewer</span>
                     </div>
                 </div>
-                <div class="review-detail-audience">
+                <div class="review-detail-audience" id="rate-user">
                     {{#if data.rate}}
                     Đánh giá từ khán giả: {{data.rate}}/5
                     {{else}}
@@ -137,13 +139,10 @@
     </div>
 </section>
 <script src="/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    console.log("test");
     const socket = io();
     socket.emit('join-room', {{ data.reviewId }})
     socket.on('receive-message', (comment) => {
-        console.log(comment);
         setComment(comment);
     });
     {{#if user}}
@@ -184,7 +183,10 @@
                 break;
         }
         let url = "/film-review/" + {{ data.reviewId }} + "?rate=" + res
-        $.post(url);
+        $.post(url, function(data) {
+            let rateUser = document.getElementById("rate-user");
+            rateUser.innerHTML = `Đánh giá từ khán giả: ${data}/5 <i class="fas fa-star"></i>`;
+        });
     }
 
         {{#if rate}}
@@ -206,7 +208,6 @@
             }
             let star = document.getElementById("star" + res);
             star.checked = true;
-            console.log(star, "hi")
         {{/if}}
     {{/if}}
 
