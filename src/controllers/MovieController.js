@@ -135,6 +135,6 @@ module.exports = {
 
     await models.Review.update({ rate: rateAvg }, { where: { id: id } });
 
-    res.redirect('/film-review/'+ id);
+    res.send(rateAvg.toString());
   },
 };

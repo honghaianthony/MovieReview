@@ -9,4 +9,7 @@ router.post("/post", passportAuth.checkAdmin, postController.postInfo);
 
 router.get("/post", passportAuth.checkAdmin, postController.getPostInterface);
 
+router.get("/post/:id", passportAuth.checkAdmin, postController.getEditPost);
+router.put("/post/:id", passportAuth.checkAdmin, postController.editPost);
+
 module.exports = router;

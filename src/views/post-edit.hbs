@@ -1,0 +1,22 @@
+<section class="post">
+    <div class="container">
+        <div class="post-editor">
+            <div class="post-title">
+                <h2>Chỉnh sửa bài Review</h2>
+            </div>
+            <form method="post" action="/post/{{data.id}}?_method=PUT">
+                <input type="hidden" name="id" value={{data.id}} />
+                <h3>{{movie.name}}</h3>
+                <textarea name="context" id="context" rows="10" cols="80" >
+                    {{data.content}}
+                </textarea>
+                <script>
+                    CKEDITOR.replace("context");
+                    CKEDITOR.config.extraPlugins = 'justify';
+        
+                </script>
+                <button type="submit" class="btn-post">Đăng bài</button>
+            </form>
+        </div>
+    </div>
+</section>
