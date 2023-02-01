@@ -1,58 +1,50 @@
-# Documentation 
+# [HTML/CSS/JAVASCRIPT] Review Movie - A review movies website
 
-Quy định và quy trình làm việc
+## Introduction
 
-## Quy định 
+Hello everyone, this is the project about review movies. You can check it out:
 
-- Khi bắt đầu làm một tính năng mới cần checkout branch mới từ branch local với tên của mình hoặc tên phù hợp với tính năng.
+<p align="center">
+    <img src="demo/home.png" width="800"/>
+</p>
 
-    Ví dụ: khuong-duy-login.
+## Motivation
 
-    `git checkout local`
+This is the first project I made with my team. The project using ExpressJS, NodeJS and Handlebars to build website. In the lack of review movies website, we see that problems and started making this.
 
-    `git checkout -b <branch name>`
+## Installation
 
-- Sau khi hoàn thành code thì đặt tên commit một cách ngắn gọn dễ hiểu bằng tiếng anh.
+First time you see this repository, you must clone it and then run the following command:
 
-- Nếu thấy tính năng mình làm đã xong thì báo cáo với leader để tiến hành họp và test tính năng sau đó merge code vào branch chính.
+### `npm install`
 
-## Cấu trúc thư mục 
+Moreover, you should have a backend which is running with ExpressJS and NodeJS. You should also have your database to run successfully:
 
-    /src
-    |
-    |- /routes thư mục này dùng để định nghĩa các route.
-    |- /models thư mục này dùng để định nghĩa các model.
-    |- /controllers thư mục này chứa các controller của model thao tác xử lý logic chủ yếu nằm ở đây.
-    |- /public đây là thư mục chứa các file tĩnh như hình ảnh, văn bản, ...
-    |- /config Thư mục chứa các file config cho server, database, ...
+-   **create database review_db**
 
-## Cách chạy source code
+Next, you will create an .env file in your repository. The .env will follow this
 
-1. Những thứ cần cài đặt trước: 
+-   **DB_NAME**
+-   **DB_USERNAME**
+-   **DB_PASSWORD**
+-   **DB_HOST**
+-   **DB_PORT**
+-   **SESSION_SECRET**
+-   **CLIENT_ID**
+-   **CLIENT_SECRET**
+-   **REDIRECT_URI**
+-   **REFRESH_TOKEN**
 
-    - Git Bash
-    - Microsoft SQL Server
-    - Nodejs
-2. Tiến hành chạy source 
-    
-    - Clone git repository 
+After all the configuration, you can run the following command:
 
-        Mở terminal tại thư mục muốn đặt source code
+### `npm run dev`
 
-        `git clone https://gitlab.com/khuongduy172/movie_review.git`
+And... That's all what you need.
 
-    - Tạo database trong My SQL
+## Requirements
 
-        `create database review_db`
-    - Chạy code
+-   **nodejs >=14**
 
-        Tiếp tục ở terminal vừa clone git repository về
+## Thank you
 
-        `cd movie_review/`
-
-        `npm i`
-
-        `npm run dev`
-    
-    - Lưu ý luôn phải kiểm tra xem phiên bản mới nhất của file .env trong project của mình, nếu có cập nhật .env phải báo cho leader và gửi nội dung cho leader.
-
+Thank you for the excellent contributions of my team to implement this project. I appreciate you if you have any questions and some comments for us to improve this project.
