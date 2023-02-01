@@ -10,7 +10,7 @@ Hello everyone, this is the project about review movies. You can check it out:
 
 ## Motivation
 
-This is the first project I made with my team. The project using ExpressJS, NodeJS and Handlebars to build website. In the lack of review movies website, we see that problems and started making this.
+This is the first project I made with my team. The project using ExpressJS, NodeJS and Handlebars to build website. In the lack of review movies website, we see that problems and started making this project. We hope that this project will help you to find the best movies to watch.
 
 ## Installation
 
